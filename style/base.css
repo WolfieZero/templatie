@@ -1,0 +1,98 @@
+/*html5doctor.com Reset Stylesheet*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+
+/* 
+    Document	: base stylesheet
+	Package		: 
+    Author		: Neil Sweeney - http://wolfiezero.com/
+	Twitter		: @WolfieZero
+*/
+
+html{
+	background:			#EFEFEF;
+	overflow-y:			scroll;
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:100%;
+}
+body{
+	width:				960px;
+	font:				62.5% sans-serif;
+	margin:				10px auto;
+	color:				#444;
+}
+::-moz-selection, ::selection{ 
+	background:			#C09;
+	color:				#FFF; 
+	text-shadow:		none;
+}
+
+/*	Type Elements */
+p{
+	line-height:		1.5em;
+	margin:				1em 0;
+}
+h1,h2,h3{
+	line-height:		2em;
+}
+h1{
+	font:				3em;
+}
+h2{
+	font:				2.6em;
+}
+h3{
+	font:				2.2em;
+}
+sub,sup{
+	font:				75%;
+	line-height:		0;
+	position:			relative;
+}
+sup{
+	top:				-0.5em;
+}
+sub{
+	bottom:				-0.25em;
+}
+
+
+/*	Form Elements */
+input[type=submit],input[type=radio],button{
+	cursor:				pointer;
+}
+button{
+	width:				auto; 
+	overflow:			visible;
+}
+form input[type=text]{
+	border:				1px solid #AAA;
+	background:			-moz-linear-gradient(top,  #EEE, #FFF);
+	background:			-webkit-gradient(linear, left top, left bottom, from(#EEE), to(#FFF));	
+	filter:				progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#FFFFFF');
+}
+form input[type=submit]{
+	cursor:				pointer;
+	border:				1px solid #AAA;
+	background:			-moz-linear-gradient(top, #FFF, #EEE);
+	background:			-webkit-gradient(linear, left top, left bottom, from(#FFF), to(#EEE));	
+	filter:				progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#EEEEEE');
+}
+form textarea{
+	border:				1px solid #AAA;
+	background:			-moz-linear-gradient(top,  #EEE, #FFF);
+	background:			-webkit-gradient(linear, left top, left bottom, from(#EEE), to(#FFF));	
+	filter:				progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#FFFFFF');
+	width:				70%;
+}
+input::-moz-focus-inner,
+button::-moz-focus-inner { border: 0; padding: 0; }
+
+/*	Header */
+body>header{
+
+}
+
+body>footer{
+	
+}
