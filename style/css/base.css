@@ -1,0 +1,33 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body{line-height:1;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+nav ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;}
+ins{background-color:#ff9;color:#000;text-decoration:none;}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
+del{text-decoration:line-through;}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}
+table{border-collapse:collapse;border-spacing:0;}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;}
+ainput,select{vertical-align:middle;}
+small{font-size:0.8em;}
+sub,sup{font-size:0.7em;line-height:0;position:relative;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+.ie7 img{-ms-interpolation-mode:bicubic;}
+::-moz-selection{background:#C09;color:#FFF;text-shadow:none;}
+::selection{background:#C09;color:#FFF;text-shadow:none;}
+html{background:#FFF;height:100%;}
+body{font:87.5% 'Helvetica, Arial, sans-serif';color:#444444;}
+.pad{width:1000px;}
+h1{font-size:2.2em;}
+h2{font-szie:1.7em;}
+h3{font-size:1.4em;}
+h1,h2,h3{margin:1em 0;}
+ul,ol{margin:1em 0 1em 3em;line-height:1.5em;}
+button,input,select,textarea{margin:0;}
+button{width:auto;overflow:visible;}
+label,input[type="button"],input[type="submit"],input[type="image"],button{cursor:pointer;}
+header .logo{background:url('../logo.png');background:-webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#ffffff));background:-moz-linear-gradient(top, #eeeeee, #ffffff);filter:progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#eeeeee', EndColorStr='#ffffff');}

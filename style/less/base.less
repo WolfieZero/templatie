@@ -1,0 +1,199 @@
+/*html5doctor.com Reset Stylesheet*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,
+small,strong,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,
+canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video
+	{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body
+	{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
+	{display:block}
+nav ul
+	{list-style:none}
+blockquote,q
+	{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after
+	{content:'';content:none}
+a
+	{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins
+	{background-color:#ff9;color:#000;text-decoration:none}
+mark
+	{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del
+	{text-decoration:line-through}
+abbr[title],dfn[title]
+	{border-bottom:1px dotted;cursor:help}
+table
+	{border-collapse:collapse;border-spacing:0}
+hr
+	{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+ainput,select
+	{vertical-align:middle}
+/**
+ * My additions to the default reset
+ */
+small 
+	{font-size:0.8em}
+sub, sup 
+	{font-size:0.7em;line-height:0;position:relative}
+sup 
+	{top:-0.5em}
+sub 
+	{bottom:-0.25em}
+/**
+ * Bicubic resizing for non-native sized IMG: 
+ * code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/	
+ */
+.ie7 img 
+	{-ms-interpolation-mode:bicubic;} 
+
+.highlight(){
+	background: #C09; 
+	color: #FFF; 
+	text-shadow: none; 
+}
+::-moz-selection{.highlight}
+::selection{.highlight}
+
+/**
+ * LESS CSS style sheet
+ * http://lesscss.org/
+ */
+
+/**
+ * Various variables
+ */
+
+@dFontColor: 	#444;
+@dFontFamily:	'Helvetica, Arial, sans-serif';
+@dLineHeight:	1.5em;
+@dLinkColor: 	#C09;
+@dSiteWidth: 	1000px;
+@imgDir: 		'../';
+
+
+/**
+ * Graident
+ *
+ * @param	start colour
+ * @param	end colour
+ */
+.graident(@start, @end){
+	background:	-webkit-gradient(linear, left top, left bottom, from(@start), to(@end));
+	background:	-moz-linear-gradient(top, @start, @end); 
+	filter:		~"progid:DXImageTransform.Microsoft.Gradient(StartColorStr='@{start}', EndColorStr='@{end}')";
+}
+
+/**
+ * Corners
+ *
+ * @param	radius 5px
+ */
+.corners(@radius: 5px) {
+	-webkit-border-radius:	@radius;
+	-moz-border-radius:		@radius;
+	-o-border-radius:		@radius;
+	border-radius:			@radius;
+}
+
+/**
+ * Corners
+ *
+ * @param	top-left 5px
+ * @param	top-right 5px
+ * @param	bottom-left 5px
+ * @param	bottom-left 5px
+ */
+.corners-alt(@tl: 5px, @tr: 5px, @br: 5px, @bl: 5px) {
+	-webkit-border-radius:	@tl @tr @br @bl;
+	-moz-border-radius:		@tl @tr @br @bl;
+	-o-border-radius:		@tl @tr @br @bl;
+	border-radius:			@tl @tr @br @bl;
+}
+
+/**
+ * ClearFix
+ * 
+ * For use with :after element (remember to use zoom:1; on the main element for
+ * IE)
+ */
+.clearfix(){
+	content: '\0020';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+
+/******************************************************************************/
+
+/**
+ * 	Base styles
+ */
+
+html{
+	background: #FFF;
+	height: 100%;
+}
+body{
+	font: 87.5% @dFontFamily; /* http://pxtoem.com/ */
+	color: @dFontColor;
+}
+.pad{
+	width: @dSiteWidth;
+}
+
+/**
+ * 	Type
+ */
+h1{	font-size: 2.2em; }
+h2{ font-szie: 1.7em; }
+h3{ font-size: 1.4em; }
+h1,h2,h3{
+	margin: 1em 0;
+}
+ul, 
+ol{
+	margin: 1em 0 1em 3em; 
+	line-height: @dLineHeight;
+}
+
+
+/**
+ * 	Form Elements
+ */
+button, input, select, textarea 
+	{ margin: 0; }
+button 
+	{ width: auto; overflow: visible; }
+label, input[type="button"], input[type="submit"], input[type="image"], button 
+	{ cursor: pointer; }
+
+
+/**
+ * Header
+ */
+header{
+	
+	.logo{
+		background: url('@{imgDir}logo.png');
+		.graident(#EEE,#FFF);
+	}
+	
+}
+
+/**
+ * 	Main section
+ */
+#main{
+	
+}
+
+
+/**
+ * 	Footer Section
+ */
+footer{
+	
+}
