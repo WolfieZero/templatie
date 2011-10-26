@@ -1,0 +1,135 @@
+/*! normalize.css 2011-09-22T17:42 UTC - http://github.com/necolas/normalize.css */
+
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ */
+
+audio:not([controls]) {
+    display: none;
+}
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+
+[hidden] {
+    display: none;
+}
+
+
+/* ============================================================================
+   Base
+   ========================================================================= */
+
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em
+ *    units - http://clagnut.com/blog/348/#c790
+ *    Using 62.5% so that our .font-size() function is correctly used for rems
+ *    and px - http://snook.ca/archives/html_and_css/font-size-with-rem
+ * 2. Keeps page centred in all browsers regardless of content height
+ * 3. Prevents iOS text size adjust after orientation change, without disabling 
+ *    user zoom - www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+
+html {
+    font-size:					62.5%;	// 1
+    overflow-y:					scroll;	// 2
+    -webkit-text-size-adjust:	62.5%;	// 3
+    -ms-text-size-adjust:		62.5%%;	// 3
+    color:						@dFontColor;
+}
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+
+html, body {
+    margin:						0;
+    padding:					0;
+}
+
+/* 
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family:				@dFontFamily;
+}
+
+
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
+ * 2. Improves image quality when scaled in IE7
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+
+img {
+	border:						0;				// 1
+	-ms-interpolation-mode:		bicubic;		// 2
+}
+
+/*
+ * Corrects overflow displayed oddly in IE9 
+ */
+
+svg:not(:root) {
+	overflow:					hidden;
+}
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+/*
+ * Addresses margin not present in IE6/7/8/9, S5, O11
+ */
+
+figure {
+	margin:						0;
+}

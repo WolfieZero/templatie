@@ -1,0 +1,202 @@
+/******************************************************************************
+ * 
+ * functions.less 
+ * --------------
+ * 
+ * Use this to store all your Less functions that will be accessed globally.
+ * 
+ * If you want more for here then have a look at http://lesselements.com/	
+ * 
+ *****************************************************************************/
+
+/******************************************************************************
+ * ClearFix
+ * 
+ * Rather than adding clearfix class inline, this function will do the same
+ * but within the CSS for good semantic markup!
+ *****************************************************************************/
+.clearfix(){
+	&:after{
+		content:			'\0020';
+		display:			block;
+		height:				0;
+		clear:				both;
+		visibility:			hidden;
+	}
+	.ie &{zoom:1;}
+}
+
+
+/******************************************************************************
+ * Font Size
+ * 
+ * Uses pixels (px) as the main unit then convert to REM.
+ * The default font-size is used as a default value.
+ *
+ * @param	int	size
+ *****************************************************************************/
+.font-size(@size: @dFontSize) {
+	@remFontSize:			(@size/10);
+	font-size:				~`"@{size}"+'px'`;
+	font-size:				~`"@{remFontSize}"+'rem'`;
+}
+
+
+/******************************************************************************
+ * Inline Image
+ * 
+ * You can use this when you have an image you want to display as an
+ * alternative to text such as:
+ * 	<a href="#" class="appstore">Download from App Store</a>
+ *****************************************************************************/
+.inlineimage(@width, @height){
+	display:				block;
+	width:					@width;
+	height:					@height;
+	text-indent:			-9999em;
+	text-transform:			capitalize;
+}
+
+
+/******************************************************************************
+ * 
+ *****************************************************************************/
+.transition(@transition) {
+ 	-webkit-transition:		@transition;
+	   -moz-transition:		@transition;
+	    -ms-transition:		@transition;
+	     -o-transition:		@transition;
+            transition:		@transition;
+}
+
+/******************************************************************************
+ * 
+ *****************************************************************************/
+.box-shadow(@arguments) {
+	-webkit-box-shadow:		@arguments;
+	   -moz-box-shadow:		@arguments;
+	        box-shadow:		@arguments;
+}
+
+/******************************************************************************
+ * 
+ *****************************************************************************/
+.rounded(@radius: 2px) {
+	-webkit-border-radius:	@radius;
+	   -moz-border-radius:	@radius;
+	        border-radius:	@radius;
+	
+	-moz-background-clip:	padding; 
+	-webkit-background-clip:padding-box; 
+	background-clip:		padding-box; 
+}
+
+/******************************************************************************
+ * 
+ *****************************************************************************/
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+	-webkit-border-radius:	@topright @bottomright @bottomleft @topleft;
+	   -moz-border-radius:	@topright @bottomright @bottomleft @topleft;
+	        border-radius:	@topright @bottomright @bottomleft @topleft;
+	
+	-moz-background-clip:	padding; 
+	-webkit-background-clip:padding-box; 
+	background-clip:		padding-box; 
+}
+
+
+/******************************************************************************
+ * Reset filters used in IE
+ *****************************************************************************/
+.reset-filter() {
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+
+/******************************************************************************
+ * 
+ *****************************************************************************/
+.opacity(@opacity: 100) {
+	-khtml-opacity:			@opacity / 100;
+	  -moz-opacity:			@opacity / 100;
+	       opacity:			@opacity / 100;
+	filter: e(%("alpha(opacity=%d)", @opacity));
+}
+
+/******************************************************************************
+ * 
+ * From Bootstrap
+ *****************************************************************************/
+// Gradient Bar Colors for buttons and alerts
+.gradientBar(@primaryColor, @secondaryColor) {
+	#gradient > .vertical(@primaryColor, @secondaryColor);
+	text-shadow:			0 -1px 0 rgba(0,0,0,.25);
+	border-color:			@secondaryColor @secondaryColor darken(@secondaryColor, 15%);
+	border-color:			rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
+}
+
+
+/******************************************************************************
+ * 
+ * Gradient
+ * 
+ * I've removed my original in favour for Bootstraps method but I've commented
+ * out some elements for less common browsers. Also, there is no default style
+ * because that seems a bit pointless...
+ * 
+ * A note that IEs filter can slow down the rendering of a page so might be
+ * worth thinking about whether you really want to include that element.
+ * 
+ * #gradient
+ *	> horizontal
+ *	> vertical
+ *	> directional
+ *	> vertical-three-colors
+ * 
+ *****************************************************************************/
+#gradient {
+	.horizontal(@startColor, @endColor) {
+		background-color:	@endColor;
+		background-repeat:	repeat-x;
+		//background-image:	-webkit-gradient(linear, left top, right top, color-stop(0%, @startColor), color-stop(100%, @endColor));			// Safari 4+, Chrome 2+
+		background-image:	-webkit-linear-gradient(left, @startColor, @endColor); 																// Safari 5.1+, Chrome 10+
+		//background-image:	-khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor));										// Konqueror
+		background-image:	-moz-linear-gradient(left, @startColor, @endColor);																	// FF 3.6+
+		background-image:	-ms-linear-gradient(left, @startColor, @endColor);																	// IE10
+		background-image:	-o-linear-gradient(left, @startColor, @endColor);																	// Opera 11.10
+		background-image:	linear-gradient(left, @startColor, @endColor);																		// CSS3
+		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor));	// IE9 and down
+	}
+	.vertical (@startColor, @endColor) {
+		background-color:	@endColor;
+		background-repeat:	repeat-x;
+		//background-image:	-webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor));			// Safari 4+, Chrome 2+
+		background-image:	-webkit-linear-gradient(top, @startColor, @endColor);																// Safari 5.1+, Chrome 10+
+		//background-image:	-khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));									// Konqueror
+		background-image:	-moz-linear-gradient(top, @startColor, @endColor);																	// FF 3.6+
+		background-image:	-ms-linear-gradient(top, @startColor, @endColor);																	// IE10
+		background-image:	-o-linear-gradient(top, @startColor, @endColor);																	// Opera 11.10
+		background-image:	linear-gradient(top, @startColor, @endColor);																		// CSS3
+		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor));	// IE9 and down
+	}
+	.directional (@startColor, @endColor, @deg) {
+		background-color:	@endColor;
+		background-repeat:	repeat-x;
+		background-image:	-webkit-linear-gradient(@deg, @startColor, @endColor);																// Safari 5.1+, Chrome 10+
+		background-image:	-moz-linear-gradient(@deg, @startColor, @endColor);																	// FF 3.6+
+		background-image:	-ms-linear-gradient(@deg, @startColor, @endColor);																	// IE10
+		background-image:	-o-linear-gradient(@deg, @startColor, @endColor);																	// Opera 11.10
+		background-image:	linear-gradient(@deg, @startColor, @endColor);																		// CSS3
+	}
+	.vertical-three-colors(@startColor, @midColor, @colorStop, @endColor) {
+		background-color:	@endColor;
+		background-repeat:	no-repeat;
+	//	background-image:	-webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));			// Safari 4+, Chrome 2+
+		background-image:	-webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);												// Safari 5.1+, Chrome 10+
+		background-image:	-moz-linear-gradient(top, @startColor, @midColor @colorStop, @endColor);											// FF 3.6+
+		background-image:	-ms-linear-gradient(@startColor, @midColor @colorStop, @endColor);													// IE10
+		background-image:	-o-linear-gradient(@startColor, @midColor @colorStop, @endColor);													// Opera 11.10
+		background-image:	linear-gradient(@startColor, @midColor @colorStop, @endColor);														// CSS3
+		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor));	// IE9 and down, gets no color-stop at all for proper fallback
+	}
+}
