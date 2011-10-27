@@ -5,6 +5,7 @@ audio:not([controls]){display:none;}
 [hidden]{display:none;}
 html{font-size:62.5%;overflow-y:scroll;-webkit-text-size-adjust:62.5%;-ms-text-size-adjust:62.5%%;color:#404040;}
 html,body{margin:0;padding:0;width:100%;height:100%;background:#fefefe;}
+.pad{margin:0 auto;padding:0;}
 img{border:0;-ms-interpolation-mode:bicubic;}
 svg:not(:root){overflow:hidden;}
 figure{margin:0;}
@@ -78,7 +79,6 @@ tbody th{text-align:right;}
 .invisible{visibility:hidden;}
 .hide{display:none !important;visibility:hidden;}
 .readabilyhide{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}
-.pad{margin:0 auto;}
 header{font-family:'Ubuntu Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;height:220px;background:#333;color:#FEFEFE;padding:0 10px;-webkit-border-radius:0 0 10px 10px;-moz-border-radius:0 0 10px 10px;border-radius:0 0 10px 10px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;}header p{font-size:60px;font-size:6rem;}
 header small{border-top:1px solid #EEE;padding:0.5em 0;text-align:right;line-height:0.5em;}
 label{text-align:right;display:inline-block;width:120px;margin:0 1em 0 0;}
