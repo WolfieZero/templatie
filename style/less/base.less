@@ -9,31 +9,30 @@
  *****************************************************************************/
 
 // Define font families
-@dSerifFamily:			Georgia, 'Times New Roman', Times, serif;
+@dSerifFamily:			'PT Serif', Georgia, 'Times New Roman', Times, serif;
 @dSansSerifFamily:		Helvetica, Arial, sans-serif;
 @dMonospacedFamily:		'Bitstream Vera Sans Mono', Courier, monospace;
 @dFontFamily:			Helvetica, Arial, sans-serif;
-@dHeaderFamily:			'Helvetica Neue', Helvetica, Arial, sans-serif;
+@dHeaderFamily:			'Ubuntu Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 // Define default typography
 @dFontSize:				16;			// in pixels!
 @dLineHeight:			1.5em;
-@baseline:				1.5em;
+@dHeaderWeight:			100;
+
+@baseline:				2em;
 
 // Define colours
-@dBackgroundColor:		#FFF;
+@dBackgroundColor:		#FEFEFE;
 @dFontColor: 			#404040;
 @dHeaderColor:			#000;
 @dLinkColor: 			#C09;
 @dLinkHoverColor:		#C07;
 
-// Define widths for screen sizes
-@siteWidthMobile:		90%;
-@siteWidth480Min:		95%;
-@siteWidth768Min:		97%;
-
 // Define where images are
 @imgDir: 				'../../';
+
+// Add more variables
 
 
 /******************************************************************************
@@ -47,68 +46,34 @@
  * Styling the content
  *****************************************************************************/
 @import 'element/type';				// Typography
-
 @import 'element/code';				// Display of code
 @import 'element/form';				// Form styles
 @import 'element/table';			// Table styles
-@import 'element/non-semantics';	// Table styles
+@import 'element/non-semantics';	// For JavaScript styling
+
+
+/******************************************************************************
+ * Styling the scaffolding
+ *****************************************************************************/
+
+@import 'scaffold/base';
 
 
 /******************************************************************************
  * 
- * Seeming as we work with mobile first, these style will override those
- * styles with bigger styles.
- * 
- * So starting with the smaller screen working up to the larger ones.
+ * In regards to responsive design, going about the mobile first idea it's
+ * best to order files from smallest screen to biggest.
  * 
  * The reason for this is we are more likely to load larger file-sizes on a
  * desktop so we only want to load those if they are on a desktop.
  * 
- * On the other hand, if you don't need any of these then may I suggest using
- * the /768+/ folder to place your files in if you are developing for the 
- * desktop. If not then use the matching folder for your device that you're
- * developing for as it will help later on if you wish to expand your CSS
+ * I've come across an issue where you cannot compile LESS files that use
+ * @import inside an @media block. Due to this the files must be included as
+ * a whole with the @media block within.
  * 
  *****************************************************************************/
 
-/******************************************************************************
- * Views less than 480px wide
- * /480-/
- *****************************************************************************/
-
-
-
-
-/******************************************************************************
- * Views equal to or more than 480px wide
- * /480+/
- *****************************************************************************/
-@media only screen and (min-width: 480px) {
-
-	#main {
-		width: @siteWidth480Min;
-	}	
-
-}
-
-
-/******************************************************************************
- * Views equal to or more than 768px wide
- * /768+/
- *****************************************************************************/
-@media only screen and (min-width: 768px) {
-
-	#main {
-		width: @siteWidth768Min;
-	}	
-
-}
-
-
-/******************************************************************************
- * Printers!
- * /all/ (as you can print from any screen size)
- *****************************************************************************/
-@media print {
-	@import 'all/print';
-}
+@import 'media/480minus';			// Views equal to or less than 480px wide
+@import 'media/480plus';			// Views more than 480px wide
+@import 'media/768plus';			// Views equal to or more than 768px wide
+@import 'media/print';				// For printing the document

@@ -18,8 +18,12 @@ footer,
 header,
 hgroup,
 nav,
-section {
+section,
+div,
+span {
     display: block;
+    margin:		0;
+    padding:	0;
 }
 
 /*
@@ -74,25 +78,13 @@ html {
     color:						@dFontColor;
 }
 
-/*
- * Addresses margins handled incorrectly in IE6/7
- */
 
 html, body {
     margin:						0;
     padding:					0;
-}
-
-/* 
- * Addresses font-family inconsistency between 'textarea' and other form elements.
- */
-
-body,
-button,
-input,
-select,
-textarea {
-    font-family:				@dFontFamily;
+    width:						100%;
+    height:						100%;
+	background:					@dBackgroundColor;
 }
 
 

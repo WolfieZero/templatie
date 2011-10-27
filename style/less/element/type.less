@@ -1,37 +1,57 @@
-h1,h2,h3,h4{
+body,
+button,
+input,
+select,
+textarea {
+    font-family:				@dFontFamily;
+}
+
+
+/******************************************************************************
+ * Headers
+ *****************************************************************************/
+
+h1, h2, h3, h4 {
 	font-family:		@dHeaderFamily;
+	font-weight:		@dHeaderWeight;
+	margin:				(@baseline / 2) 0;
+	border-bottom:		1px solid lighten(@dFontColor, 70%);
 	small {
-		font-size:			0.7em;
 		color:				#888;
 	}
 }
-h1{
-	.font-size(26);
+h1 {
+	.font-size(28);
 }
-h2{
+h2 {
+	.font-size(24);
+}
+h3 {
 	.font-size(22);
 }
-h3{
+h4 {
 	.font-size(20);
 }
-h4{
-	.font-size(18);
-}
-p{
+
+p {
 	.font-size();
-	line-height:	@dLineHeight;
+	padding:				(@baseline / 4) 0;
+	margin:			0;
+	line-height:		@dLineHeight;
 }
 
-/* =============================================================================
-   Typography
-   ========================================================================== */
+hr {
+	border:				0;
+	margin:				@baseline 0;
+	border-bottom:		1px solid lighten(@dFontColor, 60%);
+}
 
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
 
 abbr[title] {
-    border-bottom:				1px dotted;
+    border-bottom:				1px dotted lighten(@dFontColor, 40%);
 }
 
 /*
@@ -65,25 +85,16 @@ blockquote {
 	margin:						1em 40px;
 	font-family:				@dSerifFamily;
 	font-weight:				100;
-	&:before,
-	&:after {
-		.font-size(40);
+
+	&:before {
+		.font-size(75);
 		color:						lighten(@dFontColor, 50%);
-	}
-    &:before {
 		content:					'“';
 		margin-top:					-10px;
-		margin-left:				-20px;
+		margin-left:				-40px;
 		float:						left;
-    }
-   &:after {
-		content:					'”';
-		margin-top:					-30px;
-		margin-right:				-20px;
-		float:						right;
-    }
-    &,
-    p {
+	}
+	&, p {
 		.font-size(18);
 	}
 	cite {
