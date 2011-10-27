@@ -71,7 +71,10 @@ input[type=button],input[type=reset],input[type=submit]{width:auto;height:auto;}
 .btn[disabled],button[disabled]{cursor:default;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);-khtml-opacity:0.65;-moz-opacity:0.65;opacity:0.65;filter:alpha(opacity=65);-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
 :root .alert-message,:root .btn{border-radius:0 \0;}
 .btn::-moz-focus-inner,button::-moz-focus-inner{padding:0;border:0;}
-table{border-collapse:collapse;border-spacing:0;font-size:16px;font-size:1.6rem;}
+table{border-collapse:collapse;border-spacing:0;margin:0.75em auto;}
+th,td{font-size:16px;font-size:1.6rem;border:1px solid #CCC;padding:0.5em;}
+thead td,thead th{background:#EEE;text-align:center;}
+tbody th{text-align:right;}
 .invisible{visibility:hidden;}
 .hide{display:none !important;visibility:hidden;}
 .readabilyhide{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}

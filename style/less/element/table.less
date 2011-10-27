@@ -1,13 +1,28 @@
-/* =============================================================================
-   Tables
-   ========================================================================== */
-
-/* 
- * Remove most spacing between table cells
- */
+/******************************************************************************
+ * Tables
+ *****************************************************************************/
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+	border-collapse:	collapse;
+	border-spacing:		0;
+	margin:				(@dLineHeight / 2) auto;
+}
+
+th, td {
 	.font-size();
+	border:				1px solid #CCC; 
+	padding:			(@baseline / 4);
+}
+
+thead {
+	td, th {
+		background:			#EEE;
+		text-align:			center;
+	}
+}
+
+tbody {
+	th {
+		text-align:			right;
+	}
 }
