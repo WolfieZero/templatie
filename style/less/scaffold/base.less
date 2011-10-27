@@ -1,9 +1,9 @@
 header {
+	background:				#333;
+	color:					@dBackgroundColor;
+	padding:				0 1em;
 	font-family:			@dHeaderFamily;
 	height:					220px;
-	background:				#333;
-	color:					#FEFEFE;
-	padding:				0 10px;
 	.border-radius(0, 0, 10px, 10px);
 	p {
 		.font-size(60);
@@ -15,6 +15,13 @@ header {
 		line-height:			0.5em;
 		display:				block;
 	}
+}
+
+footer {
+	.box-shadow(inset 0px 2px 10px rgba(0,0,0,0.5));
+	padding:				2em 0;
+	text-align:				center;
+	background:				#CCC;
 }
 
 label {
