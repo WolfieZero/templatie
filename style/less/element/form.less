@@ -1,6 +1,12 @@
-/* =============================================================================
-   Forms
-   ========================================================================== */
+/******************************************************************************
+ * 
+ * from.less 
+ * ---------
+ * 
+ * All elements to do with forms are in here as well as some cool buttons
+ * styles I took from Twitter's Bootstrap.
+ *  
+ *****************************************************************************/
 
 /*
  * Corrects margin displayed oddly in IE6/7
@@ -15,7 +21,7 @@ form {
  */
 
 fieldset {
-	border:						1px solid #c0c0c0;
+	border:						0;
     margin:						0 2px;
     padding:					0.35em 0.625em 0.75em;
 }
@@ -187,35 +193,10 @@ input[type=submit] {
 }
 
 
-/**
- * Styles for Alerts and Buttons
- * 
+/******************************************************************************
+ * Styles for Buttons
  *****************************************************************************/
-.btn {
-	font-weight: normal;
-  // Set text color
-  &.error,
-  &.error:hover,
-  &.success,
-  &.success:hover {
-	color:					#FFF;
-	text-shadow:			0 1px 1px rgba(0,0,0,.5);
-  }
-  // Danger and error appear as red
-  &.error {
-    .gradientBar(#ee5f5b, #c43c35);
-  }
-  // Success appears as green
-  &.success {
-    .gradientBar(#62c462, #57a957);
-  }
-}
 
-
-/**
- * Button
- * 
- *****************************************************************************/
 .btn,
 button{
 	cursor:					pointer;

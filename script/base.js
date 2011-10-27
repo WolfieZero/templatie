@@ -3,7 +3,7 @@
  */
 $(document).ready(function() {
 	
-	$('html').removeClass('no-js');
+	$('body').removeClass('no-js');
 	$('textarea').autoGrow();
 
 	log('Welcome to Templatie! Enjoy your stay but please leave the carrot cake alone...');
