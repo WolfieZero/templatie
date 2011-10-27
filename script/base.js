@@ -2,10 +2,13 @@
  * Main site scripts 
  */
 $(document).ready(function() {
+	
+	$('html').removeClass('no-js');
 	$('textarea').autoGrow();
 
 	log('Welcome to Templatie! Enjoy your stay but please leave the carrot cake alone...');
 });
+
 
 /**
  * Is Set
