@@ -1,3 +1,13 @@
+/******************************************************************************
+ * 
+ * type.less 
+ * ---------
+ * 
+ * All the p tags, the header tags, the list tags and such like. Anything that
+ * is text based.
+ * 
+ *****************************************************************************/
+
 body,
 button,
 input,
@@ -35,8 +45,8 @@ h4 {
 
 p {
 	.font-size();
-	padding:				(@baseline / 4) 0;
-	margin:			0;
+	padding:			(@baseline / 4) 0;
+	margin:				0;
 	line-height:		@dLineHeight;
 }
 
@@ -85,10 +95,11 @@ blockquote {
 	margin:						1em 40px;
 	font-family:				@dSerifFamily;
 	font-weight:				100;
+	color:						lighten(@dFontColor, 30%);
 
 	&:before {
 		.font-size(75);
-		color:						lighten(@dFontColor, 50%);
+		color:						lighten(@dFontColor, 20%);
 		content:					'“';
 		margin-top:					-10px;
 		margin-left:				-40px;
@@ -101,7 +112,6 @@ blockquote {
 		.font-size(14);
 		margin-top:					-1em;
 		display:					block;
-		color:						lighten(@dFontColor, 50%);
 		font-family:				@dFontFamily;
 		text-align:					right;
 	}

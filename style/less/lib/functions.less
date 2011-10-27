@@ -11,9 +11,8 @@
 
 /******************************************************************************
  * ClearFix
- * 
- * Rather than adding clearfix class inline, this function will do the same
- * but within the CSS for good semantic markup!
+ * 	Rather than adding clearfix class inline, this function will do the same
+ * 	but within the CSS for good semantic markup!
  *****************************************************************************/
 .clearfix(){
 	&:after{
@@ -29,11 +28,8 @@
 
 /******************************************************************************
  * Font Size
- * 
- * Uses pixels (px) as the main unit then convert to REM.
- * The default font-size is used as a default value.
- *
- * @param	int	size
+ * 	Uses pixels (px) as the main unit then convert to REM.
+ * 	The default font-size is used as a default value.
  *****************************************************************************/
 .font-size(@size: @dFontSize) {
 	@remFontSize:			(@size/10);
@@ -44,10 +40,9 @@
 
 /******************************************************************************
  * Inline Image
- * 
- * You can use this when you have an image you want to display as an
- * alternative to text such as:
- * 	<a href="#" class="appstore">Download from App Store</a>
+ * 	You can use this when you have an image you want to display as an
+ * 	alternative to text such as:
+ * 		<a href="#" class="appstore">Download from App Store</a>
  *****************************************************************************/
 .inlineimage(@width, @height){
 	display:				block;
@@ -59,7 +54,7 @@
 
 
 /******************************************************************************
- * 
+ * Transition
  *****************************************************************************/
 .transition(@transition) {
  	-webkit-transition:		@transition;
@@ -70,7 +65,7 @@
 }
 
 /******************************************************************************
- * 
+ * Box Shadow
  *****************************************************************************/
 .box-shadow(@arguments) {
 	-webkit-box-shadow:		@arguments;
@@ -79,7 +74,8 @@
 }
 
 /******************************************************************************
- * 
+ * Rounded
+ * 	Make an element completely rounded
  *****************************************************************************/
 .rounded(@radius: 2px) {
 	-webkit-border-radius:	@radius;
@@ -92,7 +88,8 @@
 }
 
 /******************************************************************************
- * 
+ * Border Radius
+ * 	Specify each corner's radius
  *****************************************************************************/
 .border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
 	-webkit-border-radius:	@topright @bottomright @bottomleft @topleft;
@@ -106,7 +103,9 @@
 
 
 /******************************************************************************
- * Reset filters used in IE
+ * Reset IE Filters
+ * 	Removes the use of a filter
+ * 	(from Bootstrap)
  *****************************************************************************/
 .reset-filter() {
 	filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
@@ -114,7 +113,7 @@
 
 
 /******************************************************************************
- * 
+ * Opacity
  *****************************************************************************/
 .opacity(@opacity: 100) {
 	-khtml-opacity:			@opacity / 100;
@@ -124,10 +123,10 @@
 }
 
 /******************************************************************************
- * 
- * From Bootstrap
+ * Gradient Bar
+ * 	Used for the button styles
+ * 	(from Bootstrap)
  *****************************************************************************/
-// Gradient Bar Colors for buttons and alerts
 .gradientBar(@primaryColor, @secondaryColor) {
 	#gradient > .vertical(@primaryColor, @secondaryColor);
 	text-shadow:			0 -1px 0 rgba(0,0,0,.25);
@@ -140,27 +139,27 @@
  * 
  * Gradient
  * 
- * I've removed my original in favour for Bootstraps method but I've commented
- * out some elements for less common browsers. Also, there is no default style
- * because that seems a bit pointless...
+ * 	I've removed my original in favour for Bootstraps method but I've commented
+ * 	out some elements for less common browsers. Also, there is no default style
+ * 	because that seems a bit pointless...
  * 
- * A note that IEs filter can slow down the rendering of a page so might be
- * worth thinking about whether you really want to include that element.
- * 
- * #gradient
- *	> horizontal
- *	> vertical
- *	> directional
- *	> vertical-three-colors
+ * 	A note that IEs filter can slow down the rendering of a page so might be
+ * 	worth thinking about whether you really want to include that element.
+ * 	
+ * 	#gradient
+ *		> horizontal
+ *		> vertical
+ *		> directional
+ *		> vertical-three-colors
  * 
  *****************************************************************************/
 #gradient {
 	.horizontal(@startColor, @endColor) {
 		background-color:	@endColor;
 		background-repeat:	repeat-x;
-		//background-image:	-webkit-gradient(linear, left top, right top, color-stop(0%, @startColor), color-stop(100%, @endColor));			// Safari 4+, Chrome 2+
+	//	background-image:	-webkit-gradient(linear, left top, right top, color-stop(0%, @startColor), color-stop(100%, @endColor));			// Safari 4+, Chrome 2+
 		background-image:	-webkit-linear-gradient(left, @startColor, @endColor); 																// Safari 5.1+, Chrome 10+
-		//background-image:	-khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor));										// Konqueror
+	//	background-image:	-khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor));										// Konqueror
 		background-image:	-moz-linear-gradient(left, @startColor, @endColor);																	// FF 3.6+
 		background-image:	-ms-linear-gradient(left, @startColor, @endColor);																	// IE10
 		background-image:	-o-linear-gradient(left, @startColor, @endColor);																	// Opera 11.10
@@ -170,9 +169,9 @@
 	.vertical (@startColor, @endColor) {
 		background-color:	@endColor;
 		background-repeat:	repeat-x;
-		//background-image:	-webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor));			// Safari 4+, Chrome 2+
+	//	background-image:	-webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor));			// Safari 4+, Chrome 2+
 		background-image:	-webkit-linear-gradient(top, @startColor, @endColor);																// Safari 5.1+, Chrome 10+
-		//background-image:	-khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));									// Konqueror
+	//	background-image:	-khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));									// Konqueror
 		background-image:	-moz-linear-gradient(top, @startColor, @endColor);																	// FF 3.6+
 		background-image:	-ms-linear-gradient(top, @startColor, @endColor);																	// IE10
 		background-image:	-o-linear-gradient(top, @startColor, @endColor);																	// Opera 11.10

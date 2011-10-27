@@ -20,9 +20,9 @@ abbr[title]{border-bottom:1px dotted #a6a6a6;}
 b,strong{font-weight:700;}
 q{quotes:none;}
 q:before,q:after{content:'';}
-blockquote{margin:1em 40px;font-family:'PT Serif',Georgia,'Times New Roman',Times,serif;font-weight:100;}blockquote:before{font-size:75px;font-size:7.5rem;color:#c0c0c0;content:'“';margin-top:-10px;margin-left:-40px;float:left;}
+blockquote{margin:1em 40px;font-family:'PT Serif',Georgia,'Times New Roman',Times,serif;font-weight:100;color:#8d8d8d;}blockquote:before{font-size:75px;font-size:7.5rem;color:#737373;content:'“';margin-top:-10px;margin-left:-40px;float:left;}
 blockquote,blockquote p{font-size:18px;font-size:1.8rem;}
-blockquote cite{font-size:14px;font-size:1.4rem;margin-top:-1em;display:block;color:#c0c0c0;font-family:Helvetica,Arial,sans-serif;text-align:right;}
+blockquote cite{font-size:14px;font-size:1.4rem;margin-top:-1em;display:block;font-family:Helvetica,Arial,sans-serif;text-align:right;}
 dfn{font-style:italic;}
 mark{background:#FF0;color:#000;}
 pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word;}
