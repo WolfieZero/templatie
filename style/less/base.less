@@ -1,0 +1,79 @@
+/******************************************************************************
+ * Templatie!
+ * Err... yeah, remember to minimize this stuff for quick loading.
+ *****************************************************************************/
+
+
+/******************************************************************************
+ * Various variables
+ *****************************************************************************/
+
+// Define font families
+@dSerifFamily:			'PT Serif', Georgia, 'Times New Roman', Times, serif;
+@dSansSerifFamily:		Helvetica, Arial, sans-serif;
+@dMonospacedFamily:		'Bitstream Vera Sans Mono', Courier, monospace;
+@dFontFamily:			Helvetica, Arial, sans-serif;
+@dHeaderFamily:			'Ubuntu Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Define default typography
+@dFontSize:				16;			// in pixels!
+@dLineHeight:			1.5em;
+@dHeaderWeight:			100;
+
+@baseline:				2em;
+
+// Define colours
+@dBackgroundColor:		#FEFEFE;
+@dFontColor: 			#404040;
+@dHeaderColor:			#000;
+@dLinkColor: 			#C09;
+@dLinkHoverColor:		#C07;
+
+// Define where images are
+@imgDir: 				'../../';
+
+// Add more variables
+
+
+/******************************************************************************
+ * Required
+ *****************************************************************************/
+@import 'lib/functions';			// Load in functions
+@import 'lib/normalise';			// standarise 
+
+
+/******************************************************************************
+ * Styling the content
+ *****************************************************************************/
+@import 'element/type';				// Typography
+@import 'element/code';				// Display of code
+@import 'element/form';				// Form styles
+@import 'element/table';			// Table styles
+@import 'element/non-semantics';	// For JavaScript styling
+
+
+/******************************************************************************
+ * Styling the scaffolding
+ *****************************************************************************/
+
+@import 'scaffold/base';
+
+
+/******************************************************************************
+ * 
+ * In regards to responsive design, going about the mobile first idea it's
+ * best to order files from smallest screen to biggest.
+ * 
+ * The reason for this is we are more likely to load larger file-sizes on a
+ * desktop so we only want to load those if they are on a desktop.
+ * 
+ * I've come across an issue where you cannot compile LESS files that use
+ * @import inside an @media block. Due to this the files must be included as
+ * a whole with the @media block within.
+ * 
+ *****************************************************************************/
+
+@import 'media/480minus';			// Views equal to or less than 480px wide
+@import 'media/480plus';			// Views more than 480px wide
+@import 'media/768plus';			// Views equal to or more than 768px wide
+@import 'media/print';				// For printing the document
