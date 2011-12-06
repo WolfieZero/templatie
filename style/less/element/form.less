@@ -1,30 +1,27 @@
-/* =============================================================================
-   Forms
-   ========================================================================== */
+//*****************************************************************************
+// 
+// form.less 
+// ---------
+// 
+// All elements to do with forms are in here as well as some cool buttons
+// styles I took from Twitter's Bootstrap.
+//  
+//*****************************************************************************
 
-/*
- * Corrects margin displayed oddly in IE6/7
- */
-
+/* Corrects margin displayed oddly in IE6/7 */
 form {
 	margin:						0;
 }
 
-/*
- * Define consistent border, margin, and padding
- */
-
+/* Define consistent border, margin, and padding */
 fieldset {
-	border:						1px solid #c0c0c0;
+	border:						0;
     margin:						0 2px;
     padding:					0.35em 0.625em 0.75em;
 }
 
-/*
- * 1. Corrects color not being inherited in IE6/7/8/9
- * 2. Corrects alignment displayed oddly in IE6/7
- */
-
+/* 1. Corrects color not being inherited in IE6/7/8/9 
+   2. Corrects alignment displayed oddly in IE6/7     */
 legend {
 	border:						0;				// 1
 	*margin-left:				-7px;			// 2
@@ -136,33 +133,26 @@ select {
 	line-height:				@dLineHeight;
 	color:						@dFontColor;
 	border:						1px solid #CCC;
+	@transition:				all linear .3s;
+	.transition(@transition);
+	.box-shadow(inset 0 1px 3px rgba(0,0,0,.1));
 	.rounded(3px);
 }
 label {
-	float:						left;
+	cursor:						pointer;
 	height:						@dLineHeight;
 	line-height:				@dLineHeight;
-	padding:					3px;
 }
 select[multiple='multiple'] {
 	height:						inherit;
 }
-
-input,
-textarea,
-select {
-	@transition: border linear .2s, box-shadow linear .2s;
-	.transition(@transition);
-	.box-shadow(inset 0 1px 3px rgba(0,0,0,.1));
-}
-
 
 input:focus,
 textarea:focus,
 select:focus {
 	outline:					0;
 	border-color:				#BBB;
-	@shadow:					inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(200,200,200,.6);
+	@shadow:					inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(100,100,100,.5);
 	.box-shadow(@shadow);
 }
 
@@ -187,52 +177,30 @@ input[type=submit] {
 }
 
 
-/**
- * Styles for Alerts and Buttons
- * 
+/******************************************************************************
+ * Styles for Buttons
  *****************************************************************************/
-.btn {
-	font-weight: normal;
-  // Set text color
-  &.error,
-  &.error:hover,
-  &.success,
-  &.success:hover {
-	color:					#FFF;
-	text-shadow:			0 1px 1px rgba(0,0,0,.5);
-  }
-  // Danger and error appear as red
-  &.error {
-    .gradientBar(#ee5f5b, #c43c35);
-  }
-  // Success appears as green
-  &.success {
-    .gradientBar(#62c462, #57a957);
-  }
-}
 
-
-/**
- * Button
- * 
- *****************************************************************************/
 .btn,
 button{
 	cursor:					pointer;
 	text-decoration:		none;
 	display:				inline-block;
-	padding:				6px 14px 5px;
+	padding:				4px 14px;
 	text-shadow:			0 1px 1px rgba(255,255,255,.75);
 	color:					@dFontColor;
 	line-height:			normal;
 	border:					1px solid #CCC;
 	border-bottom-color:	#BBB;
+	.ie & {
+		font-weight:			700;
+	}
 	.box-shadow('inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)');
 	#gradient > 
 		.vertical-three-colors(#ffffff, #ffffff, 25%, darken(#ffffff, 10%)); // Don't use .gradientbar() here since it does a three-color gradient
 	.rounded(4px);
 	.font-size();
-	.transition(.1s linear all);
+	.transition(.2s linear all);
 
 	&:hover {
 		background-position:	0 -15px;
@@ -249,7 +217,8 @@ button{
 	&.primary {
 		color:					#FFF;
 		text-shadow:			0 1px 1px rgba(0,0,0,.5);
-		.gradientBar(#62c462, #57a957);
+		.gradientBar(#bcdf7c, #78ae05);
+	//	.gradientBar(#62c462, #57a957);
 	}
 
 	// Active and Disabled states

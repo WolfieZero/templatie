@@ -1,4 +1,16 @@
-// Inline and block code styles
+//*****************************************************************************
+// 
+// code.less 
+// ---------
+// 
+// If you show code on a web page then you'll need these elements and possibly
+// want to add more to it if you use things like syntax highlighting.
+// 
+//*****************************************************************************
+
+/******************************************************************************
+ * Code
+ *****************************************************************************/
 code, 
 pre,
 kbd,
@@ -7,7 +19,7 @@ samp  {
 	.font-size(14);
 }
 code {
-	background-color:	#EEE;
+	background-color:	#FEFEFE;
 	color:				rgba(0,0,0,.75);
 	padding:			1px 3px;
 }
@@ -15,8 +27,8 @@ pre {
 	background:			#FEFEFE;
 	color:				#556270;
 	display: 			block;
-	padding:			@baseline  / 2;
-	margin:				0 auto @baseline;
+	padding:			@baseline / 2;
+	margin:				(@baseline / 4) auto;
 	line-height:		@dLineHeight; 
 	border:				1px solid #CCC;
 	width:				95%;

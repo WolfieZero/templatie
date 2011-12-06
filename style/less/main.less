@@ -1,0 +1,73 @@
+//*****************************************************************************
+// Templatie!
+// Err... yeah, remember to minimize this stuff for quick loading.
+//*****************************************************************************
+
+
+//*****************************************************************************
+// Various variables
+//*****************************************************************************
+
+// Define font families
+@dSerifFamily:			Tienne, Georgia, 'Times New Roman', Times, serif;
+@dSansSerifFamily:		Helvetica, Arial, sans-serif;
+@dMonospacedFamily:		'Bitstream Vera Sans Mono', Courier, monospace;
+@dFontFamily:			'Helvetica Neue', Helvetica, Arial, sans-serif;
+@dHeaderFamily:			Cabin, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Define default typography
+@dFontSize:				16;			// in pixels!
+@dLineHeight:			1.5em;
+@dHeaderWeight:			700;
+
+@dSiteWidth:			1000px;
+@baseline:				20px;
+
+// Define colours
+@dBackgroundColor:		#EFEFEF;
+@dFontColor: 			#404040;
+@dHeaderColor:			#000;
+@dLinkColor: 			#C01;
+@dLinkHoverColor:		#C01;
+
+// Define where images are
+@imgDir: 				'../../img/';
+
+@cPetrolPrices:	#C01;
+@cMyMotoring:	#007CC4;
+@cGetInsured:	#FF7113;
+@cThinkFuel:	#FFA200;
+@cGoGreen:		#55A945;
+@cBlog:			#8A8A8A;
+@cBoxGrey:		#FAF8F9;
+
+@ver:					'2.3';
+
+// Add more variables
+
+
+//*****************************************************************************
+// Required
+//*****************************************************************************
+@import 'lib/functions';			// Load in functions
+@import 'lib/normalise';			// standarise 
+
+
+//*****************************************************************************
+// Styling the content
+//*****************************************************************************
+@import 'element/type';				// Typography
+@import 'element/code';				// Display of code
+@import 'element/form';				// Form styles
+@import 'element/table';			// Table styles
+@import 'element/non-semantics';	// For JavaScript styling
+@import 'lib/image';				// Images for the site
+
+
+//*****************************************************************************
+// Styling the scaffolding
+//*****************************************************************************
+
+@import 'scaffold/scaffold';		// Main base of design operations
+
+@import 'scaffold/media/print';		// For printing the document
