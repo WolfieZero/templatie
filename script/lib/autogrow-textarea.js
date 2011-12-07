@@ -1,4 +1,4 @@
-/*!
+/**
 * Autogrow Textarea Plugin Version v2.0
 * http://www.technoreply.com/autogrow-textarea-plugin-version-2-0
 *
