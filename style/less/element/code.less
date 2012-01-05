@@ -35,6 +35,19 @@ pre {
 	white-space:		pre;
 	white-space:		pre-wrap;
 	word-wrap:			break-word;
-	.box-shadow(0 0 5px rgba(0,0,0,0.1));
-	.rounded(3px);
+}
+
+/******************************************************************************
+ * Example area
+ *****************************************************************************/
+.eg {
+	background:			#FEFEFE;
+	color:				#000;
+	display: 			block;
+	padding:			(@baseline / 2);
+	margin:				(@baseline / 2) auto;
+	line-height:		@dLineHeight; 
+	border:				1px solid #CCC;
+	width:				@contentWidth;
+	margin-left:		-(@baseline / 2);
 }

@@ -1,4 +1,4 @@
-//*****************************************************************************
+// ****************************************************************************
 // 
 // form.less 
 // ---------
@@ -6,226 +6,227 @@
 // All elements to do with forms are in here as well as some cool buttons
 // styles I took from Twitter's Bootstrap.
 //  
-//*****************************************************************************
+// ****************************************************************************
 
-/* Corrects margin displayed oddly in IE6/7 */
-form {
-	margin:						0;
-}
 
-/* Define consistent border, margin, and padding */
-fieldset {
-	border:						0;
-    margin:						0 2px;
-    padding:					0.35em 0.625em 0.75em;
-}
+// Corrects margin displayed oddly in IE6/7 and define consistent border, 
+// margin, and padding
 
-/* 1. Corrects color not being inherited in IE6/7/8/9 
-   2. Corrects alignment displayed oddly in IE6/7     */
+form,
+fieldset,
 legend {
-	border:						0;				// 1
-	*margin-left:				-7px;			// 2
+	border: 0;
+    margin: 0;
+    padding: 0;
 }
 
-/*
- * 1. Corrects font size not being inherited in all browsers
- * 2. Addresses margins set differently in IE6/7, FF3/4, S5, Chrome
- * 3. Improves appearance and consistency in all browsers
- */
+legend {
+	*margin-left: -7px; // Corrects alignment displayed oddly in IE6/7
+}
+
+
+// 1. Corrects font size not being inherited in all browsers
+// 2. Addresses margins set differently in IE6/7, FF3/4, S5, Chrome
+// 3. Improves appearance and consistency in all browsers
 
 button,
 input,
 select,
 textarea {
-	font-size:					100%;			// 1
-	margin:						0;				// 2
-	vertical-align:				baseline;		// 3
-	*vertical-align:			middle;			// 3
+	font-size: 100%; // 1
+	margin: 0; // 2
+	padding: 0; //2
+	vertical-align: baseline; // 3
+	*vertical-align: middle; // 3
+	line-height: normal;
 }
 
-/*
- * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
- */
 
-button,
-input {
-	line-height:				normal;			// 1
-}
-
-/*
- * 1. Improves usability and consistency of cursor style between image-type 'input' and others
- * 2. Corrects inability to style clickable 'input' types in iOS
- * 3. Corrects inner spacing displayed oddly in IE7 without effecting normal text inputs
- *    Known issue: inner spacing remains in IE6
- */
-
-button,
-input[type='button'], 
-input[type='reset'], 
-input[type='submit'] {
-	cursor:						pointer;		// 1
-	-webkit-appearance:			button;			// 2
-	*overflow:					visible;		// 3
-}
-
-/*
- * 1. Improves usability and consistency of cursor style between image-type 'input' and others
- * 2. Addresses box sizing set to content-box in IE8/9
- * 3. Addresses excess padding in IE8/9
- */
+// 1. Improves usability and consistency of cursor style between image-type 'input' and others
+// 2. Addresses box sizing set to content-box in IE8/9
+// 3. Addresses excess padding in IE8/9
+// 4. Removes the boarder set by input{}
 
 input[type='checkbox'],
 input[type='radio'] {
-	cursor:						pointer;		// 1
-	box-sizing:					border-box;		// 2
-	padding:					0;				// 3
+	cursor: pointer; // 1
+	box-sizing: border-box; // 2
+	padding: 0; // 3
+	border: 0; // 4
+	background: transparent;
+	.box-shadow(none);
+	&:focus {
+		.box-shadow(none);
+	}
 }
 
-/*
- * 1. Addresses appearance set to searchfield in S5, Chrome
- * 2. Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof)
- */
+
+// 1. Addresses appearance set to searchfield in S5, Chrome
+// 2. Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof)
 
 input[type='search'] {
-	-webkit-appearance:			textfield;		// 1
-	-webkit-box-sizing:			content-box;	// 2
-	-moz-box-sizing:			content-box;
-	box-sizing:					content-box;
+	-webkit-appearance: textfield; // 1
+	-webkit-box-sizing: content-box; // 2
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
 }
 
-/*
- * Corrects inner padding displayed oddly in S5, Chrome on OSX
- */
+
+// Corrects inner padding displayed oddly in S5, Chrome on OSX
 
 input[type='search']::-webkit-search-decoration {
-	-webkit-appearance:			none;
+	-webkit-appearance: none;
 }
 
-/*
- * Corrects inner padding and border displayed oddly in FF3/4
- * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
- */
+
+// Corrects inner padding and border displayed oddly in FF3/4
+// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-	border:						0;
-	padding:					0;
+	border: 0;
+	padding: 0;
 }
 
-/*
- * 1. Removes default vertical scrollbar in IE6/7/8/9
- * 2. Improves readability and alignment in all browsers
- */
+
+// 1. Removes default vertical scrollbar in IE6/7/8/9
+// 2. Improves readability and alignment in all browsers
 
 textarea {
-	overflow:					auto;			// 1
-	vertical-align:				top;			// 2
-	.font-size(14);
+	overflow: auto; // 1
+	vertical-align: top; // 2
+}
+
+input {
+	height: @dLineHeight;
+	width: 200px;
 }
 
 input,
 textarea,
 select {
-	display:					inline-block;
-	width:						210px;
-	padding:					2px;
-	height:						@dLineHeight;
-	line-height:				@dLineHeight;
-	color:						@dFontColor;
-	border:						1px solid #CCC;
-	@transition:				all linear .3s;
-	.transition(@transition);
-	.box-shadow(inset 0 1px 3px rgba(0,0,0,.1));
-	.rounded(3px);
+	display: inline-block;
+	padding: 2px;
+	line-height: @dLineHeight;
+	color: @dFontColor;
+	border: 1px solid #CCC;
+	.transition(all linear .3s);
+	.box-shadow(inset 0 5px 10px rgba(0,0,0,.1));
+	.rounded(2px);
+	&.error {
+		.box-shadow(inset 0 20px 20px rgba(150,0,0,.1));
+	}
 }
 label {
-	cursor:						pointer;
-	height:						@dLineHeight;
-	line-height:				@dLineHeight;
+	display: block;
+	width: auto;
+	cursor: pointer;
+	height: @dLineHeight;
+	line-height: @dLineHeight;
+	input {
+		float: left;
+		margin: auto 5px;
+	}
 }
-select[multiple='multiple'] {
-	height:						inherit;
+
+.complex {
+	label {
+		display: inline-block;
+		width: 125px;
+		text-align: right;
+		margin-right: 10px;
+	}
+	.submit {
+		margin-left: 140px;
+	}
+}
+
+select {
+	height: @dFontSize + 12px;
+	line-height: @dFontSize + 12px;
+	padding: 4px;
+	&[multiple='multiple'] {
+		height: inherit;
+	}
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-	outline:					0;
-	border-color:				#BBB;
-	@shadow:					inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(100,100,100,.5);
+	outline: 0;
+	border-color: #BBB;
+	@shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(100,100,100,.7);
 	.box-shadow(@shadow);
-}
-
-*[disabled],
-*[readonly] {
-	background-color:			#F5F5F5;
-	border-color:				#ddd;
-	cursor:						not-allowed;
-}
-*[disabled] {
-	color:						lighten(@dFontColor, 16%);
-}
-*[readonly] {
-	color:						lighten(@dFontColor, 15%);
-}
-
-input[type=button],
-input[type=reset],
-input[type=submit] {
-  width: auto;
-  height: auto;
-}
-
-
-/******************************************************************************
- * Styles for Buttons
- *****************************************************************************/
-
-.btn,
-button{
-	cursor:					pointer;
-	text-decoration:		none;
-	display:				inline-block;
-	padding:				4px 14px;
-	text-shadow:			0 1px 1px rgba(255,255,255,.75);
-	color:					@dFontColor;
-	line-height:			normal;
-	border:					1px solid #CCC;
-	border-bottom-color:	#BBB;
-	.ie & {
-		font-weight:			700;
-	}
-	.box-shadow('inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)');
-	#gradient > 
-		.vertical-three-colors(#ffffff, #ffffff, 25%, darken(#ffffff, 10%)); // Don't use .gradientbar() here since it does a three-color gradient
-	.rounded(4px);
-	.font-size();
-	.transition(.2s linear all);
-
-	&:hover {
-		background-position:	0 -15px;
-		color:					#333;
-		text-decoration:		none;
-	}
-
-	// Focus state for keyboard and accessibility
-	&:focus {
-	    outline:				1px dotted #666;
-	}
-
-	// Primary Button Type
-	&.primary {
-		color:					#FFF;
-		text-shadow:			0 1px 1px rgba(0,0,0,.5);
-		.gradientBar(#bcdf7c, #78ae05);
-	//	.gradientBar(#62c462, #57a957);
-	}
-
-	// Active and Disabled states
-	&:active {
-		@shadow: inset 0 2px 4px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.05);
+	&.error {
+		@shadow: inset 0 1px 3px rgba(200,0,0,.1), 0 0 8px rgba(200,0,0,.7);
 		.box-shadow(@shadow);
 	}
+}
+ 
+*[disabled],
+*[readonly] {
+	background-color: #F5F5F5;
+	border-color: #DDD;
+	cursor: not-allowed;
+	color: lighten(@dFontColor, 15%);
+}
+
+
+// ****************************************************************************
+// Styles for Buttons
+// ****************************************************************************
+
+button,
+input[type='button'], 
+input[type='reset'], 
+input[type='submit'] {
+	-webkit-appearance: button;
+}
+
+a.btn {
+	text-decoration: none;
+}
+
+.btn,
+button,
+input[type='submit'],
+input[type='reset']{
+	*overflow: visible;
+	cursor: pointer;
+	display: inline-block;
+	padding: 2px 14px;
+	font-weight: 700;
+	text-shadow: 0 1px 1px rgba(255,255,255,.7);
+	color: @dFontColor;
+	border: 1px solid #B3B3B3;
+	width: auto;
+	height: auto;
+	
+	.box-shadow(inset 0 2px 4px rgba(0,0,0,.0));
+	.font-size();
+	.rounded(3px);
+	.transition(.2s linear all);
+	#gradient > .vertical-three-colors(#FFF, #FFF, 25%, darken(#FFF, 10%));
+	
+	&:hover {
+		background-position: 0 -15px;
+		color: #333;
+		text-decoration: none;
+	}
+	
+	// Primary Button Type
+	// Do this after :hover due to colour order
+	&.primary {
+		color: #FFF;
+		text-shadow: 0 1px 1px rgba(0,0,0,.5);
+    	border-color: #518800;
+		#gradient > .vertical-three-colors(#a2dd50, #72ba02, 25%, darken(#72ba02, 10%));
+	}
+	
+	&:active {
+		.box-shadow(inset 0 2px 8px rgba(0,0,0,.3));
+	}
+	
 	&.disabled {
 		cursor: default;
 		background-image: none;
@@ -233,6 +234,7 @@ button{
 		.opacity(65);
 		.box-shadow(none);
 	}
+	
 	&[disabled] {
 		// disabled pseudo can't be included with .disabled
 		// def because IE8 and below will drop it ;_;
@@ -242,18 +244,54 @@ button{
 		.opacity(65);
 		.box-shadow(none);
 	}
-}
-// Super jank hack for removing border-radius from IE9 so we can keep filter gradients on alerts and buttons
-:root .alert-message,
-:root .btn {
-  border-radius: 0 \0;
+	
+	// Super jank hack for removing border-radius from IE9 so we can keep filter gradients on alerts and buttons
+	:root & {
+		border-radius: 0 \0;
+	}
+
+	
+	// Help Firefox not be a jerk about adding extra padding to buttons
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
 }
 
-// Help Firefox not be a jerk about adding extra padding to buttons
-.btn,
-button {
-  &::-moz-focus-inner {
-  	padding: 0;
-  	border: 0;
-  }
+
+// ****************************************************************************
+// Styles for Buttons
+// ****************************************************************************
+
+.alert-msg {
+	position: absolute;
+    top: 40%;
+    left: 35%;
+	margin:	 0 auto;
+	padding: 20px 30px;
+	color: #FFF;
+	text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+	font-weight: 700;
+	border-color: 1px solid #CCC;
+	width: auto;
+	.rounded(6px);
+	@shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 0 100px rgba(0,0,0,.5);
+	.box-shadow(@shadow);
+	
+	.no-js & {
+		display: block;
+		position: relative;
+	}
+	
+	&.success {
+		#gradient > .vertical-three-colors(#62C462, #57A957, 25%, darken(#57A957, 20%));
+		border-color: darken(#57A957, 10%);
+	}
+	&.error {
+		#gradient > .vertical-three-colors(#ee5f5b, #c43c35, 25%, darken(#c43c35, 20%));
+		border-color: darken(#c43c35, 10%);
+	}
 }

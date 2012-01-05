@@ -9,14 +9,24 @@
 //*****************************************************************************
 
 /******************************************************************************
- * Set font-family globally
+ * Type
  *****************************************************************************/
+
+html {
+	@baseFontSize: (@dFontSize / 16 * 100%);
+	font-size: @baseFontSize;
+	-webkit-text-size-adjust: @baseFontSize;
+	-ms-text-size-adjust: @baseFontSize;
+	line-height: @dLineHeight;
+	color: @dFontColor;
+}
+
 body,
 button,
 input,
 select,
 textarea {
-    font-family:				@dFontFamily;
+    font-family: @dFontFamily;
 }
 
 

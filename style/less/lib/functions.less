@@ -34,7 +34,7 @@
 // The default font-size is used as a default value.
 //*****************************************************************************
 .font-size(@size: @dFontSize) {
-	@remFontSize:			(@size/10);
+	@remFontSize:			( @size / @dFontSize );
 	font-size:				~`"@{size}"+'px'`;
 	font-size:				~`"@{remFontSize}"+'rem'`;
 }
