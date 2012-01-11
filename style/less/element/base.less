@@ -1,7 +1,7 @@
 //*****************************************************************************
 // 
-// normalise.less 
-// --------------
+// base.less 
+// ---------
 // 
 // This is the base normalise.css file, but elements have been removed and
 // placed into relevant /element/ files so we aren't calling items we don't
@@ -68,7 +68,7 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-	background: @dBackgroundColor;
+    background: @dBackgroundColor;
 }
 
 
@@ -82,15 +82,15 @@ html, body {
  *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
  */
 img {
-	border: 0; // 1
-	-ms-interpolation-mode: bicubic; // 2
+    border: 0; // 1
+    -ms-interpolation-mode: bicubic; // 2
 }
 
 /*
  * Corrects overflow displayed oddly in IE9 
  */
 svg:not(:root) {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 
@@ -102,5 +102,5 @@ svg:not(:root) {
  * Addresses margin not present in IE6/7/8/9, S5, O11
  */
 figure {
-	margin: 0;
+    margin: 0;
 }

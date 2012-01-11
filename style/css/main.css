@@ -40,22 +40,6 @@ audio:not([controls]) {
 /******************************************************************************
  * Base
  *****************************************************************************/
-/*
- * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em
- *    units - http://clagnut.com/blog/348/#c790
- *    Using 62.5% so that our .font-size() function is correctly used for rems
- *    and px - http://snook.ca/archives/html_and_css/font-size-with-rem
- * 2. Keeps page centred in all browsers regardless of content height
- * 3. Prevents iOS text size adjust after orientation change, without disabling 
- *    user zoom - www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
- */
-html {
-  font-size: 62.5%;
-  overflow-y: scroll;
-  -webkit-text-size-adjust: 62.5%;
-  -ms-text-size-adjust: 62.5%%;
-  color: #404040;
-}
 html, body {
   margin: 0;
   padding: 0;
@@ -91,8 +75,15 @@ figure {
   margin: 0;
 }
 /******************************************************************************
- * Set font-family globally
+ * Type
  *****************************************************************************/
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  line-height: 1.5em;
+  color: #404040;
+}
 body,
 button,
 input,
@@ -107,7 +98,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: Cabin, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 700;
   padding: 5px 0;
   margin: 0;
@@ -122,23 +113,23 @@ h4 small {
 }
 h1 {
   font-size: 30px;
-  font-size: 3rem;
+  font-size: 1.875rem;
 }
 h2 {
   font-size: 20px;
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 h3 {
   font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
 }
 h4 {
   font-size: 20px;
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 aside h4 {
   font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   color: #404040;
   line-height: normal;
   padding: 0;
@@ -147,7 +138,7 @@ aside h4 {
 }
 p {
   font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 1rem;
   padding: 5px 0;
   margin: 0;
   text-align: justify;
@@ -181,13 +172,13 @@ q:before, q:after {
 }
 blockquote {
   margin: 1em 40px;
-  font-family: Tienne, Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 100;
   color: #8d8d8d;
 }
 blockquote:before {
   font-size: 75px;
-  font-size: 7.5rem;
+  font-size: 4.6875rem;
   color: #737373;
   content: '“';
   margin-top: -10px;
@@ -196,11 +187,11 @@ blockquote:before {
 }
 blockquote, blockquote p {
   font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
 }
 blockquote cite {
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   margin-top: -1em;
   display: block;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -242,7 +233,7 @@ li, dl {
   line-height: 1.5em;
   margin: 0.5em 0;
   font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 dd {
   margin: 0 0 0 40px;
@@ -276,7 +267,7 @@ kbd,
 samp {
   font-family: 'Bitstream Vera Sans Mono', Courier, monospace;
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
 }
 code {
   background-color: #FEFEFE;
@@ -295,115 +286,79 @@ pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
 }
-/* Corrects margin displayed oddly in IE6/7 */
-form {
+/******************************************************************************
+ * Example area
+ *****************************************************************************/
+.eg {
+  background: #FEFEFE;
+  color: #000;
+  display: block;
+  padding: 10px;
+  margin: 10px auto;
+  line-height: 1.5em;
+  border: 1px solid #CCC;
+  width: 600px;
+  margin-left: -10px;
+}
+form, fieldset, legend {
+  border: 0;
   margin: 0;
+  padding: 0;
 }
-/* Define consistent border, margin, and padding */
-fieldset {
-  border: 0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-/* 1. Corrects color not being inherited in IE6/7/8/9 
-   2. Corrects alignment displayed oddly in IE6/7     */
 legend {
-  border: 0;
   *margin-left: -7px;
 }
-/*
- * 1. Corrects font size not being inherited in all browsers
- * 2. Addresses margins set differently in IE6/7, FF3/4, S5, Chrome
- * 3. Improves appearance and consistency in all browsers
- */
 button,
 input,
 select,
 textarea {
   font-size: 100%;
   margin: 0;
+  padding: 0;
   vertical-align: baseline;
   *vertical-align: middle;
-}
-/*
- * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
- */
-button, input {
   line-height: normal;
 }
-/*
- * 1. Improves usability and consistency of cursor style between image-type 'input' and others
- * 2. Corrects inability to style clickable 'input' types in iOS
- * 3. Corrects inner spacing displayed oddly in IE7 without effecting normal text inputs
- *    Known issue: inner spacing remains in IE6
- */
-button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
-  cursor: pointer;
-  -webkit-appearance: button;
-  *overflow: visible;
-}
-/*
- * 1. Improves usability and consistency of cursor style between image-type 'input' and others
- * 2. Addresses box sizing set to content-box in IE8/9
- * 3. Addresses excess padding in IE8/9
- */
 input[type='checkbox'], input[type='radio'] {
   cursor: pointer;
   box-sizing: border-box;
   padding: 0;
+  border: 0;
+  background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
-/*
- * 1. Addresses appearance set to searchfield in S5, Chrome
- * 2. Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof)
- */
+input[type='checkbox']:focus, input[type='radio']:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
 input[type='search'] {
   -webkit-appearance: textfield;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
-/*
- * Corrects inner padding displayed oddly in S5, Chrome on OSX
- */
 input[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-/*
- * Corrects inner padding and border displayed oddly in FF3/4
- * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
- */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-/*
- * 1. Removes default vertical scrollbar in IE6/7/8/9
- * 2. Improves readability and alignment in all browsers
- */
 textarea {
   overflow: auto;
   vertical-align: top;
-  font-size: 14px;
-  font-size: 1.4rem;
+}
+input {
+  height: 1.5em;
+  width: 200px;
 }
 input, textarea, select {
   display: inline-block;
-  width: 210px;
   padding: 2px;
-  height: 1.5em;
   line-height: 1.5em;
   color: #404040;
   border: 1px solid #CCC;
@@ -412,20 +367,45 @@ input, textarea, select {
   -ms-transition: all linear 0.3s;
   -o-transition: all linear 0.3s;
   transition: all linear 0.3s;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+input.error, textarea.error, select.error {
+  -webkit-box-shadow: inset 0 20px 20px rgba(150, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 20px 20px rgba(150, 0, 0, 0.1);
+  box-shadow: inset 0 20px 20px rgba(150, 0, 0, 0.1);
+}
 label {
+  display: block;
+  width: auto;
   cursor: pointer;
   height: 1.5em;
   line-height: 1.5em;
+}
+label input {
+  float: left;
+  margin: auto 5px;
+}
+.complex label {
+  display: inline-block;
+  width: 125px;
+  text-align: right;
+  margin-right: 10px;
+}
+.complex .submit {
+  margin-left: 140px;
+}
+select {
+  height: 28px;
+  line-height: 28px;
+  padding: 4px;
 }
 select[multiple='multiple'] {
   height: inherit;
@@ -433,41 +413,60 @@ select[multiple='multiple'] {
 input:focus, textarea:focus, select:focus {
   outline: 0;
   border-color: #BBB;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(100, 100, 100, 0.5);
-  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(100, 100, 100, 0.5);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(100, 100, 100, 0.5);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(100, 100, 100, 0.7);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(100, 100, 100, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(100, 100, 100, 0.7);
+}
+input:focus.error, textarea:focus.error, select:focus.error {
+  -webkit-box-shadow: inset 0 1px 3px rgba(200, 0, 0, 0.1), 0 0 8px rgba(200, 0, 0, 0.7);
+  -moz-box-shadow: inset 0 1px 3px rgba(200, 0, 0, 0.1), 0 0 8px rgba(200, 0, 0, 0.7);
+  box-shadow: inset 0 1px 3px rgba(200, 0, 0, 0.1), 0 0 8px rgba(200, 0, 0, 0.7);
 }
 *[disabled], *[readonly] {
   background-color: #F5F5F5;
-  border-color: #ddd;
+  border-color: #DDD;
   cursor: not-allowed;
-}
-*[disabled] {
-  color: #696969;
-}
-*[readonly] {
   color: #666666;
 }
-input[type=button], input[type=reset], input[type=submit] {
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+}
+a.btn {
+  text-decoration: none;
+}
+.btn,
+button,
+input[type='submit'],
+input[type='reset'] {
+  *overflow: visible;
+  cursor: pointer;
+  display: inline-block;
+  padding: 2px 14px;
+  font-weight: 700;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+  color: #404040;
+  border: 1px solid #B3B3B3;
   width: auto;
   height: auto;
-}
-/******************************************************************************
- * Styles for Buttons
- *****************************************************************************/
-.btn, button {
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  padding: 4px 14px;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  color: #404040;
-  line-height: normal;
-  border: 1px solid #CCC;
-  border-bottom-color: #BBB;
-  -webkit-box-shadow: 'inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)';
-  -moz-box-shadow: 'inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)';
-  box-shadow: 'inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)';
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0);
+  font-size: 16px;
+  font-size: 1rem;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-transition: 0.2s linear all;
+  -moz-transition: 0.2s linear all;
+  -ms-transition: 0.2s linear all;
+  -o-transition: 0.2s linear all;
+  transition: 0.2s linear all;
   background-color: #e6e6e6;
   background-repeat: no-repeat;
   background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
@@ -476,52 +475,43 @@ input[type=button], input[type=reset], input[type=submit] {
   background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
   background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  font-size: 16px;
-  font-size: 1.6rem;
-  -webkit-transition: 0.2s linear all;
-  -moz-transition: 0.2s linear all;
-  -ms-transition: 0.2s linear all;
-  -o-transition: 0.2s linear all;
-  transition: 0.2s linear all;
 }
-.ie .btn, .ie button {
-  font-weight: 700;
-}
-.btn:hover, button:hover {
+.btn:hover,
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover {
   background-position: 0 -15px;
   color: #333;
   text-decoration: none;
 }
-.btn:focus, button:focus {
-  outline: 1px dotted #666;
-}
-.btn.primary, button.primary {
+.btn.primary,
+button.primary,
+input[type='submit'].primary,
+input[type='reset'].primary {
   color: #FFF;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  background-color: #78ae05;
-  background-repeat: repeat-x;
-  background-image: -webkit-linear-gradient(top, #bcdf7c, #78ae05);
-  background-image: -moz-linear-gradient(top, #bcdf7c, #78ae05);
-  background-image: -ms-linear-gradient(top, #bcdf7c, #78ae05);
-  background-image: -o-linear-gradient(top, #bcdf7c, #78ae05);
-  background-image: linear-gradient(top, #bcdf7c, #78ae05);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bcdf7c', endColorstr='#78ae05', GradientType=0);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border-color: #78ae05 #78ae05 #456403;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-color: #518800;
+  background-color: #538801;
+  background-repeat: no-repeat;
+  background-image: -webkit-linear-gradient(#a2dd50, #72ba02 25%, #538801);
+  background-image: -moz-linear-gradient(top, #a2dd50, #72ba02 25%, #538801);
+  background-image: -ms-linear-gradient(#a2dd50, #72ba02 25%, #538801);
+  background-image: -o-linear-gradient(#a2dd50, #72ba02 25%, #538801);
+  background-image: linear-gradient(#a2dd50, #72ba02 25%, #538801);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a2dd50', endColorstr='#538801', GradientType=0);
 }
-.btn:active, button:active {
-  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+.btn:active,
+button:active,
+input[type='submit']:active,
+input[type='reset']:active {
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
 }
-.btn.disabled, button.disabled {
+.btn.disabled,
+button.disabled,
+input[type='submit'].disabled,
+input[type='reset'].disabled {
   cursor: default;
   background-image: none;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -533,7 +523,10 @@ input[type=button], input[type=reset], input[type=submit] {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.btn[disabled], button[disabled] {
+.btn[disabled],
+button[disabled],
+input[type='submit'][disabled],
+input[type='reset'][disabled] {
   cursor: default;
   background-image: none;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -545,12 +538,68 @@ input[type=button], input[type=reset], input[type=submit] {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-:root .alert-message, :root .btn {
+:root .btn,
+:root button,
+:root input[type='submit'],
+:root input[type='reset'] {
   border-radius: 0 \0;
 }
-.btn::-moz-focus-inner, button::-moz-focus-inner {
+.btn::-moz-focus-inner,
+button::-moz-focus-inner,
+input[type='submit']::-moz-focus-inner,
+input[type='reset']::-moz-focus-inner {
   padding: 0;
   border: 0;
+}
+.alert-msg {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  margin: 0 auto;
+  padding: 20px 30px;
+  color: #FFF;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  font-weight: 700;
+  border-color: 1px solid #CCC;
+  width: auto;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 100px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 100px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 100px rgba(0, 0, 0, 0.5);
+}
+.no-js .alert-msg {
+  display: block;
+  position: relative;
+}
+.alert-msg.success {
+  background-color: #346634;
+  background-repeat: no-repeat;
+  background-image: -webkit-linear-gradient(#62c462, #57a957 25%, #346634);
+  background-image: -moz-linear-gradient(top, #62c462, #57a957 25%, #346634);
+  background-image: -ms-linear-gradient(#62c462, #57a957 25%, #346634);
+  background-image: -o-linear-gradient(#62c462, #57a957 25%, #346634);
+  background-image: linear-gradient(#62c462, #57a957 25%, #346634);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#346634', GradientType=0);
+  border-color: #458845;
+}
+.alert-msg.error {
+  background-color: #74231f;
+  background-repeat: no-repeat;
+  background-image: -webkit-linear-gradient(#ee5f5b, #c43c35 25%, #74231f);
+  background-image: -moz-linear-gradient(top, #ee5f5b, #c43c35 25%, #74231f);
+  background-image: -ms-linear-gradient(#ee5f5b, #c43c35 25%, #74231f);
+  background-image: -o-linear-gradient(#ee5f5b, #c43c35 25%, #74231f);
+  background-image: linear-gradient(#ee5f5b, #c43c35 25%, #74231f);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#74231f', GradientType=0);
+  border-color: #9c302a;
 }
 /******************************************************************************
  * Table
@@ -563,7 +612,7 @@ table {
 }
 th, td {
   font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 1rem;
   border: 1px solid #CCC;
   padding: 5px;
   line-height: 1.5em;

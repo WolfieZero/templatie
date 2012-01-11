@@ -1,64 +1,29 @@
 //*****************************************************************************
-// Templatie!
-// Err... yeah, remember to minimize this stuff for quick loading.
+// Main site style - /style/css/main.css
+// This will be the file you will refer to in the doc. For each new .css you
+// want you'll need a new file like this with the included required pages 
+// (only what is needed is pulled from the requried files so they don't add
+// excess overhead).
 //*****************************************************************************
 
-
-//*****************************************************************************
-// Various variables
-//*****************************************************************************
-
-// Define font families
-@dSerifFamily:			Georgia, 'Times New Roman', Times, serif;
-@dSansSerifFamily:		'Helvetica Neue', Helvetica, Arial, sans-serif;
-@dMonospacedFamily:		'Bitstream Vera Sans Mono', Courier, monospace;
-
-@dFontFamily:			@dSansSerifFamily;
-@dHeaderFamily:			@dSerifFamily;
-
-// Define default typography
-@dFontSize:				16;			// in pixels!
-@dLineHeight:			1.5em;
-@dHeaderWeight:			700;
-
-@dSiteWidth:			960px;
-@baseline:				20px;
-
-// Define colours
-@dBackgroundColor:		#EFEFEF;
-@dFontColor: 			#404040;
-@dHeaderColor:			#000;
-@dLinkColor: 			#C01;
-@dLinkHoverColor:		#C01;
-
-// Define where images are
-@imgDir: 				'../../img/';
-
-// Add more variables
-
-
-//*****************************************************************************
-// Required
-//*****************************************************************************
+// Library (required)
+@import 'lib/variables';			// Variables for the site
 @import 'lib/functions';			// Load in functions
-@import 'lib/normalise';			// standarise 
 
 
-//*****************************************************************************
-// Styling the content
-//*****************************************************************************
+// Set default styles
+
+@import 'element/base';				// Base of the site's default styles 
 @import 'element/type';				// Typography
 @import 'element/code';				// Display of code
 @import 'element/form';				// Form styles
 @import 'element/table';			// Table styles
-@import 'element/non-semantics';	// For JavaScript styling
-@import 'lib/image';				// Images for the site
+@import 'element/non-semantics';	// For JavaScript style & naughty moments
+@import 'element/image';			// Images on the site
 
 
-//*****************************************************************************
 // Styling the scaffolding
-//*****************************************************************************
 
 @import 'scaffold/scaffold';		// Main base of design operations
 
-@import 'scaffold/media/print';		// For printing the document
+@import 'element/print';			// For printing the document
