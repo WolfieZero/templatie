@@ -18,7 +18,7 @@ Feel free to use in the start of your projects; source of code should be pointed
 "What? No Version Number?"
 --------------------------
 
-For this project, no. The idea is that you use the file in it's current state and look through the code to see what you need and don't need.
+For this project, no. The idea is that you use the file in it's current state and look through the code to see what you need and don't need. It's forever being updated and frequently... plus I hate versioning! There are a list of changes and date though if that make you happy?
 
 
 Changes
@@ -32,6 +32,8 @@ will the the file should be what's compiled. Having the folder lib is reserved f
 * Started logging changes
 * Improved the Scaffold structure
 * Started use of variable and function file to be include where needed (keeping it DRY)
+* Change some of the default type styles
+* Removed reliance on PHP for JavaScript pulling (simply HTML commenting used)
 
 
 Inspiration & Sources

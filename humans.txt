@@ -1,17 +1,15 @@
 /* the humans responsible & colophon */
 /* humanstxt.org */
  
- 
 /* TEAM */
-	Designer/Developer: Neil Sweeney
-	Site: http://wolfiezero.com/
-	Twitter: @WolfieZero
-	Location: Hampshire, UK
+	Designer/Developer: 
+	Site: 
+	Twitter: 
+	Location: 
  
 /* THANKS */
-	Ideas: 
+	Name: 
  
 /* SITE */
 	Standards: HTML5, CSS3
-	Components: jQuery, HTML5shiv
-	Software: Aptana 3.0
+	Components: jQuery, HTML5shiv, Templatie
