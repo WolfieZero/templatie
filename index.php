@@ -7,13 +7,13 @@ if (isset($_POST['contact'])) {
 
 	$sendMail = false;
 
-	if ($_POST['name']) {
+	if (!$_POST['name']) {
 		$msgContact = 'No name given';
 
-	} elseif ($_POST['email']) {
+	} elseif (!$_POST['email']) {
 		$msgContact = 'No email given';
 
-	} elseif ($_POST['subject']) {
+	} elseif (!$_POST['subject']) {
 		$msgContact = 'No subject chosen';
 
 	} elseif (!$_POST['message']) {
@@ -48,6 +48,8 @@ if (isset($_POST['contact'])) {
 	} else {
 		$contactSuccess = 'Message sent!';
 	}
+
+	$contactAlert = 'Mail fail: '.$mail->ErrorInfo;
 }
 
 ?><!doctype html>
