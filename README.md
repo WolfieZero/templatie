@@ -9,6 +9,10 @@ Read more about Templatie at http://templatie.info/.
 Changes
 -------
 
+**v1.0.1 - 27/02/12**
+
+* Added some extra definitions to `nav` to remove style by default
+
 **v1.0 - 27/02/12**
 
 The first full official release of Templatie.
