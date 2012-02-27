@@ -265,7 +265,7 @@ if (isset($_POST['contact'])) {
 
 	<footer id="site-footer">
 		<div class="pad">
-			<p>&copy; copyright, all rights reserved - hosted by the sexy folk at <a href="http://catn.com/" rel="external">CatN; the cluster hosting company</a><br />
+			<p>&copy; copyright, all rights reserved - <a href="http://catn.com/" rel="external">web hosting by CatN</a><br />
 			this content uses <a rel="profile" href="http://microformats.org/profile/hcard">hCard</a> - view the <a href="https://github.com/WolfieZero/templatie/tree/official-site" rel="external">full source code</a></p>
 		</div>
 	</footer>
