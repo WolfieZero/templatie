@@ -1,0 +1,18 @@
+//*****************************************************************************
+// 
+// img.less 
+// --------
+// 
+// Images for the site that are loaded via the CSS should be kept here. It's
+// also an idea to include @media queries here 
+// 
+//*****************************************************************************
+
+img {
+    margin: @baseline;
+	border: 4px solid #FFF;
+    -ms-interpolation-mode: bicubic; // code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+    
+	.box-shadow(2px 2px 4px rgba(0,0,0,.1));
+	.transform(rotate(-3deg));
+}
