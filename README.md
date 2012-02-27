@@ -1,8 +1,8 @@
 Templatie
 =========
 
-Official site: http://templatie.info/
-Project code: https://github.com/WolfieZero/templatie
+- Official site: http://templatie.info/
+- Project code: https://github.com/WolfieZero/templatie
 
 ---
 
