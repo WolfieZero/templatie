@@ -1,5 +1,5 @@
 //*****************************************************************************
-// Main site style - /style/css/main.css
+// Main site style - /style/less/main.less >> /style/css/main.css
 // This will be the file you will refer to in the doc. For each new .css you
 // want you'll need a new file like this with the included required pages 
 // (only what is needed is pulled from the requried files so they don't add
@@ -7,23 +7,27 @@
 //*****************************************************************************
 
 // Library (required)
+// ------------------
+
 @import 'lib/variables';			// Variables for the site
 @import 'lib/functions';			// Load in functions
 
 
 // Set default styles
+// ------------------
 
-@import 'element/base';				// Base of the site's default styles 
-@import 'element/type';				// Typography
-@import 'element/code';				// Display of code
-@import 'element/form';				// Form styles
-@import 'element/table';			// Table styles
-@import 'element/non-semantics';	// For JavaScript style & naughty moments
-@import 'element/image';			// Images on the site
+@import 'element/base';				// base of the site's default styles 
+@import 'element/type';				// typography
+@import 'element/code';				// display of code
+@import 'element/nav';				// nav styles
+@import 'element/form';				// form styles
+@import 'element/table';			// table styles
+@import 'element/non-semantics';	// for javascript style & naughty moments
+@import 'element/image';			// images on the site
 
 
 // Styling the scaffolding
+// -----------------------
 
-@import 'scaffold/scaffold';		// Main base of design operations
-
-@import 'element/print';			// For printing the document
+@import 'scaffold/scaffold';		// main site shape file
+@import 'scaffold/header-footer';	// header and footer styles

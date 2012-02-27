@@ -7,7 +7,6 @@
 // want to add more to it if you use things like syntax highlighting.
 // 
 //*****************************************************************************
-
 /******************************************************************************
  * Code
  *****************************************************************************/
@@ -15,39 +14,24 @@ code,
 pre,
 kbd,
 samp  {
-	font-family:		@dMonospacedFamily;
-	.font-size(14);
+	font-family: @dCodeFamily;
+	.font-size(@dCodeSize);
 }
 code {
-	background-color:	#FEFEFE;
-	color:				rgba(0,0,0,.75);
-	padding:			1px 3px;
+	background-color: #DDD;
+	color: rgba(0,0,0,.75);
+	padding: 1px 3px;
 }
 pre {
-	background:			#FEFEFE;
-	color:				#556270;
-	display: 			block;
-	padding:			@baseline / 2;
-	margin:				(@baseline / 4) auto;
-	line-height:		@dLineHeight; 
-	border:				1px solid #CCC;
-	width:				95%;
-	white-space:		pre;
-	white-space:		pre-wrap;
-	word-wrap:			break-word;
-}
-
-/******************************************************************************
- * Example area
- *****************************************************************************/
-.eg {
-	background:			#FEFEFE;
-	color:				#000;
-	display: 			block;
-	padding:			(@baseline / 2);
-	margin:				(@baseline / 2) auto;
-	line-height:		@dLineHeight; 
-	border:				1px solid #CCC;
-	width:				@contentWidth;
-	margin-left:		-(@baseline / 2);
+	background: #FEFEFE;
+	color: #556270;
+	display: block;
+	padding: (@baseline / 2);
+	margin: (@baseline / 4) auto;
+	line-height: @dLineHeight; 
+	border:	 1px solid #CCC;
+	width: 95%;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }

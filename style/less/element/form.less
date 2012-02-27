@@ -7,17 +7,18 @@
 // styles I took from Twitter's Bootstrap.
 //  
 // ****************************************************************************
-
-
-// Corrects margin displayed oddly in IE6/7 and define consistent border, 
-// margin, and padding
+/******************************************************************************
+ * Form Styles
+ *****************************************************************************/
 
 form,
 fieldset,
-legend {
+legend,
+button::-moz-focus-inner,
+input::-moz-focus-inner {
 	border: 0;
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 legend {
@@ -26,21 +27,18 @@ legend {
 
 
 // 1. Corrects font size not being inherited in all browsers
-// 2. Addresses margins set differently in IE6/7, FF3/4, S5, Chrome
-// 3. Improves appearance and consistency in all browsers
+// 2. Improves appearance and consistency in all browsers
 
 button,
 input,
 select,
-textarea {
+textarea,
+label {
 	font-size: 100%; // 1
-	margin: 0; // 2
-	padding: 0; //2
-	vertical-align: baseline; // 3
-	*vertical-align: middle; // 3
+	vertical-align: baseline; // 2
+	*vertical-align: middle; // 2
 	line-height: normal;
 }
-
 
 // 1. Improves usability and consistency of cursor style between image-type 'input' and others
 // 2. Addresses box sizing set to content-box in IE8/9
@@ -53,8 +51,11 @@ input[type='radio'] {
 	box-sizing: border-box; // 2
 	padding: 0; // 3
 	border: 0; // 4
+	width: auto;
 	background: transparent;
+
 	.box-shadow(none);
+
 	&:focus {
 		.box-shadow(none);
 	}
@@ -79,27 +80,18 @@ input[type='search']::-webkit-search-decoration {
 }
 
 
-// Corrects inner padding and border displayed oddly in FF3/4
-// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
-
-
 // 1. Removes default vertical scrollbar in IE6/7/8/9
 // 2. Improves readability and alignment in all browsers
 
 textarea {
 	overflow: auto; // 1
 	vertical-align: top; // 2
+	width: @dTextareaWidth;
 }
 
 input {
 	height: @dLineHeight;
-	width: 200px;
+	width: @dInputWidth;
 }
 
 input,
@@ -107,18 +99,35 @@ textarea,
 select {
 	display: inline-block;
 	padding: 2px;
+	margin: 0;
 	line-height: @dLineHeight;
 	color: @dFontColor;
-	border: 1px solid #CCC;
+	border: 1px solid #BBB;
+
 	.transition(all linear .3s);
-	.box-shadow(inset 0 5px 10px rgba(0,0,0,.1));
+	.box-shadow(inset 0 2px 7px rgba(0,0,0,.2));
 	.rounded(2px);
+	.font-size();
+
 	&.error {
 		.box-shadow(inset 0 20px 20px rgba(150,0,0,.1));
 	}
+
+	&:focus {
+		outline: 0;
+		border-color: #BBB;
+
+		@shadow: inset 0 0 0, 0 0 5px rgba(100,100,100,.5);
+		.box-shadow(@shadow);
+
+		&.error {
+			@shadow: inset 0 1px 3px rgba(200,0,0,.1), 0 0 8px rgba(200,0,0,.7);
+			.box-shadow(@shadow);
+		}
+	}
 }
 label {
-	display: block;
+	display: inline-block;
 	width: auto;
 	cursor: pointer;
 	height: @dLineHeight;
@@ -129,37 +138,13 @@ label {
 	}
 }
 
-.complex {
-	label {
-		display: inline-block;
-		width: 125px;
-		text-align: right;
-		margin-right: 10px;
-	}
-	.submit {
-		margin-left: 140px;
-	}
-}
-
 select {
+	width: @dInputWidth;
 	height: @dFontSize + 12px;
 	line-height: @dFontSize + 12px;
 	padding: 4px;
 	&[multiple='multiple'] {
 		height: inherit;
-	}
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-	outline: 0;
-	border-color: #BBB;
-	@shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(100,100,100,.7);
-	.box-shadow(@shadow);
-	&.error {
-		@shadow: inset 0 1px 3px rgba(200,0,0,.1), 0 0 8px rgba(200,0,0,.7);
-		.box-shadow(@shadow);
 	}
 }
  
@@ -172,9 +157,10 @@ select:focus {
 }
 
 
-// ****************************************************************************
-// Styles for Buttons
-// ****************************************************************************
+/******************************************************************************
+ * Button Styles
+ *****************************************************************************/
+
 
 button,
 input[type='button'], 
@@ -183,49 +169,58 @@ input[type='submit'] {
 	-webkit-appearance: button;
 }
 
-a.btn {
-	text-decoration: none;
-}
-
 .btn,
 button,
 input[type='submit'],
-input[type='reset']{
+input[type='reset'] {
+	@shadow: inset 0 6px 6px rgba(255,255,255,.35);
+
+	text-decoration: none; // used for a.btn references
 	*overflow: visible;
 	cursor: pointer;
 	display: inline-block;
 	padding: 2px 14px;
+	margin: 0;
 	font-weight: 700;
 	text-shadow: 0 1px 1px rgba(255,255,255,.7);
-	color: @dFontColor;
-	border: 1px solid #B3B3B3;
-	width: auto;
+	color: @dBtnFontColor;
+	border: 1px solid @dBtnBorderColor;
+	width: @dBtnWidth;
 	height: auto;
 	
-	.box-shadow(inset 0 2px 4px rgba(0,0,0,.0));
-	.font-size();
+	.box-shadow(@shadow);
+	.transition(none);
 	.rounded(3px);
-	.transition(.2s linear all);
-	#gradient > .vertical-three-colors(#FFF, #FFF, 25%, darken(#FFF, 10%));
+	#gradient > .vertical(@dBtnColor, darken(@dBtnColor, 20%));
 	
+
 	&:hover {
-		background-position: 0 -15px;
-		color: #333;
+		@shadow: 0 0 6px rgba(0,0,0,.1), inset 0 6px 6px rgba(255,255,255,.1);
+
 		text-decoration: none;
+		color: @dBtnFontColor;
+
+		.box-shadow(@shadow);
+	}
+
+	
+	&:active {
+		background: darken(@dBtnColor, 10%);
+		.box-shadow(inset 0 5px 15px rgba(0,0,0,.2));
 	}
 	
 	// Primary Button Type
-	// Do this after :hover due to colour order
 	&.primary {
-		color: #FFF;
-		text-shadow: 0 1px 1px rgba(0,0,0,.5);
-    	border-color: #518800;
-		#gradient > .vertical-three-colors(#a2dd50, #72ba02, 25%, darken(#72ba02, 10%));
+		color: @pBtnFontColor;
+		text-shadow: -1px -1px 1px rgba(0,0,0,.3);
+		border-color: @pBtnBorderColor;
+
+		#gradient > .vertical(@pBtnColor, darken(@pBtnColor, 20%));
+		&:active {
+			background: darken(@pBtnColor, 10%);
+		}
 	}
-	
-	&:active {
-		.box-shadow(inset 0 2px 8px rgba(0,0,0,.3));
-	}
+
 	
 	&.disabled {
 		cursor: default;
@@ -234,6 +229,7 @@ input[type='reset']{
 		.opacity(65);
 		.box-shadow(none);
 	}
+
 	
 	&[disabled] {
 		// disabled pseudo can't be included with .disabled
@@ -245,6 +241,7 @@ input[type='reset']{
 		.box-shadow(none);
 	}
 	
+	
 	// Super jank hack for removing border-radius from IE9 so we can keep filter gradients on alerts and buttons
 	:root & {
 		border-radius: 0 \0;
@@ -255,43 +252,5 @@ input[type='reset']{
 	&::-moz-focus-inner {
 		padding: 0;
 		border: 0;
-	}
-}
-
-
-// ****************************************************************************
-// Styles for Buttons
-// ****************************************************************************
-
-.alert-msg {
-	position: absolute;
-    top: 40%;
-    left: 35%;
-	margin:	 0 auto;
-	padding: 20px 30px;
-	color: #FFF;
-	text-shadow: 0 1px 0 rgba(0,0,0,.5);
-	border-width: 1px;
-	border-style: solid;
-	text-align: center;
-	font-weight: 700;
-	border-color: 1px solid #CCC;
-	width: auto;
-	.rounded(6px);
-	@shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 0 100px rgba(0,0,0,.5);
-	.box-shadow(@shadow);
-	
-	.no-js & {
-		display: block;
-		position: relative;
-	}
-	
-	&.success {
-		#gradient > .vertical-three-colors(#62C462, #57A957, 25%, darken(#57A957, 20%));
-		border-color: darken(#57A957, 10%);
-	}
-	&.error {
-		#gradient > .vertical-three-colors(#ee5f5b, #c43c35, 25%, darken(#c43c35, 20%));
-		border-color: darken(#c43c35, 10%);
 	}
 }

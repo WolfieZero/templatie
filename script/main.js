@@ -1,10 +1,6 @@
 $(document).ready(function() {
-	
+
 	// Just in case JS is disabled we can style our page accordingly
-	$('body').removeClass('no-js');
+	$('html').removeClass('no-js');
 
 });
-
-// make it safe to use console.log always (remove from production)
-(function(b){function c(){}for(var d="assert,clear,count,debug,dir,dirxml,error,exception,firebug,group,groupCollapsed,groupEnd,info,log,memoryProfile,memoryProfileEnd,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn".split(","),a;a=d.pop();){b[a]=b[a]||c}})((function(){try
-{console.log();return window.console;}catch(err){return window.console={};}})());

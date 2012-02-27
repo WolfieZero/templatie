@@ -6,33 +6,53 @@
 // Because people still use these to display tabular information!
 // 
 //*****************************************************************************
-
 /******************************************************************************
  * Table
  *****************************************************************************/
+
 table {
-	border-collapse:	collapse;
-	border-spacing:		0;
-	color:				@dFontColor;
-	margin:				(@dLineHeight / 2) auto;
+	border-collapse: separate;
+	border-spacing: 0;
+	color: @dFontColor;
+	margin: (@dLineHeight / 2) auto;
+	border: @tBorderStyle; 
 }
 
 th, td {
-	.font-size();
-	border:				1px solid #CCC; 
-	padding:			(@baseline / 4);
-	line-height:		@dLineHeight;
+	padding: (@baseline / 4);
+	border-top: @tBorderStyle; 
+	border-left: @tBorderStyle; 
+	line-height: @dLineHeight;
+}
+
+tr:first-child th, 
+tr:first-child td {
+	border-top: 0;
+}
+
+th:first-child, 
+td:first-child {
+	border-left: 0;
 }
 
 thead {
 	td, th {
-		background:			#EEE;
-		text-align:			center;
+		background: @tHeadColor;
+		border-bottom: @tBorderStyle; 
 	}
 }
 
 tbody {
+	tr {
+		background: @tOddColor;
+	}
+	tr:nth-child(even) {
+		background: @tEvenColor;
+	}
+	tr:hover {
+		background: @tHoverColor;
+	}
 	th {
-		text-align:			right;
+		text-align: right;
 	}
 }
