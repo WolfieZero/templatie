@@ -9,7 +9,7 @@ Read more about Templatie at http://templatie.info/.
 Changes
 -------
 
-** v1.0 - 27/02/12 **
+**v1.0 - 27/02/12**
 
 The first full official release of Templatie.
 
