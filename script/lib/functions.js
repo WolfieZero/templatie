@@ -11,12 +11,17 @@ else if (!jsDebugging || typeof console.log == "undefined")
 /**
  * Is Set
  * Checks element exists on a page
- * 
+ * It grabs the length of an element and if it's equal-to or more-than 1 then
+ * we take it the element has been set and return true.
+ *
+ * Example:
+ *		if (isset('body')) {}
+ *
  * @param	element
  * @return	bool
  */
 var isset = function (elem) {
-	if ( $(elem).length >= 1 ) {
+	if ($(elem).length >= 1) {
 		return true;
 	} else {
 		return false;

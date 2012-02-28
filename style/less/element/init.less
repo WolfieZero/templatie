@@ -1,19 +1,18 @@
 //*****************************************************************************
 // 
-// base.less 
+// init.less 
 // ---------
 // 
 // This is the base normalise.css file, but elements have been removed and
 // placed into relevant /element/ files so we aren't calling items we don't
 // need (basically the whole purpose of this framework!)
 // 
-// Built from: normalize.css 2011-09-22T17:42 UTC 
+// Certain HTML5 elements are kept here for ease
 // 
 //*****************************************************************************
 
-
 /******************************************************************************
- * HTML5 Display
+ * HTML5 Elements
  *****************************************************************************/
 
 /*
@@ -29,7 +28,7 @@ header,
 hgroup,
 nav,
 section{
-    display: block;
+	display: block;
 }
 
 /*
@@ -38,8 +37,8 @@ section{
 audio,
 canvas,
 video {
-    display: inline-block;
-    *display: inline;
+	display: inline-block;
+	*display: inline;
     *zoom: 1;
 }
 
@@ -93,19 +92,11 @@ html, body {
  * Embedded Content
  *****************************************************************************/
 
-/*
- * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
- * 2. Improves image quality when scaled in IE7
- *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
- */
 img {
-    border: 0; // 1
-    -ms-interpolation-mode: bicubic; // 2
+    border: 0;
+    -ms-interpolation-mode: bicubic; // http://j.mp/yQpqFZ
 }
 
-/*
- * Corrects overflow displayed oddly in IE9 
- */
 svg:not(:root) {
     overflow: hidden;
 }
