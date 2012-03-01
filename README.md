@@ -10,6 +10,11 @@ Read more about Templatie at http://templatie.info/
 Changes
 -------
 
+**v1.0.3 - 1/03/12**
+
+* Added CodeKit import statement in main.js
+* CSS files compressed using YUI Compressor - http://developer.yahoo.com/yui/compressor/
+
 **v1.0.2 - 28/02/12**
 
 * Changed the order some tags in the `head` of index.html for a better code flow
