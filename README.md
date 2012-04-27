@@ -10,6 +10,14 @@ Read more about Templatie at http://templatie.info/
 Changes
 -------
 
+**v1.1 - 24/04/12**
+* Removed `functions.js` as it seems pointless
+* Removed the `isset()` function as that also seems pointless and annoying when out of scope
+* Moved the `console` debugger to the index.html page as we want this globally avaliable
+* Made some major changes to the less/element/form.less as it
+* Added custom dialog boxes (need more felixablity these days)
+
+
 **v1.0.3 - 1/03/12**
 
 * Added CodeKit import statement in main.js

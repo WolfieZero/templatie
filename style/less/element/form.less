@@ -105,7 +105,6 @@ select {
 	color: @dFontColor;
 	border: 1px solid #BBB;
 
-	.transition(all linear .3s);
 	.box-shadow(inset 0 2px 7px rgba(0,0,0,.2));
 	.rounded(2px);
 	.font-size();
@@ -170,10 +169,12 @@ input[type='submit'] {
 }
 
 .btn,
+a.btn,
 button,
 input[type='submit'],
 input[type='reset'] {
-	@shadow: inset 0 6px 6px rgba(255,255,255,.35);
+//	@shadow: inset 0 6px 6px rgba(255,255,255,.35);
+	@shadow: inset 0 0 2px #FFF, 0 1px 1px rgba(0, 0, 0, 0.2);
 
 	text-decoration: none; // used for a.btn references
 	*overflow: visible;
@@ -183,42 +184,32 @@ input[type='reset'] {
 	margin: 0;
 	font-weight: 700;
 	text-shadow: 0 1px 1px rgba(255,255,255,.7);
-	color: @dBtnFontColor;
-	border: 1px solid @dBtnBorderColor;
-	width: @dBtnWidth;
+	color: #444;
+	border: 1px solid #B3B3B3;
+	width: auto;
 	height: auto;
 	
 	.box-shadow(@shadow);
-	.transition(none);
 	.rounded(3px);
-	#gradient > .vertical(@dBtnColor, darken(@dBtnColor, 20%));
+	#gradient > .vertical(#EEE, darken(#EEE, 20%));
 	
 
 	&:hover {
-		@shadow: 0 0 6px rgba(0,0,0,.1), inset 0 6px 6px rgba(255,255,255,.1);
-
+		background-position: 0 -10px;
 		text-decoration: none;
-		color: @dBtnFontColor;
-
-		.box-shadow(@shadow);
 	}
 
-	
 	&:active {
-		background: darken(@dBtnColor, 10%);
-		.box-shadow(inset 0 5px 15px rgba(0,0,0,.2));
+		.box-shadow(inset 0 2px 5px rgba(0,0,0,.2));
 	}
 	
-	// Primary Button Type
+	// Primary Button Type, so you want it as your main CTA
 	&.primary {
-		color: @pBtnFontColor;
-		text-shadow: -1px -1px 1px rgba(0,0,0,.3);
-		border-color: @pBtnBorderColor;
+		color: #FFF;
+		text-shadow: 0 1px 1px rgba(0,0,0,.5);
+    	border-color: #518800;
 
-		#gradient > .vertical(@pBtnColor, darken(@pBtnColor, 20%));
-		&:active {
-			background: darken(@pBtnColor, 10%);
-		}
+		#gradient > .vertical(#badc77, #8abb24);
 	}
 
 	
@@ -253,4 +244,63 @@ input[type='reset'] {
 		padding: 0;
 		border: 0;
 	}
+}
+
+
+// ****************************************************************************
+// Dialog Popup
+// ****************************************************************************
+
+.dialog-box{
+	@shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 0 100px rgba(0,0,0,.5);
+	position: fixed;
+    top: 40%;
+    left: 50%;
+	padding: (@baseline - 5) @baseline;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #CCC;
+	text-align: center;
+	font-weight: 400;
+	max-width: 60%;
+	#gradient > .vertical(#f4f4f4, #e7e7e7);
+	.box-shadow(@shadow);
+	.rounded(6px);
+
+	p {
+		text-align: center;
+	}
+	
+	.btn {
+		margin: 0 (@baseline / 2);
+		font-weight: 400;
+	}
+
+	.no-js & {
+		display: block;
+		position: relative;
+	}
+	&.success, &.error {
+		color: #FFF;
+		text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	}
+
+	&.success {
+		#gradient > .vertical(#62C462, darken(#57A957, 20%));
+		border-color: darken(#57A957, 10%);
+	}
+	&.error {
+		#gradient > .vertical(#ee5f5b, darken(#c43c35, 20%));
+		border-color: darken(#c43c35, 10%);
+	}
+}
+
+#dialog-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width:100%;
+	height: 100%;
+	background:  rgba(0,0,0,.7);
 }

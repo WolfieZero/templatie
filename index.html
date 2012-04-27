@@ -32,6 +32,17 @@
 	<script>
 		// to called console.log in ~script/lib/function.js
 		var jsDebugging = true; 
+
+		/**
+		 * Console Debugging
+		 * To use console.log you will need to set the varible `debugging` to `true`
+		 * before this script is called.
+		 */
+		if (typeof console == "undefined" || typeof jsDebugging == "undefined") {
+			var console = { log: function() {} };
+		}else if (!jsDebugging || typeof console.log == "undefined") {
+			console.log = function() {};
+		}
 	</script>
 
 </head>
@@ -52,13 +63,10 @@
 	</footer>
 
 	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
  	<script>window.jQuery || document.write('<script src="script/lib/jquery-1.7.1.min.js"><\/script>')</script>
 
 	<!-- Define jQuery Plugins -->
-
-	<!-- Define our JS libaries -->
-	<script src="script/lib/function.js"></script>
 
 	<!-- Define our CTA script -->
 	<script src="script/main.js"></script>
