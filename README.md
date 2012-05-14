@@ -10,6 +10,11 @@ Read more about Templatie at http://templatie.info/
 Changes
 -------
 
+**v1.1.1 - 14/05/12**
+* Moved dialog function to it's own file
+* Split out the dialog object to prototype objects for better performance - http://net.tutsplus.com/tutorials/javascript-ajax/stop-nesting-functions-but-not-all-of-them/
+* Moved some of the code in index.html around for better performace
+
 **v1.1 - 24/04/12**
 * Removed `functions.js` as it seems pointless
 * Removed the `isset()` function as that also seems pointless and annoying when out of scope
