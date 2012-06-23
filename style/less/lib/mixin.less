@@ -1,19 +1,41 @@
-//*****************************************************************************
+///
+// @secton Mixins
+// @file mixin.less
 // 
-// functions.less 
-// --------------
+// Stores all the tpyically used functions for within LESS. More can be found
+// at http://lesselements.com/
 // 
-// Use this to store all your Less functions that will be accessed globally.
-// 
-// If you want more for here then have a look at http://lesselements.com/	
-// 
-//*****************************************************************************
+// Contents:
+// 	+ Clearfix
+// 	+ Font Size
+// 	+ Image
+// 	+ Column Count
+//  + Column Gap
+//  + Column Width
+//  + Column Rule
+//  + Column Break Before
+//  + Transition
+//  + Transform
+//  + Box Shadow
+//  + Rounded
+//  + Reset IE Filters
+//  + Opacity
+//  + Sprite
+//  + Gradient
+//  ++ Horizontal
+//  ++ Vertical
+//  ++ Directional
+//  
 
-//*****************************************************************************
-// ClearFix
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
+// Clearfix
 // Adds a CSS only clearfix to a block level element to stop floats allowing
 // elements to "wonder" into the given block
-//*****************************************************************************
+// 
 .clearfix() {
 	&:after{
 		content: '\0020';
@@ -28,30 +50,33 @@
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Font Size
-// Uses pixels (px) as the main unit then convert to REM.
-// The default font-size is used as a default value.
+// Gives the relative em font size with a pixel based one first for backwards
+// browser support
+// @param size:@dFontSize; <size>
 // 
-// @size		- : @dFontSize		- <pixel>
-//*****************************************************************************
-.font-size(@size: @dFontSize) {
-	@remSize: ( @size / @dFontSize );
+.font-size(@size: @docFontSize) {
+	@remSize: ( @size / @docFontSize );
 	font-size: ~`"@{size}"+'px'`;
 	font-size: ~`"@{remSize}"+'rem'`;
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Image
-// 	You can use this when you have an image you want to display as an
-// 	alternative to text such as:
-// 		<a href="#" class="appstore">Download from App Store</a>
-// 		
-// 	@width		- required			- <width>
-// 	@height		- requried			- <height>
-// 	@display	- : block			- <display>
-//*****************************************************************************
+// Give the standard definitions for an image section or to hold an image minus
+// the background properties
+// @param width <measurement>
+// @param height <measurement>
+// @param display:block <display>
+// 
 .image(@width, @height, @display: block) {
 	display: @display;
 	width: @width;
@@ -61,12 +86,14 @@
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Column Count
-// Specifies the number of columns desired in a multicolumn flow.
+// Specifies the number of columns desired in a multicolumn flow
+// @param @count:auto; <integer>
 // 
-// @count		- : auto			- <number_of_columns>
-//*****************************************************************************
 .col-count(@count: auto) {
 	-webkit-column-count: @count;
 	   -moz-column-count: @count;
@@ -74,12 +101,14 @@
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Column Gap
-// Specifies the space between columns in a multicolumn flow.
+// Specifies the space between columns in a multicolumn flow
+// @param gap:normal; <measurement>
 // 
-// @gap			- : normal			- <width>
-//*****************************************************************************
 .col-gap(@gap: normal) {
 	-webkit-column-gap: @gap;
 	   -moz-column-gap: @gap;
@@ -87,12 +116,14 @@
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Column Width
-// Specifies the width of the column in a multicolumn flow.
+// Specifies the width of the column in a multicolumn flow
+// @param width:auto; Desired width of a single column
 // 
-// @width		- : auto			- <width>
-//*****************************************************************************
 .col-width(@width) {
 	-webkit-column-width: @width;
 	   -moz-column-width: @width;
@@ -100,12 +131,14 @@
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Column Rule
 // Specifies the color, style and width of the column rule.
+// @param style <width> <style> <color>
 // 
-// @style		- required			- <width> <style> <color>
-//*****************************************************************************
 .col-rule(@@style) {
 	-webkit-column-rule: @style;
 	   -moz-column-rule: @style;
@@ -113,12 +146,14 @@
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Column Break Before
-// Specifies whether a column break should occur before an element.
+// Specifies whether a column break should occur before an element
+// @param policy:auto; <policy> always | avoid | left | right
 // 
-// @break		- : auto			- <policy> always | avoid | left | right
-//*****************************************************************************
 .col-break-before(@policy: auto) {
 	-webkit-column-break-before: @policy;
 	   -moz-column-break-before: @policy;
@@ -126,13 +161,15 @@
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Transition
 // Combines `transition-delay`, `transition-duration`, `transition-property`
 // and `transition-timing-function` into a single property.
+// @param String transition <property> <duration> <timing_function> <delay>
 // 
-// @transition	- requried			- <property> <duration> <timing_function> <delay>
-//*****************************************************************************
 .transition(@transition) {
  	-webkit-transition: @transition;
 	   -moz-transition: @transition;
@@ -142,14 +179,16 @@
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Transform
 // Specifies the two-dimensional linear transformation applied to an element. 
 // The origin of the transformation is specified by the `transform-origin` 
 // property.
+// @param transform <function>
 // 
-// @transform	- requried			- <function>
-//*****************************************************************************
 .transform(@transform) {
  	-webkit-transform: @transform;
 	   -moz-transform: @transform;
@@ -159,14 +198,15 @@
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Transform
 // Specifies the origin of two-dimensional linear transformations specified 
-// with the `transform` property.
+// with the `transform` property
+// @param origin <x-pos> | <x-pos> <y-pos>
 // 
-// @origin		- required			- <x-pos>
-// @origin		- required			- <x-pos> <y-pos>
-//*****************************************************************************
 .transform-origin(@origin) {
  	-webkit-transform-origin: @origin;
 	   -moz-transform-origin: @origin;
@@ -175,24 +215,31 @@
 	       transition-origin: @origin;
 }
 
-//*****************************************************************************
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Box Shadow
-// Applies a drop shadow effect to the border box of an object.
+// Applies a drop shadow effect to the border box of an object
+// @param shadow <x-off> <y-off> <blur> <color>
 // 
-// @shadow		- required			- <x-off> <y-off> <blur> <color>
-//*****************************************************************************
 .box-shadow(@shadow) {
 	-webkit-box-shadow: @shadow;
 	   -moz-box-shadow: @shadow;
 	        box-shadow: @shadow;
 }
 
-//*****************************************************************************
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Rounded
-// Specifies that the corners of a box be rounded with the specified radius.
+// Specifies that the corners of a box be rounded with the specified radius and
+// adds the background clip.
+// @param Integer radius Radius of the corner (requires type)
 // 
-// @radius		- : 2px				- <radius>
-//*****************************************************************************
 .rounded(@radius: 2px) {
 	  -webkit-border-radius: @radius;
 	-webkit-background-clip: padding-box; 
@@ -203,20 +250,27 @@
 }
 
 
-//*****************************************************************************
-// Reset IE Filters (from Bootstrap)
-// Removes the use of a filter
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
+// Reset IE Filters 
+// Removes the use of a filter (taken from Bootstrap)
+// 
 .reset-filter() {
 	filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Opacity
+// Cross browser opacity for transparancy. Note that the IE filter fix causes
+// all child elements to be transparent as well.
+// @param alpha <integer> Percentage without symbol
 // 
-// @opacity		- required			- <alpha>% (converts to floating point)
-//****************************************************************************/
 .opacity(@alpha) {
 	-webkit-opacity: (@alpha / 100);
 	   -moz-opacity: (@alpha / 100);
@@ -225,46 +279,41 @@
 }
 
 
-//*****************************************************************************
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Sprite
-// For the main site template images (as an image)
-// - http://www.alistapart.com/articles/sprites/
+// For the main site template images (as an image) - http://bit.ly/KMprA
+// @param x <x-pos>
+// @param y <y-pos>
+// @param img:@spriteImg; <url>
+// @param @repeat:no-repeat; <repeat>
 // 
-// @x			- required			- <x-pos>
-// @y			- required			- <y-pos>
-// @img			- : @spriteImg		- <img_file_name>
-// @repeat		- : no-repeat		- <repeat>
-//****************************************************************************/
 .sprite(@x, @y, @img: @spriteImg, @repeat: no-repeat) {
 	background: url('@{imgDir}@{img}') @x @y @repeat;
 }
 
 
-//*****************************************************************************
-// 
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
 // Gradient
-// 
 // I've removed my original in favour for Bootstraps method but I've commented
 // out some elements for less common browsers. Also, there is no default style
 // because that seems a bit pointless...
-//
 // A note that IEs filter can slow down the rendering of a page so might be
 // worth thinking about whether you really want to include that element.
-// 	
-// #gradient
-//  > horizontal
-//  > vertical
-//  > directional
-//  > vertical-three-colors
 // 
-// (all)
-// @startColor	- required			- <color>
-// @endColor	- required			- <color>
-// 
-// + .directional
-// @deg			- required			- <deg>
-//*****************************************************************************
 #gradient {
+
+	///
+	// Horizontal
+	// @param startColor <color>
+	// @param endColor <color>
+	// @parent #gradient
+	// 
 	.horizontal(@startColor, @endColor) {
 		background-color: @endColor;
 		background-repeat: repeat-x;
@@ -277,6 +326,13 @@
 		background-image: linear-gradient(left, @startColor, @endColor);																		// CSS3
 		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor));	// IE9 and down
 	}
+
+	///
+	// Vertical
+	// @param startColor <color>
+	// @param endColor <color>
+	// @parent #gradient
+	// 
 	.vertical(@startColor, @endColor) {
 		background-color:	@endColor;
 		background-repeat:	repeat-x;
@@ -289,6 +345,14 @@
 		background-image:	linear-gradient(top, @startColor, @endColor);																		// CSS3
 		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor));	// IE9 and down
 	}
+
+	///
+	// Directional
+	// @param startColor <color>
+	// @param endColor <color>
+	// @param deg <degrees>
+	// @parent #gradient
+	// 
 	.directional(@startColor, @endColor, @deg) {
 		background-color:	@endColor;
 		background-repeat:	repeat-x;

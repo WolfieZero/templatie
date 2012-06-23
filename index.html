@@ -1,84 +1,63 @@
 <!doctype html>
-<!--[if lt IE 7]>	<html class="no-js ie lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr">	<![endif]-->
-<!--[if IE 7]>		<html class="no-js ie lt-ie10 lt-ie9 lt-ie8" lang="en" dir="ltr">			<![endif]-->
-<!--[if IE 8]>		<html class="no-js ie lt-ie10 lt-ie9" lang="en" dir="ltr">					<![endif]-->
-<!--[if IE 9]>		<html class="no-js ie lt-ie10" lang="en" dir="ltr">							<![endif]-->
+<!--[if lt IE 7]>   <html class="no-js ie lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr">    <![endif]-->
+<!--[if IE 7]>      <html class="no-js ie lt-ie10 lt-ie9 lt-ie8" lang="en" dir="ltr">           <![endif]-->
+<!--[if IE 8]>      <html class="no-js ie lt-ie10 lt-ie9" lang="en" dir="ltr">                  <![endif]-->
+<!--[if IE 9]>      <html class="no-js ie lt-ie10" lang="en" dir="ltr">                         <![endif]-->
 <!--[if gt IE 9]>
-	<!-->			<html class="no-js" lang="en" dir="ltr">								<!--<![endif]-->
+    <!-->           <html class="no-js" lang="en" dir="ltr">                                <!--<![endif]-->
 <head>
-
-	<link rel="dns-prefetch" href="//ajax.googleapis.com" />
-	
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-	<title></title>
-	<meta name="description" content="" />
-	<link rel="author" type="text/plain" href="humans.txt" />
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<!--[if ! lte IE 6]><!-->
-		<link rel="stylesheet" media="screen, projection" href="style/css/main.css" />
-		<link rel="stylesheet" media="print" href="style/css/basic.css" />
-	<!--<![endif]-->
-
-	<!--[if lte IE 6]>
-		<link rel="stylesheet" href="style/css/basic.css" />
-	<![endif]-->
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" media="screen, projection" href="style/css/main.css" />
+    <title></title>
+    <meta name="description" content="" />
 </head>
-<body>
+<body class="home">
+    
+    
+
+    <!-- Inline JS -->
+
+    <script>
+        var jsDebugging = true,
+            _gaq        = [['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+
+        /**
+         * Console Debugging - to use console.* set `jsDebugging` to true
+         */
+        if (typeof console === 'undefined' || typeof jsDebugging === 'undefined') {
+            var console = { log: function() {} };
+        }else if (!jsDebugging || typeof console.log == "undefined") {
+            console.log = function() {};
+        }
+    </script>
+    
+    <!-- Define Javascript Libraries -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script src="script/lib/dialog.js"></script>
+
+    <!-- Define jQuery Plugins -->
 
 
-	<header role="banner" id="site-header">
-	</header>
 
-	<div role="main" id="main">	
-	</div>
+    <!-- Define our CTA script -->
 
-	<nav role="navigation">
-	</nav>
+    <script src="script/main.js"></script>
+    
 
-	<footer role="contentinfo" id="site-footer">
-		<p>&copy; copyright, all rights reserved.</p>
-	</footer>
 
-<!---------------------------------------------------------------------------->
-
-	<!-- Inline JS -->
-
-	<script>
-		// to called console.log in ~script/lib/function.js
-		var jsDebugging = true; 
-
-		/**
-		 * Console Debugging
-		 * To use console.log you will need to set the varible `debugging` to `true`
-		 * before this script is called.
-		 */
-		if (typeof console == "undefined" || typeof jsDebugging == "undefined") {
-			var console = { log: function() {} };
-		}else if (!jsDebugging || typeof console.log == "undefined") {
-			console.log = function() {};
-		}
-	</script>
-	
-	<!-- Define Javascript Libraries -->
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
- 	<script src="/script/lib/dialog.js"></script>
-
-	<!-- Define jQuery Plugins -->
-	
-	
-
-	<!-- Define our CTA script -->
-
-	<script src="script/main.js"></script>
-	
+    <!-- Asynchronous Google Analytics snippet - mathiasbynens.be/notes/async-analytics-snippet -->
+    <script>
+        (function(d,t){
+            var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)
+        }(document,'script'));
+    </script>
 
 </body>
 </html>

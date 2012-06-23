@@ -1,19 +1,34 @@
 Templatie
 =========
 
-Templatie is a boilerplate for HTML and CSS using LESS that will allow for quicker development of projects. Using LESS along with various varibles and functions you can create to look however you want with minimal setup time; just pick the colours. It also introduces a structure to your LESS files to keep the development file in order so it's easier to manage what goes where.
 
-Read more about Templatie at http://templatie.info/
+
+Templatie is a boilerplate for HTML and CSS using LESS that will allow for 
+quicker development of projects with a few presets
+
+Read more about Templatie at http://templatie.info/ (site needs updating).
 
 
 
 Changes
 -------
 
+**v2.0 - 08/06/12**
+* Re-throught the CSS system so it's stripped down to a customised [Normalize.css](http://necolas.github.com/normalize.css/) decleration
+* Added some standardised CSS/LESS documentation (based on [CSS_doc](https://github.com/imedo/css_doc) and a number of other languages documentation style)
+** Use `/** ... */` for CSS with each line starting with ` *` (note the space)
+** Use `/// ... //` for LESS with each new line starting with `//` (supresses it from CSS view)
+** Will provide a detailed document later on
+* Added `additional` folder into the `less` folder that's used for tranferable scripts such as for JS libraries
+* Kept the custom dialog boxes 
+* Removed a lot of the boilerplate stuff as it is easier to add then to remove
+
+
 **v1.1.1 - 14/05/12**
 * Moved dialog function to it's own file
 * Split out the dialog object to prototype objects for better performance - http://net.tutsplus.com/tutorials/javascript-ajax/stop-nesting-functions-but-not-all-of-them/
 * Moved some of the code in index.html around for better performace
+
 
 **v1.1 - 24/04/12**
 * Removed `functions.js` as it seems pointless
@@ -24,12 +39,11 @@ Changes
 
 
 **v1.0.3 - 1/03/12**
-
 * Added CodeKit import statement in main.js
 * CSS files compressed using YUI Compressor - http://developer.yahoo.com/yui/compressor/
 
-**v1.0.2 - 28/02/12**
 
+**v1.0.2 - 28/02/12**
 * Changed the order some tags in the `head` of index.html for a better code flow
 * Added detail to the `isset()` function
 * Added jQuery check and local file (for check fails)
@@ -40,14 +54,13 @@ Changes
 * Removed root slash from humans.txt file path
 * Removed author meta tag
 
-**v1.0.1 - 27/02/12**
 
+**v1.0.1 - 27/02/12**
 * Added some extra definitions to `nav` to remove style by default
 
+
 **v1.0 - 27/02/12**
-
-The first full official release of Templatie.
-
+* The first full official release of Templatie.
 * Started logging changes
 * Officially released as v1
 * Improved the Scaffold structure
