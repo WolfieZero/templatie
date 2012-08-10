@@ -1,4 +1,37 @@
 ///
+// Config
+// @file config.less
+// 
+// Variables for style elements
+// 
+// Contents:
+// 
+// 	+ Font Definitions
+// 	++ Document Serif Family
+// 	++ Document San-Serif Family
+// 	++ Documet Monospaced Family
+// 	++ Document Font Family
+// 	
+// 	+ Site Measurements
+// 	++ Default Site Width
+// 	
+// 	+ File & Folder Paths
+// 	++ Sprite Image
+// 	++ Image Directory
+//  
+//  + Site Colours
+//  ++ Document Font Color
+//  ++ Document Background Color
+//  ++ Mouse Selector Background
+//  ++ Mouse selector font colour
+//  
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Font Definitions
+///////////////////////////////////////////////////////////////////////////////
+
+///
 // Document Serif Family
 // @type Font
 // 
@@ -9,7 +42,7 @@
 // Document San-Serif Family
 // @type Font
 // 
-@docSansSerifFamily: 'Helvetica Neue Light', HelveticaNeue-Light, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@docSansSerifFamily: 'Helvetica Neue', Sans-Serif; // Sans-Serif == Helvetica, Arial >> http://css-tricks.com/sans-serif/
 
 
 ///
@@ -20,35 +53,32 @@
 
 
 ///
-// Document Background Color
-// @type Hex
-// 
-@docBackgroundColor: #FEFEFE;
-
-
-///
 // Document Font Family
 // @type Font
 // 
 @docFontFamily: @docSansSerifFamily;
 
 
+///////////////////////////////////////////////////////////////////////////////
+// Site Measurements
+///////////////////////////////////////////////////////////////////////////////
+
+
 ///
-// Document Font Size (Base)
-// @type Integer (passed as PX)
+// Default Site Width
+// @type PX
 // 
-@docFontSize: 18;
+@defaultSiteWidth: 960px;
 
 
-///
-// Document Font Color
-// @type Hex
-@docFontColor: #333;
+///////////////////////////////////////////////////////////////////////////////
+// File & Folder Paths
+///////////////////////////////////////////////////////////////////////////////
 
 
 ///
 // Sprite Image
-// @type URL|Path
+// @type Path
 // 
 @spriteImg: 'spite.png';
 
@@ -57,19 +87,37 @@
 // Image Directory
 // @type Path
 // 
-@imgDir: '../../img/';
+@imgDir: '../../img';
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Site Colours
+///////////////////////////////////////////////////////////////////////////////
+
+
+///
+// Document Font Color
+// @type Hex
+// 
+@docFontColor: #404040;
+
+
+///
+// Document Background Color
+// @type Hex
+// 
+@docBackgroundColor: #EFEFEF;
 
 
 ///
 // Mouse Selector Background
 // @type Hex
 // 
-@selectBG: #C09;
+@selectBG: #C04;
 
 
 ///
-// Mouse Selector Font Color
+// Mouse selector font colour
 // @type Hex
 // 
-@selectColor: #EEE;
-
+@selectColor: #DDD;

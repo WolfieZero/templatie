@@ -8,10 +8,9 @@
  *
  * Usage
  * -----
- * The first use, pass the function Dialog into a variable such as `dialog` (I
- * personally assign it globally).
  *
- * `var dialog = new Dialog();`
+ * Once jQuery has been loaded the dialog box will initilise itself under the
+ * global varaible 'dialog'.
  *
  * Then you can call each function by doing the following commands.
  *
@@ -25,33 +24,45 @@
  * callbacks for the confirmation dialog (one for a positive answer and one for
  * negative).
  *
- * 
+ *
+ * Requires
+ * --------
+ *
+ * - jQuery
  *
  *
  * License
  * -------
  *
  * Licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License
- * (http://creativecommons.org/licenses/by-sa/3.0/)
+ * http://creativecommons.org/licenses/by-sa/3.0/
  */
 
-function Dialog() {
 
+/**
+ * Default constructor
+ */
+Dialog = function() {
 	this._body = $('body');
-
-}
+};
 
 
 /*****************************************************************************/
 
 
 /**
- * Alert Front End
- * Replacement alert box for the front end
+ * Alert box for the front end
  * @param  {object} obj The options for the alert box
  * @return {bool} Returns true to show message was sent
  */
 Dialog.prototype.alert = function(obj, callback) {
+
+	// if `obj` is a string then we need to make it an object again
+	if (obj.split) {
+		var message = obj;
+		obj = {};
+		obj.message = message;
+	}
 
 	if (obj.message === undefined)	obj.message = 'Something happened';
 	if (obj.response === undefined)	obj.response = 'Okay';
@@ -70,7 +81,8 @@ Dialog.prototype.alert = function(obj, callback) {
 
 	this._body.append(html);
 
-	fixPosition();
+	// Make sure the box is central
+	self.fixPosition();
 
 	$('.dialog-box').find('.btn').focus().on('click', function(e) {
 			e.preventDefault();
@@ -81,7 +93,7 @@ Dialog.prototype.alert = function(obj, callback) {
 		});
 
 		window.onresize = function() {
-			fixPosition();
+			self.fixPosition();
 		};
 
 	};
@@ -91,8 +103,7 @@ Dialog.prototype.alert = function(obj, callback) {
 
 
 /**
- * Custom ConfirmDialog
- * Replacement confirmation box for the front end
+ * Confirmation box for the front end
  * @param  {string} message The question to show
  * @return {bool} Returns true or false depending on answer
  */
@@ -116,8 +127,11 @@ Dialog.prototype.confirm = function(obj, posCallback, negCallback) {
 	html += '</div></div>';
 
 	this._body.append(html);
+
+	// Focus on the button by default
 	$('input[tabindex=1]').focus();
 
+	// Make sure the box is central
 	fixPosition();
 
 	// What to do when the user picks an option
@@ -145,7 +159,6 @@ Dialog.prototype.confirm = function(obj, posCallback, negCallback) {
 
 
 /**
- * Fix Position
  * Fixes the dialog box's position on a page so that it appear central
  * @return {bool} Return true
  */
@@ -157,3 +170,6 @@ Dialog.prototype.fixPosition = function() {
 		.css('top', parseInt( (window.innerHeight / 2) - (dialogBox.height()/2) - 20, 10) +'px');
 	return true;
 };
+
+
+/*****************************************************************************/

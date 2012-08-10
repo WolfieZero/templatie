@@ -1,10 +1,3 @@
-// @codekit-prepend 'lib/dialog.js';
-// @codekit-prepend 'lib/map.js';
-
-
-/*****************************************************************************/
-
-
 $(document).ready(function() {
 
 	dialog		= new Dialog();

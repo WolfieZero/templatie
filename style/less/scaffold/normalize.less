@@ -1,19 +1,19 @@
 /**
- * @section Normalize CSS
+ * Normalize CSS
  * @file normalize.less
  * 
  * Originally written by Nicolas Gallagher and Jonathan Neal, I've added a few
  * additions for long term browser support and improved documentation
  *
  * Contents:
- * 	+ N.1. HTML5 Display Definitions
- * 	+ N.2. Base
- * 	+ N.3. Links
- * 	+ N.4. Typography
- * 	+ N.5. Lists
- * 	+ N.6. Embedded Content
- * 	+ N.7. Form
- * 	+ N.8. Tables
+ *  + N. HTML5 Display Definitions
+ *  + N. Base
+ *  + N. Links
+ *  + N. Typography
+ *  + N. Lists
+ *  + N. Embedded Content
+ *  + N. Form
+ *  + N. Tables
  */
 
 
@@ -21,7 +21,7 @@
 
 
 /**
- * N.1. HTML5 Display Definitions
+ * N. HTML5 Display Definitions
  */
 
 
@@ -75,24 +75,16 @@ audio:not([controls]) {
 
 
 /**
- * N.2. Base
+ * N. Base
  */
 
-
 /**
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ * 
  * 1 - Corrects text resizing oddly in IE6/7 when body font-size is set using
  *     em units - http://bit.ly/sFWW0q
  * 2 - Prevents iOS text size adjust after orientation change, without 
  *     disabling user zoom - http://bit.ly/dMH96r
- */
-html {
-    font-size: 100%; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-    -ms-text-size-adjust: 100%; /* 2 */
-}
-
-/**
- * Addresses font-family inconsistency between 'textarea' and other form elements.
  */
 html,
 button,
@@ -100,6 +92,12 @@ input,
 select,
 textarea {
     font-family: @docFontFamily;
+    line-height: 1.5em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-size: 87.5%; /* 1 */
+    -webkit-text-size-adjust: 87.5%; /* 2 */
+    -ms-text-size-adjust: 87.5%; /* 2 */
     color: @docFontColor;
 }
 
@@ -107,9 +105,14 @@ textarea {
  * Addresses margins handled incorrectly in IE6/7
  */
 html, body {
-	margin: 0;
-	padding: 0;
-	background: @docBackgroundColor;
+    margin: 0;
+    padding: 0;
+    background: @docBackgroundColor;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+body {
+    overflow-y: hidden;
 }
 
 
@@ -117,9 +120,13 @@ html, body {
 
 
 /**
- * N.3. Links
+ * N. Links
  */
 
+
+a {
+    color: #C01;
+}
 
 /**
  * Addresses outline displayed oddly in Chrome
@@ -142,7 +149,7 @@ a:active {
 
 
 /**
- * N.4. Typography
+ * N. Typography
  */
 
 
@@ -151,36 +158,51 @@ a:active {
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 1em;
+    padding-bottom: 0.5em;
+}
+
 h1 {
-    .font-size(36);
-    margin: 0.67em 0;
+    font-size: 3em;
+    line-height: 1.2em;
+    padding-bottom: 0.3em;
 }
 
 h2 {
-    .font-size(27);
-    margin: 0.83em 0;
+    font-size: 2em;
+    padding-top: 1em;
 }
 
 h3 {
-    .font-size(22);
-    margin: 1em 0;
+    font-size: 1.5em;
+    padding-top: 0.5em;
 }
 
 h4 {
-    font-size: 1em;
-    .font-size();
-    margin: 1.33em 0;
+    font-size: 1.25em;
+    padding-top: 0.5em;
 }
 
 h5 {
-    font-size: 0.83em;
-    .font-size(15);
-    margin: 1.67em 0;
+    font-size: 1em;
+    padding-top: 0.5em;
 }
 
 h6 {
-    .font-size(14);
-    margin: 2.33em 0;
+    font-size: 1em;
+    padding-top: 0.5em;
+    font-weight: 400;
+}
+
+/**
+ * Addresses margins set differently in IE6/7
+ */
+p,
+pre {
+    margin: 0;
+    padding: 0.5em 0;
 }
 
 /**
@@ -195,14 +217,15 @@ abbr[title] {
  */
 b,
 strong {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /**
  * Create a default blockquote view
  */
 blockquote {
-    margin: 1em 40px;
+    margin: 0;
+    padding: 0.5em 1em;
 }
 
 /**
@@ -221,21 +244,13 @@ mark {
 }
 
 /**
- * Addresses margins set differently in IE6/7
- */
-p,
-pre {
-    margin: 1em 0;
-}
-
-/**
  * Corrects font family set oddly in IE6, S4/5, Chrome - http://bit.ly/bcJhNe
  */
 pre,
 code,
 kbd,
 samp {
-    font-family: monospace, serif;
+    font-family: @docMonospacedFamily;
     _font-family: 'courier new', monospace;
     font-size: 1em;
 }
@@ -297,7 +312,7 @@ sub {
 
 
 /**
- * N.5. Lists
+ * N. Lists
  */
 
 
@@ -309,20 +324,20 @@ dl,
 menu,
 ol,
 ul {
-    margin: 1em 0;
+    margin: .5em 0;
+    padding: 0 0 0 40px;
+
+    dl,
+    menu,
+    ol,
+    ul {
+        margin: 0;
+    }
 }
 
 dd {
-    margin: 0 0 0 40px;
-}
-
-/**
- * Addresses paddings set differently in IE6/7
- */
-menu,
-ol,
-ul {
-    padding: 0 0 0 40px;
+    padding: 0 0 0 20px;
+    margin: 0;
 }
 
 /*
@@ -332,6 +347,7 @@ nav ul,
 nav ol {
     list-style: none;
     list-style-image: none;
+    margin: 0;
 }
 
 
@@ -339,7 +355,7 @@ nav ol {
 
 
 /**
- * N.6. Embedded Content
+ * N. Embedded Content
  */
 
 
@@ -351,7 +367,7 @@ nav ol {
 img {
     border: 0; /* 1 */
     -ms-interpolation-mode: bicubic; /* 2 */
-    width: 100%; /* 3 */
+    max-width: 100%; /* 3 */
 }
 
 /**
@@ -373,7 +389,7 @@ figure {
 
 
 /**
- * N.7. Forms
+ * N. Forms
  */
 
 
@@ -418,7 +434,14 @@ textarea {
     margin: 0; /* 2 */
     vertical-align: baseline; /* 3 */
     *vertical-align: middle; /* 3 */
-    border: 1px solid #AAA;
+    border: 1px solid #CCC;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 0;
 }
 
 /**
@@ -426,7 +449,7 @@ textarea {
  */
 button,
 input {
-    line-height: normal; /* 1 */
+    line-height: 1.5em; /* 1 */
 }
 
 /**
@@ -440,9 +463,21 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+    @shadow: inset 0 0 2px #FFF;
+    @bgColor: #EEE;
     cursor: pointer; /* 1 */
     -webkit-appearance: button; /* 2 */
     *overflow: visible;  /* 3 */
+    .box-shadow(@shadow);
+    #gradient > .vertical(@bgColor, darken(@bgColor, 10%));
+    &:active {
+        position: relative;
+        top: 1px;
+        #gradient > .vertical(darken(@bgColor, 5%), @bgColor);
+    }
+}
+label {
+    cursor: pointer;
 }
 
 /**
@@ -513,7 +548,7 @@ textarea {
 
 
 /**
- * N.8. Tables
+ * N. Tables
  */
 
 
@@ -530,8 +565,9 @@ table {
 
 
 /**
- * N.9. Mouse Selection
+ * N. Mouse Selection
  */
+
 
 /**
  * Mozilla
@@ -550,3 +586,6 @@ table {
     color: @selectColor;
     text-shadow: none;
 }
+
+
+/*****************************************************************************/

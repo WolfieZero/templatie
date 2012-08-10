@@ -15,9 +15,11 @@
     <title></title>
     <meta name="description" content="" />
 </head>
-<body class="home">
+<body class="">
     
-    
+
+    <!-- Main HTML -->
+
 
     <!-- Inline JS -->
 
@@ -25,9 +27,7 @@
         var jsDebugging = true,
             _gaq        = [['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 
-        /**
-         * Console Debugging - to use console.* set `jsDebugging` to true
-         */
+        // Console Debugging - to use console.* set `jsDebugging` to true
         if (typeof console === 'undefined' || typeof jsDebugging === 'undefined') {
             var console = { log: function() {} };
         }else if (!jsDebugging || typeof console.log == "undefined") {
@@ -35,20 +35,14 @@
         }
     </script>
     
-    <!-- Define Javascript Libraries -->
+
+    <!-- Javascript  -->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
     <script src="script/lib/dialog.js"></script>
 
-    <!-- Define jQuery Plugins -->
-
-
-
-    <!-- Define our CTA script -->
-
     <script src="script/main.js"></script>
     
-
 
     <!-- Asynchronous Google Analytics snippet - mathiasbynens.be/notes/async-analytics-snippet -->
     <script>
