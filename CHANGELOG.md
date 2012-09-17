@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+** V2.2.1 - 17/09/12 **
+
+* Fixed typo in config.less
+
+
 ** V2.2 - 17/09/12 **
 
 * Added Eric Meyer's Reset into base.less as well as normalize so you can if
