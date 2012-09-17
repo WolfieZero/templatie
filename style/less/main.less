@@ -1,35 +1,48 @@
 ///
-// @section Main
-// @file main.less
-//
-//
-// Contents:
-// 	+ Scaffold
-// 		+ Normalize
-// 		+ Layout
-//  + Additional
-//  	+ Dialog
-//
+// Main
+// ============================================================================
+// 
+// This is the compiled file
+// 
+// 
+// Content
+// ----------------------------------------------------------------------------
+// - LESS Libraries
+//   - config
+//   - mixin
+// - Main Site Styles
+//   - base
+//   - layout
+// - Additionals
+//   - dialog
+///
 
+
+///
+// LESS Libraries
+// ----------------------------------------------------------------------------
+// This is the configs and mixings
+///
 
 @import 'lib/config';
 @import 'lib/mixin';
 
 
-///////////////////////////////////////////////////////////////////////////////
-
-
 ///
-// Scaffold
-//
-@import 'scaffold/normalize'; 
+// Main Site Styles
+// ----------------------------------------------------------------------------
+// Where the traditional CSS is build for the site specific styles
+///
+
+@import 'scaffold/base';
 @import 'scaffold/layout'; 
 
 
-///////////////////////////////////////////////////////////////////////////////
-
-
 ///
-// Additional
-//
+// Additionals
+// ----------------------------------------------------------------------------
+// Additional CSS/LESS styles that aren't specifically related to the site
+// e.g. Style for third-party jQuery element
+///
+
 @import 'additional/dialog';

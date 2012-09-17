@@ -1,13 +1,26 @@
 Change Log
 ==========
 
+** V2.2 - 17/09/12 **
+
+* Added Eric Meyer's Reset into base.less as well as normalize so you can if
+  you want one or the other (idea from
+  [ClearLess](https://github.com/clearleft/clearless))
+* Updated all inline documentation to follow 
+  [Supersexy Swingin Front End](https://github.com/WolfieZero/Supersexy-Swingin-Front-End)
+  guidelines
+* style-test.html has been included
+* Updated README.md
+
+
 ** v2.1.1 - 02/08/12 **
 
 * Removed leaflet.js and map.js
 * Changed `img` element in normalize.less to now resize on `max-width: 100%;`
 * Moved the changes to CHANGELOG.md
 * Made the button group a bit prettier again
-* That base.less really couldn't stick, went for layout.less for high-up layout stuffs
+* That base.less really couldn't stick, went for layout.less for high-up layout
+  stuffs
 
 
 ** v2.1 - 08/06/12 **
@@ -17,17 +30,22 @@ Change Log
 
 ** v2.0 - 08/06/12 **
 
-* Re-throught the CSS system so it's stripped down to a customised [Normalize.css](http://necolas.github.com/normalize.css/) decleration
-* Added some standardised CSS/LESS documentation (based on [CSS_doc](https://github.com/imedo/css_doc) and a number of other languages documentation style)
+* Re-throught the CSS system so it's stripped down to a customised 
+  [Normalize.css](http://necolas.github.com/normalize.css/) decleration
+* Added some standardised CSS/LESS documentation (based on 
+  [CSS_doc](https://github.com/imedo/css_doc) and a number of other languages
+  documentation style)
 	* Use `/** ... */` for CSS with each line starting with ` *` (note the space)
-	* Use `/// ... //` for LESS with each new line starting with `//` (supresses it from CSS view)
-** Will provide a detailed document later on
-* Added `additional` folder into the `less` folder that's used for tranferable scripts such as for JS libraries
+	* Use `/// ... //` for LESS with each new line starting with `//` 
+      (supresses it from CSS view)
+    * Will provide a detailed document later on
+* Added `additional` folder into the `less` folder that's used for tranferable 
+  scripts such as for JS libraries
 * Kept the custom dialog boxes 
 * Removed a lot of the boilerplate stuff as it is easier to add then to remove
 
 
-*******************************************************************************
+-------------------------------------------------------------------------------
 
 
 ** v1.1.1 - 14/05/12 **

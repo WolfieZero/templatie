@@ -1,123 +1,134 @@
 ///
-// Config
-// @file config.less
+// Configuration
+// ============================================================================
 // 
 // Variables for style elements
 // 
-// Contents:
 // 
-// 	+ Font Definitions
-// 	++ Document Serif Family
-// 	++ Document San-Serif Family
-// 	++ Documet Monospaced Family
-// 	++ Document Font Family
-// 	
-// 	+ Site Measurements
-// 	++ Default Site Width
-// 	
-// 	+ File & Folder Paths
-// 	++ Sprite Image
-// 	++ Image Directory
-//  
-//  + Site Colours
-//  ++ Document Font Color
-//  ++ Document Background Color
-//  ++ Mouse Selector Background
-//  ++ Mouse selector font colour
-//  
+// Contents
+// ----------------------------------------------------------------------------
+// 
+// - General
+//   - CSS Base
+//   - Document Background
+//   - Disable MS Filters
+// - Typography
+//   - Base Font Size
+//   - Document serif family
+//   - Document san-serif family
+//   - Document monospaced family
+//   - Document font family
+//   - Base document font size
+// - Site Measurements
+//   - Default Site Width
+//   - File & Folder Paths
+//   - Sprite Image
+//   - Image Directory
+// - Site Colours
+//   - Document Font Colour
+//   - Document Background Colour
+//   - Mouse Selector Background
+//   - Mouse Selector Font Colour
+///
 
-
-///////////////////////////////////////////////////////////////////////////////
-// Font Definitions
-///////////////////////////////////////////////////////////////////////////////
 
 ///
+// General
+// ----------------------------------------------------------------------------
+///
+
+// CSS Base 
+// @type {none|normalize|reset}
+@base-css: normalize;
+
+// Document background
+// @type Background
+@doc-background: @doc-background-color;
+
+
+// Disable IE Filters
+// These can slow down page rendering in IE
+// @type Boolean
+@disable-filters: false;
+
+
+///
+// Typography
+// ----------------------------------------------------------------------------
+///
+
+// Base Font Size
+// Used as a default for px to (r)em conversions
+// @type Pixel
+@base-font-size: 16;
+
+// Base Line Height
+// @type EM
+@base-line-height: 1.5;
+
 // Document Serif Family
 // @type Font
-// 
-@docSerifFamily: Georgia, 'Times New Roman', Times, serif;
+@doc-font-serif: Georgia, 'Times New Roman', Times, serif;
 
-
-///
 // Document San-Serif Family
+// Sans-Serif == Helvetica, Arial >> http://css-tricks.com/sans-serif/
 // @type Font
-// 
-@docSansSerifFamily: 'Helvetica Neue', Sans-Serif; // Sans-Serif == Helvetica, Arial >> http://css-tricks.com/sans-serif/
+@doc-font-sans-serif: 'Helvetica Neue', Sans-Serif; 
 
-
-///
 // Documet Monospaced Family
 // @type Font
-// 
-@docMonospacedFamily: 'Bitstream Vera Sans Mono', Courier, monospace;
+@doc-font-mono: Courier, monospace;
 
-
-///
 // Document Font Family
 // @type Font
-// 
-@docFontFamily: @docSansSerifFamily;
-
-
-///////////////////////////////////////////////////////////////////////////////
-// Site Measurements
-///////////////////////////////////////////////////////////////////////////////
+@doc-font-family: @doc-font-sans-serif;
 
 
 ///
-// Default Site Width
-// @type PX
-// 
-@defaultSiteWidth: 960px;
-
-
-///////////////////////////////////////////////////////////////////////////////
-// File & Folder Paths
-///////////////////////////////////////////////////////////////////////////////
-
-
-///
-// Sprite Image
-// @type Path
-// 
-@spriteImg: 'spite.png';
-
-
-///
-// Image Directory
-// @type Path
-// 
-@imgDir: '../../img';
-
-
-///////////////////////////////////////////////////////////////////////////////
 // Site Colours
-///////////////////////////////////////////////////////////////////////////////
-
-
+// ----------------------------------------------------------------------------
 ///
+
 // Document Font Color
 // @type Hex
-// 
-@docFontColor: #404040;
+@doc-font-color: #404040;
 
-
-///
 // Document Background Color
 // @type Hex
-// 
-@docBackgroundColor: #EFEFEF;
+@doc-background-color: #EFEFEF;
 
+// Document Link Color
+// @type Hex
+@doc-link-color: #C09;
 
-///
 // Mouse Selector Background
 // @type Hex
-// 
-@selectBG: #C04;
+@selection-background: #999;
+
+// Mouse selector font colour
+// @type Hex
+@selection-color: #DDD;
 
 
 ///
-// Mouse selector font colour
-// @type Hex
-// 
-@selectColor: #DDD;
+// Site Measurements
+// ----------------------------------------------------------------------------
+///
+
+// Default Site Width
+// @type PX
+@doc-default-with: 960px;
+
+
+///
+// File & Folder Paths
+// ----------------------------------------------------------------------------
+///
+
+// Sprite Image
+// @type Path
+@img-sprite: 'sprite.png';
+
+// Image Directory
+// @type Path
+@img-dir: '../../img';
