@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+** V2.2.2 - 17/09/12 **
+
+* Updated some of the definitions and variables
+
+
 ** V2.2.1 - 17/09/12 **
 
 * Fixed typo in config.less

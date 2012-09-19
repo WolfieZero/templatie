@@ -39,7 +39,7 @@
 
 // CSS Base 
 // @type {none|normalize|reset}
-@base-css: normalize;
+@doc-base-css: normalize;
 
 // Document background
 // @type Background
@@ -60,11 +60,11 @@
 // Base Font Size
 // Used as a default for px to (r)em conversions
 // @type Pixel
-@base-font-size: 16;
+@doc-base-font-size: 16;
 
 // Base Line Height
 // @type EM
-@base-line-height: 1.5;
+@doc-base-line-height: 1.618;
 
 // Document Serif Family
 // @type Font
@@ -79,9 +79,13 @@
 // @type Font
 @doc-font-mono: Courier, monospace;
 
-// Document Font Family
+// Document Base Font Family
 // @type Font
-@doc-font-family: @doc-font-sans-serif;
+@doc-base-font-family: @doc-font-sans-serif;
+
+// Document Header Font Family
+// @type Font
+@doc-header-font-family: @doc-font-sans-serif;
 
 
 ///
@@ -100,6 +104,10 @@
 // Document Link Color
 // @type Hex
 @doc-link-color: #C09;
+
+// Document Link Color on Hover
+// @type Hex
+@doc-link-color-hover: darken(@doc-link-color, 10%);
 
 // Mouse Selector Background
 // @type Hex
