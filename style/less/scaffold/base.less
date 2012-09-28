@@ -20,7 +20,7 @@
 ///
 .base(normalize) {
 /**
- * normalize.css v1.0.1 + Templatie Edits
+ * normalize.css
  * ============================================================================
  * 
  * git.io/normalize
@@ -32,10 +32,11 @@
  * Content
  * ----------------------------------------------------------------------------
  * - HTML5 Display Definitions
+ *   - IE6-9 and FF3 Specifics
+ *   - Display Audio with Controls
  * - Base
  * - Links
- * - Typography
- * - Lists
+ * - Navigation Block
  * - Embedded Content
  * - Figures
  * - Forms
@@ -52,7 +53,7 @@
  * HTML5 Display Definitions
  * ----------------------------------------------------------------------------
  */
-
+    
 article,
 aside,
 details,
@@ -67,20 +68,29 @@ summary {
     display: block;
 }
 
-audio,
-canvas,
-video {
-    display: inline-block;
-    .ie-lt8 & {
-        display: inline;
-        zoom: 1;
-    }
-}
 
-audio:not([controls]) {
-    display: none;
-    height: 0;
-}
+    /**
+     * IE6-9 and FF3 Specifics
+     * ------------------------------------------------------------------------
+     */
+    audio,
+    canvas,
+    video {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+    }
+    
+
+    /**
+     * Display Audio with Controls
+     * ------------------------------------------------------------------------
+     */
+    audio:not([controls]) {
+        display: none;
+        height: 0;
+    }
+    
 
 [hidden] {
     display: none;
@@ -93,12 +103,14 @@ audio:not([controls]) {
  */
 
 html {
-    font-size: (@doc-base-font-size/16)*100%;
-    -webkit-text-size-adjust: (@doc-base-font-size/16)*100%;
-    -ms-text-size-adjust: (@doc-base-font-size/16)*100%;
-    color: @doc-font-color;
+    @font-size: (@doc-base-font-size/16)*100%;
+    font-size: @font-size;
+    -webkit-text-size-adjust: @font-size;
+    -ms-text-size-adjust: @font-size;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    color: @doc-font-color;
+    background: @doc-background;
 }
 
 html,
@@ -112,7 +124,6 @@ textarea {
 html,
 body {
     margin: 0;
-    background: @doc-background;
 }
 
 ::selection { 
@@ -127,12 +138,8 @@ body {
  * ----------------------------------------------------------------------------
  */
 
-a {
-    color: @doc-link-color;
-}
-
 a:focus {
-    outline: thin dotted;
+    outline: thin dotted @doc-link-color;
 }
 
 a:active,
@@ -141,166 +148,11 @@ a:hover {
     color: @doc-link-color-hover;
 }
 
-
+    
 /**
- * Typography
+ * Navigation Block
  * ----------------------------------------------------------------------------
  */
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    line-height: 1em;
-    padding-bottom: 0.4em;
-    font-family: @doc-header-font-family
-}
-
-h1 {
-    font-size: 3em;
-    padding-bottom: 0.3em;
-}
-
-h2 {
-    font-size: 2em;
-    padding-top: 0.7em;
-}
-
-h3 {
-    font-size: 1.5em;
-    padding-top: 0.5em;
-}
-
-h4 {
-    font-size: 1.25em;
-    padding-top: 0.5em;
-}
-
-h5 {
-    font-size: 1em;
-    padding-top: 0.5em;
-}
-
-h6 {
-    font-size: 1em;
-    padding-top: 0.5em;
-    font-weight: 400;
-}
-
-abbr[title] {
-    border-bottom: 1px dotted;
-}
-
-b,
-strong {
-    font-weight: bold;
-}
-
-blockquote {
-    margin: 1em 2em;
-}
-
-dfn {
-    font-style: italic;
-}
-
-mark {
-    background: #ff0;
-    color: #000;
-}
-
-p,
-li,
-dd,
-dt {
-    line-height: @doc-base-line-height;
-}
-
-p,
-pre {
-    margin: 1em 0;
-}
-
-code,
-kbd,
-pre,
-samp {
-    font-family: @doc-font-mono;
-    font-size: 1em;
-}
-
-pre {
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-q {
-    quotes: none;
-}
-
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-small {
-    font-size: 80%;
-}
-
-sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
-sup {
-    top: -0.5em;
-}
-
-sub {
-    bottom: -0.25em;
-}
-
-li,
-p,
-dt,
-dd,
-blockquote {
-    -ms-word-break: break-all;
-    word-break: break-all;
-    word-break: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-}
-
-
-/**
- * Lists
- * ----------------------------------------------------------------------------
- */
-
-dl,
-menu,
-ol,
-ul {
-    margin: 0.05em 0;
-    padding: 0 0 0 40px;
-
-    ul,
-    ol,
-    dl {
-        margin: 0;
-    }
-}
-
-dd {
-    padding: 0 0 0 40px;
-    margin: 0;
-}
-
 nav {
     ul,
     li {
@@ -318,8 +170,12 @@ nav {
  */
 
 img {
-    border: 0;
-    -ms-interpolation-mode: bicubic;
+  max-width: 100%; /* Set a maxium relative to the parent */
+  width: auto\9; /* IE7-8 need help adjusting responsive images */
+  height: auto; /* Scale the height according to the width, otherwise you get stretching */
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
 }
 
 svg:not(:root) {
@@ -331,7 +187,6 @@ svg:not(:root) {
  * Figures
  * ----------------------------------------------------------------------------
  */
-
 figure {
     margin: 0;
 }
@@ -346,32 +201,18 @@ form {
     margin: 0;
 }
 
-fieldset {
-    border: 1px solid #C0C0C0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
-}
-
-legend {
-    border: 0;
-    padding: 0;
-    white-space: normal;
-    .ie-lt8 {
-        margin-left: -7px;
-    }
-}
-
 button,
 input,
 select,
 textarea {
-    font-size: 100%;
+    font-size: (@doc-base-font-size/16)*100%;
     margin: 0;
     vertical-align: baseline;
     border: 1px solid #CCC;
-    .ie-lt8 {
-        vertical-align: middle;
-    }
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    *vertical-align: middle;
+    
     &:focus {
         outline: 0;
     }
@@ -379,22 +220,21 @@ textarea {
 
 button,
 input {
+    *overflow: visible;
     line-height: normal;
 }
 
-button,
 .btn,
+button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
-    .lt-ie8 & {
-        overflow: visible;
-    }
+    *overflow: visible;
 }
 
-.btn.disabled,
+.disabled,
 button[disabled],
 input[disabled] {
     cursor: default;
@@ -406,10 +246,8 @@ input[type="checkbox"],
 input[type="radio"] {
     box-sizing: border-box;
     padding: 0;
-    .ie-lt8 & {
-        height: 13px;
-        width: 13px;
-    }
+    *height: 13px;
+    *width: 13px;
 }
 
 input[type="search"] {
@@ -430,16 +268,17 @@ input::-moz-focus-inner {
     padding: 0;
 }
 
-textarea {
-    overflow: auto;
-    vertical-align: top;
+input,
+textarea,
+select {
+    color: @doc-font-color;
 }
-
+        
+    
 /**
  * Tables
  * ----------------------------------------------------------------------------
  */
-
 table {
     border-collapse: collapse;
     border-spacing: 0;

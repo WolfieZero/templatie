@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+** V2.3 - 28/09/12 **
+
+* Removed some definitions from normalize.css mixin and gave them their own 
+  file. This added typography and form as these are commonly changed elements
+  at their given level.
+  
+
 ** V2.2.2 - 17/09/12 **
 
 * Updated some of the definitions and variables
