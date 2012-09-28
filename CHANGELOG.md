@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+** V2.3.1 - 28/09/12 **
+
+* Linted the JS files so they sould pass with colours flying about the place
+
+
 ** V2.3 - 28/09/12 **
 
 * Removed some definitions from normalize.css mixin and gave them their own 

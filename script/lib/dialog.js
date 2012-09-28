@@ -37,6 +37,7 @@
  * Licensed under Creative Commons Attribution-ShareAlike 3.0 Unported License
  * http://creativecommons.org/licenses/by-sa/3.0/
  */
+/*global $,window*/
 
 var Dialog = {
 
@@ -44,7 +45,7 @@ var Dialog = {
      * Assigns the body element locally
      * @type {Object}
      */
-	_body: $('body'),
+	bodyElem: $('body'),
  
 
     /**
@@ -53,38 +54,49 @@ var Dialog = {
      * @param  {Object}         callback  Function to call back on button press
      * @return {Object} Returns callback option
      */
-	alert: function(obj, callback) {
+	alert: function (obj, callback) {
 
+        'use strict';
+        
+        var message,
+            html;
+        
         if (obj === undefined) {
             return {error: 'message not defined'};
         }
 
 		// if `obj` is a string then we need to make it an object again
 		if (obj.split) {
-			var message = obj;
+			message = obj;
 			obj = {};
 			obj.message = message;
 		}
 
-		if (obj.response === undefined)	obj.response = 'OK';
-		if (obj.type === undefined)		obj.type = 'default';
+		if (obj.response === undefined) {
+            obj.response = 'OK';
+        }
+		if (obj.type === undefined) {
+            obj.type = 'default';
+        }
 
-		var html =	'<div id="dialog-wrapper"><div class="dialog-box '+obj.type+'">'+
-						'<p>'+obj.message+'</p>'+
-						'<p>'+
-							'<input type="button" class="btn" value="'+obj.response+'" name="confirm" />'+
-						'</p>';
+		html =	'<div id="dialog-wrapper"><div class="dialog-box ' + obj.type + '">' +
+				    '<p>' + obj.message + '</p>' +
+					'<p>' +
+						'<input type="button" class="btn" value="' + obj.response + '" name="confirm" />' +
+				    '</p>';
 
-		if (obj.messageBelow !== undefined) html += '<p>'+obj.messageBelow+'</p>';
+		if (obj.messageBelow !== undefined) {
+            html += '<p>' + obj.messageBelow + '</p>';
+        }
 
 		html +=	'</div></div>';
 
-		Dialog._body.append(html);
+		Dialog.bodyElem.append(html);
 
 		// Make sure the box is central
 		Dialog.fixPosition();
 
-		$('.dialog-box').find('.btn').focus().on('click', function(e) {
+		$('.dialog-box').find('.btn').focus().on('click', function (e) {
 			e.preventDefault();
 			$('#dialog-wrapper').remove();
 			if (callback !== undefined) {
@@ -92,7 +104,7 @@ var Dialog = {
 			}
 		});
 
-		window.onresize = function() {
+		window.onresize = function () {
 			Dialog.fixPosition();
 		};
 	},
@@ -105,35 +117,48 @@ var Dialog = {
      * @param  {Object}         negCallback  Function to call back on negative action
      * @return {Object} Returns one of the callbacks depending on response
      */
-	confirm: function(obj, posCallback, negCallback) {
+	confirm: function (obj, posCallback, negCallback) {
 
+        'use strict';
+        
+        var message,
+            html;
+        
         if (obj === undefined) {
             return {error: 'message not defined'};
         }
 
         // if `obj` is a string then we need to make it an object again
         if (obj.message === undefined && obj.split) {
-            var message = obj;
+            message = obj;
             obj = {};
             obj.message = message;
         }
 
-		if (obj.positive === undefined)	obj.positive = 'Yes';
-		if (obj.negative === undefined)	obj.negative = 'No';
-		if (obj.type === undefined)		obj.type = 'default';
+		if (obj.positive === undefined) {
+            obj.positive = 'Yes';
+        }
+		if (obj.negative === undefined) {
+            obj.negative = 'No';
+        }
+		if (obj.type === undefined) {
+            obj.type = 'default';
+        }
 
-		var html =	'<div id="dialog-wrapper"><div class="dialog-box '+obj.type+'">'+
-						'<p>'+obj.message+'</p>'+
-						'<p><form>'+
-							'<input type="button" class="btn" value="'+obj.positive+'" tabindex="1" />'+
-							'<input type="button" class="btn" value="'+obj.negative+'" tabindex="2" />'+
-						'</form></p>';
+		html =	'<div id="dialog-wrapper"><div class="dialog-box ' + obj.type + '">' +
+					'<p>' + obj.message + '</p>' +
+					'<p><form>' +
+						'<input type="button" class="btn" value="' + obj.positive + '" tabindex="1" />' +
+						'<input type="button" class="btn" value="' + obj.negative + '" tabindex="2" />' +
+					'</form></p>';
 
-		if (obj.messageBelow !== undefined) html += '<p>'+obj.messageBelow+'</p>';
+		if (obj.messageBelow !== undefined) {
+            html += '<p>' + obj.messageBelow + '</p>';
+        }
 				
 		html += '</div></div>';
 
-		Dialog._body.append(html);
+		Dialog.bodyElem.append(html);
 
 		// Focus on the button by default
 		$('input[tabindex=1]').focus();
@@ -142,7 +167,7 @@ var Dialog = {
 		Dialog.fixPosition();
 
 		// What to do when the user picks an option
-		$('.dialog-box').find('.btn').on('click', function(e) {
+		$('.dialog-box').find('.btn').on('click', function (e) {
 
 			e.preventDefault();
 			$('#dialog-wrapper').remove();
@@ -155,7 +180,7 @@ var Dialog = {
 
 		});
 
-		window.onresize = function() {
+		window.onresize = function () {
 			Dialog.fixPosition();
 		};
 				
@@ -167,13 +192,15 @@ var Dialog = {
      * Fixes the dialog box's position on a page so that it appear central
      * @return {Boolean} Return true
      */
-    fixPosition: function() {
+    fixPosition: function () {
 
-       var dialogBox = $('.dialog-box');
+        'use strict';
+        
+        var dialogBox = $('.dialog-box');
 
-       dialogBox.
-            css('left', parseInt( (window.innerWidth / 2) - (dialogBox.width()/2) - 20, 10) +'px').
-            css('top', parseInt( (window.innerHeight / 2) - (dialogBox.height()/2) - 20, 10) +'px');
+        dialogBox.
+            css('left', parseInt((window.innerWidth / 2) - (dialogBox.width() / 2) - 20, 10) + 'px').
+            css('top', parseInt((window.innerHeight / 2) - (dialogBox.height() / 2) - 20, 10) + 'px');
         
         return true;
     }
