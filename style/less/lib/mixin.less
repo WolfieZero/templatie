@@ -35,7 +35,10 @@
 // - Column Rule
 // - Column Break Before
 // - Opacity
-// - Sprite
+// - Image
+//   - Sprite
+//   - Single
+//   - Position
 ///
 
 
@@ -489,18 +492,18 @@
 
 
 ///
-// Sprite
+// Image
 // ----------------------------------------------------------------------------
-// For the main site template images (as an image) - http://bit.ly/KMprA
+// For the main site template images and sprites- http://bit.ly/KMprA
 ///
-#sprite {
+#img {
 
-	.sprite(@x, @y, @img: @spriteImg, @repeat: no-repeat, @background-color: transparent) {
-		background: @background-color url('@{imgDir}@{img}') @x @y @repeat;
+	.sprite(@x, @y, @img: @sprite-img, @repeat: no-repeat, @background-color: transparent) {
+		background: @background-color url('@{img-dir}@{img}') @x @y @repeat;
 	}
 
-	.img(@img: @sprite-img, @repeat: no-repeat) {
-		background-image: @img;
+	.single(@img: @sprite-img, @repeat: no-repeat) {
+		background-image: url('@{img}');
 		background-repeat: @repeat;
 	}
 
