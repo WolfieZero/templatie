@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+** V2.3.2 - 09/10/12 **
+
+* Added the mixin `.image-repalce-text()` for text only removal CSS images
+
+
 ** V2.3.1 - 28/09/12 **
 
 * Linted the JS files so they sould pass with colours flying about the place
