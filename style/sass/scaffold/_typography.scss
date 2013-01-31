@@ -24,17 +24,18 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     line-height: 1em;
     padding-bottom: 0.4em;
-    font-family: @doc-header-font-family
+    font-family: $base-header-font-family;
 }
 
 h1 {
     font-size: 3em;
+    line-height: 1.2em;
     padding-bottom: 0.3em;
 }
 
 h2 {
     font-size: 2em;
-    padding-top: 0.7em;
+    padding-top: 1em;
 }
 
 h3, h4, h5, h6 {
@@ -68,12 +69,12 @@ p,
 li,
 dd,
 dt {
-    line-height: @doc-base-line-height;
+    line-height: $base-line-height;
 }
 
 p,
 pre {
-    margin: 1em 0;
+    padding: 1em 0;
 }
 
 
@@ -106,7 +107,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: @doc-font-mono;
+    font-family: $base-mono-font-family;
     font-size: 1em;
 }
 
@@ -167,12 +168,8 @@ sub {
  */
 
 a {
-    color: @doc-link-color;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    @include link-colors($base-link-color, $base-link-color-hover);
+    @include hover-link;
 }
 
 

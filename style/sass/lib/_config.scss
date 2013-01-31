@@ -1,0 +1,48 @@
+///
+// Typography
+// ----------------------------------------------------------------------------
+///
+
+$base-font-size: 14px;
+$line-height-em: 1.5;
+$base-line-height: $base-font-size * $line-height-em;
+
+$base-font-family: 'Helvetica Neue', serif;
+$base-header-font-family: Cabin, $base-font-family;
+$base-mono-font-family: Courier, monospace;
+
+
+///
+// Colours
+// ----------------------------------------------------------------------------
+///
+
+$base-font-color: #333;
+$base-doc-background: #EFEFEF;
+
+$base-link-color: #C01;
+$base-link-color-hover: #400;
+
+$selection-color: #FFF;
+$selection-background: #C01;
+
+$base-border-color: #EEE;
+
+
+///
+// Semantic.gs
+// ----------------------------------------------------------------------------
+///
+
+$column-width: 60px;
+$gutter-width: 20px;
+$columns: 12;
+
+
+///
+// Measurements
+// ----------------------------------------------------------------------------
+///
+
+$base-doc-width: 960px;
+$base-mobile-width: 625px;

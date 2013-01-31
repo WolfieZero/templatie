@@ -1,0 +1,74 @@
+///
+// Mixins
+// ============================================================================
+//
+// Some handy stand-alone mixins that can be used. This file can be updated
+// indipendantly.
+//
+//
+// Content
+// ----------------------------------------------------------------------------
+// - Size
+// - Clearfix
+// - Breakpoint
+///
+
+
+///
+// Size
+// ----------------------------------------------------------------------------
+// Creates a width and (if requried) a height, if height is omitted then it
+// will use the width for the height to make the element squared
+// 
+// @param size $width       Width of the element or the squared
+// @param size $height=null Height of the element
+///
+@mixin size($width, $height: null) {
+    width: $width;
+    @if $height != null {
+        height: $height;
+    } @else {
+        height: $width;
+    }
+}
+
+
+///
+// Clearfix
+// ----------------------------------------------------------------------------
+// Generates the appropriate properies to apply the micro-clearfix hack to the
+// element. Not a fan of the built in compass version so this overrides it.
+// Will leave it here till they update Compass.
+///
+@mixin clearfix() {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+///
+// Breakpoint
+// ----------------------------------------------------------------------------
+// Defines a media breakpoint for responsive design
+// 
+// @param size   $size=$base-doc-width Width of when the breakpoint to occure
+// @param string $rule=max-width       Rule of what the breakpoint is
+///
+@mixin breakpoint($size: $base-doc-width, $rule: max-width) {
+    @if $size == mobile {  
+        @media ($rule: $base-mobile-width) {
+            @content;
+        }
+    } @else {
+        @media ($rule: $size) {
+            @content;
+        }
+    }
+}

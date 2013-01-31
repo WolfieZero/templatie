@@ -1,0 +1,53 @@
+///
+// Main Sass Imports
+// ============================================================================
+//
+// Base style of the site where the main sass files are called in
+//
+//
+// Content
+// ----------------------------------------------------------------------------
+// - Libararies
+//   - Gems
+//   - Local
+//   - Site Specifics
+// - Style
+//   - Scaffold
+//   - Modules
+//   - Pages
+///
+
+
+///
+// Libararies
+// ----------------------------------------------------------------------------
+///
+
+// Gems
+@import 'compass'; 
+
+// Config
+@import 'lib/config';
+
+// Local
+@import 'lib/mixin';
+@import 'lib/grid';
+
+
+
+///
+// Scaffold
+// ----------------------------------------------------------------------------
+///
+
+@import 'scaffold/normalise';
+@import 'scaffold/typography';
+@import 'scaffold/layout';
+
+
+///
+// Overrides
+// ----------------------------------------------------------------------------
+// Not recommended but required
+///
+@import 'scaffold/print'; // Needs to override all styles to print correctly

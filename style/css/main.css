@@ -1,64 +1,646 @@
+/**
+ * normalize.css
+ * ============================================================================
+ * 
+ * git.io/normalize
+ *
+ * Although this uses Normalize.css, I've added and changed some of the code to
+ * better suite my own practices and the Templatie structure
+ *
+ *
+ * Content
+ * ----------------------------------------------------------------------------
+ * - HTML5 Display Definitions
+ * - IE6-9 and FF3 Specifics
+ * - Display Audio with Controls
+ * - Base
+ * - Links
+ * - Navigation Block
+ * - Embedded Content
+ * - Figures
+ * - Forms
+ * - Tables
+ *
+ * 
+ * License
+ * ----------------------------------------------------------------------------
+ * MIT License
+ */
+/**
+ * HTML5 Display Definitions
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\0000346}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
 
-article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}
-audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
-audio:not([controls]){display:none;height:0;}
-[hidden]{display:none;}
-html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;color:#404040;background:#efefef;}
-html,button,input,select,textarea{font-family:'Helvetica Neue',Sans-Serif;}
-html,body{margin:0;}
-::selection{color:#dddddd;background:#999999;text-shadow:none;}
-a:focus{outline:thin dotted #cc0099;}
-a:active,a:hover{outline:0;color:#990073;}
-nav ul,nav li{list-style:none;list-style-image:none;margin:0;padding:0;}
-img{max-width:100%;width:auto\9;height:auto;vertical-align:middle;border:0;-ms-interpolation-mode:bicubic;}
-svg:not(:root){overflow:hidden;}
-figure{margin:0;}
-form{margin:0;}
-button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;border:1px solid #CCC;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;*vertical-align:middle;}button:focus,input:focus,select:focus,textarea:focus{outline:0;}
-button,input{*overflow:visible;line-height:normal;}
-.btn,button,input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible;}
-.disabled,button[disabled],input[disabled]{cursor:default;}
-.checkbox,.radio,input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px;}
-input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}
-input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}
-button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
-input,textarea,select{color:#404040;}
-table{border-collapse:collapse;border-spacing:0;}
-h1,h2,h3,h4,h5,h6{margin:0;line-height:1em;padding-bottom:0.4em;font-family:'Helvetica Neue',Sans-Serif;}
-h1{font-size:3em;padding-bottom:0.3em;}
-h2{font-size:2em;padding-top:0.7em;}
-h3,h4,h5,h6{padding-top:0.5em;}
-h3{font-size:1.5em;}
-h4{font-size:1.25em;}
-h5{font-size:1em;}
-h6{font-size:1em;font-weight:400;}
-p,li,dd,dt{line-height:1.618;}
-p,pre{margin:1em 0;}
-blockquote{margin:1em 2em;}
-q{quotes:none;}
-q:before,q:after{content:'';content:none;}
-code,kbd,pre,samp{font-family:Courier,monospace;font-size:1em;}
-pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word;}
-abbr[title]{border-bottom:1px dotted;}
-b,strong{font-weight:bold;}
-dfn{font-style:italic;}
-mark{background:#ff0;color:#000;}
-small{font-size:80%;}
-sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
-sup{top:-0.5em;}
-sub{bottom:-0.25em;}
-a{color:#cc0099;text-decoration:none;}
-a:hover{text-decoration:underline;}
-dl,menu,ol,ul{margin:0.05em 0;padding:0 0 0 40px;}dl ul,menu ul,ol ul,ul ul,dl ol,menu ol,ol ol,ul ol,dl dl,menu dl,ol dl,ul dl{margin:0;}
-dd{padding:0 0 0 40px;margin:0;}
-li,p,dt,dd,blockquote{-ms-word-break:break-all;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;}
-fieldset{border:1px solid #C0C0C0;margin:0 2px;padding:0.35em 0.625em 0.75em;}
-legend{border:0;padding:0;white-space:normal;*margin-left:-7px;}
-textarea{overflow:auto;vertical-align:top;}
-.dialog-box{position:fixed;top:40%;left:50%;padding:15px 20px;border-width:1px;border-style:solid;border-color:#CCC;text-align:center;font-weight:400;max-width:60%;background-color:#e7e7e7;background-repeat:repeat-x;background-image:-khtml-gradient(linear, left top, left bottom, from(#f4f4f4), to(#e7e7e7));background-image:-moz-linear-gradient(#f4f4f4, #e7e7e7);background-image:-ms-linear-gradient(#f4f4f4, #e7e7e7);background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #e7e7e7));background-image:-webkit-linear-gradient(#f4f4f4, #e7e7e7);background-image:-o-linear-gradient(#f4f4f4, #e7e7e7);background-image:-ms-linear-gradient(top, #f4f4f4 0%, #e7e7e7 100%);background-image:linear-gradient(#f4f4f4, #e7e7e7);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#e7e7e7', GradientType=0);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#e7e7e7', GradientType=0)";-webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.25),0 0 100px rgba(0, 0, 0, 0.5);-moz-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.25),0 0 100px rgba(0, 0, 0, 0.5);box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.25),0 0 100px rgba(0, 0, 0, 0.5);-webkit-border-radius:6px;-webkit-background-clip:padding-box;-moz-border-radius:6px;-moz-background-clip:padding;border-radius:6px;background-clip:padding-box;}.dialog-box p{text-align:center;}
-.dialog-box .btn{margin:0 10px;font-weight:400;}
-.no-js .dialog-box{display:block;position:relative;}
-.dialog-box.success,.dialog-box.error{color:#FFF;text-shadow:0 1px 0 rgba(0, 0, 0, 0.5);}
-.dialog-box.success{background-color:#346634;background-repeat:repeat-x;background-image:-khtml-gradient(linear, left top, left bottom, from(#62c462), to(#346634));background-image:-moz-linear-gradient(#62c462, #346634);background-image:-ms-linear-gradient(#62c462, #346634);background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #62c462), color-stop(100%, #346634));background-image:-webkit-linear-gradient(#62c462, #346634);background-image:-o-linear-gradient(#62c462, #346634);background-image:-ms-linear-gradient(top, #62c462 0%, #346634 100%);background-image:linear-gradient(#62c462, #346634);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#346634', GradientType=0);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#346634', GradientType=0)";border-color:#458845;}
-.dialog-box.error{background-color:#74231f;background-repeat:repeat-x;background-image:-khtml-gradient(linear, left top, left bottom, from(#ee5f5b), to(#74231f));background-image:-moz-linear-gradient(#ee5f5b, #74231f);background-image:-ms-linear-gradient(#ee5f5b, #74231f);background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #ee5f5b), color-stop(100%, #74231f));background-image:-webkit-linear-gradient(#ee5f5b, #74231f);background-image:-o-linear-gradient(#ee5f5b, #74231f);background-image:-ms-linear-gradient(top, #ee5f5b 0%, #74231f 100%);background-image:linear-gradient(#ee5f5b, #74231f);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#74231f', GradientType=0);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#74231f', GradientType=0)";border-color:#9c302a;}
-#dialog-wrapper{position:fixed;top:0;left:0;z-index:999;width:100%;height:100%;background:rgba(0, 0, 0, 0.7);}
+/**
+ * IE6-9 and FF3 Specifics
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\0000357}}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/**
+ * Display Audio with Controls
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\0000368}}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\0000374}}
+[hidden] {
+  display: none;
+}
+
+/**
+ * Base
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/_vertical_rhythm\.scss}line{font-family:\0000361}}
+* html {
+  font-size: 87.5%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/_vertical_rhythm\.scss}line{font-family:\0000364}}
+html {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\0000386}}
+html {
+  -webkit-text-size-adjust: 87.5%;
+  -ms-text-size-adjust: 87.5%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: #333333;
+  background: #efefef;
+  font-family: "Helvetica Neue", serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\0000399}}
+html,
+body {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003104}}
+body {
+  width: 100%;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/lib\/_mixin\.scss}line{font-family:\0000346}}
+body:before, body:after {
+  content: "";
+  display: table;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/lib\/_mixin\.scss}line{font-family:\0000350}}
+body:after {
+  clear: both;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003109}}
+::selection {
+  color: white;
+  background: #cc0011;
+  text-shadow: none;
+}
+
+/**
+ * Links
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003121}}
+a:focus {
+  outline: thin dotted #cc0011;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003125}}
+a:active,
+a:hover {
+  outline: 0;
+  color: #440000;
+}
+
+/**
+ * Navigation Block
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003137}}
+nav ul,
+nav li {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Embedded Content
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003151}}
+img {
+  max-width: 100%;
+  /* Set a maxium relative to the parent */
+  width: auto \ 9;
+  /* IE7-8 need help adjusting responsive images */
+  height: auto;
+  /* Scale the height according to the width, otherwise you get stretching */
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003160}}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/**
+ * Figures
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003169}}
+figure {
+  margin: 0;
+}
+
+/**
+ * Forms
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003179}}
+form {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003183}}
+fieldset {
+  border: 1px solid #eeeeee;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003189}}
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003199}}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  font-family: sans-serif;
+  margin: 0;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  *vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003208}}
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003214}}
+button,
+input {
+  line-height: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003221}}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003229}}
+.disabled,
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003236}}
+.checkbox,
+.radio,
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *height: 13px;
+  *width: 13px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003243}}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003251}}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003256}}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003263}}
+input,
+textarea,
+select {
+  color: #333333;
+}
+
+/**
+ * Tables
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_normalise\.scss}line{font-family:\00003272}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * Typography
+ * ============================================================================
+ *
+ * The base typography of thesite
+ *
+ *
+ * Content
+ * ----------------------------------------------------------------------------
+ * - Headers
+ * - Text Groups
+ * - Quote
+ * - Monospaced
+ * - Misc.
+ */
+/**
+ * Headers
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000323}}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1em;
+  padding-bottom: 0.4em;
+  font-family: Cabin, "Helvetica Neue", serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000330}}
+h1 {
+  font-size: 3em;
+  line-height: 1.2em;
+  padding-bottom: 0.3em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000336}}
+h2 {
+  font-size: 2em;
+  padding-top: 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000341}}
+h3, h4, h5, h6 {
+  padding-top: 0.5em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000345}}
+h3 {
+  font-size: 1.5em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000349}}
+h4 {
+  font-size: 1.25em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000353}}
+h5 {
+  font-size: 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000357}}
+h6 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+/**
+ * Text Groups
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000371}}
+p,
+li,
+dd,
+dt {
+  line-height: 21px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000376}}
+p,
+pre {
+  margin: 1em 0;
+}
+
+/**
+ * Quote
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000386}}
+blockquote {
+  margin: 1em 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000390}}
+q {
+  quotes: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\0000395}}
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/**
+ * Monospaced
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003109}}
+code,
+kbd,
+pre,
+samp {
+  font-family: Courier, monospace;
+  font-size: 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003114}}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/**
+ * Inline
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003126}}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003131}}
+b,
+strong {
+  font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003135}}
+dfn {
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003139}}
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003144}}
+small {
+  font-size: 80%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003149}}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003156}}
+sup {
+  top: -0.5em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003160}}
+sub {
+  bottom: -0.25em;
+}
+
+/**
+ * Links
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003170}}
+a {
+  color: #cc0011;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000324}}
+a:hover {
+  color: #440000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_hover-link\.scss}line{font-family:\000034}}
+a:hover {
+  text-decoration: underline;
+}
+
+/**
+ * Lists
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003184}}
+dl,
+menu,
+ol,
+ul {
+  margin: 0.05em 0;
+  padding: 0 0 0 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003190}}
+dl ul,
+dl ol,
+dl dl,
+menu ul,
+menu ol,
+menu dl,
+ol ul,
+ol ol,
+ol dl,
+ul ul,
+ul ol,
+ul dl {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003195}}
+dd {
+  padding: 0 0 0 40px;
+  margin: 0;
+}
+
+/**
+ * Misc.
+ * ----------------------------------------------------------------------------
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_typography\.scss}line{font-family:\00003210}}
+li,
+p,
+dt,
+dd,
+blockquote {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+/**
+ * Layout
+ * ============================================================================
+ *
+ * Define the position and placement of high-up elements on the site
+ * 
+ *
+ * Content
+ * ----------------------------------------------------------------------------
+ * - 
+ */
+/**
+ * Print Styles
+ * ============================================================================
+ *
+ * Handy little rules for when printing a web page.
+ */
+@media print {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\000039}}
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\0000317}}
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\0000321}}
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\0000325}}
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\0000335}}
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\0000340}}
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\0000345}}
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\0000350}}
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\0000354}}
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\0000364}}
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/neil\/Sites\/templatie\/style\/sass\/scaffold\/_print\.scss}line{font-family:\0000370}}
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
