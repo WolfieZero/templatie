@@ -30,13 +30,14 @@ $base-border-color: #EEE;
 
 
 ///
-// Semantic.gs
+// Grid
 // ----------------------------------------------------------------------------
 ///
 
-$column-width: 60px;
-$gutter-width: 20px;
-$columns: 12;
+$total_columns:     12;
+$total_width:       960px; // px|100%    --  px = fixed, 100% = fluid
+$gutter_width:      20px;  // px|%       --  px = fixed, % = fluid
+$container_margin:  auto;    // auto|px|% 
 
 
 ///
