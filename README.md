@@ -40,33 +40,30 @@ variables. So if we have the class `.box` with different attributes and such
 then we would put that here. They are modal styles.
 
 
-### Profound Grid
+### Semantic.gs
 
 `/style/sass/lib/_grid.scss`
 
-A dead handy Sass mixin to create grid style based laouts without excessive CSS
-overhead or additional files. You call the grid sections you want by going into
-the layout and within the style refence adding something like:
+Described as the "Page layout for tomorrow", [Semantic.gs] this is a dead handy
+Sass mixin to create grid style based laouts without excessive CSS overhead or 
+additional files. You call the grid sections you want by going into the layout 
+and within the style refence adding something like:
 
     .main {
         @include container();
-        @include clearfix();
-    }
-
-    article {
-        @include push(1);
-        @inclide column(10);
+        article {
+           .column(9);
+        }
     }
 
 This will make the `article` tag a width of 9 colums based on the values set in
 the `_config.scss` file.
 
-    $total_columns:     12;
-    $total_width:       960px; // px|100%    --  px = fixed, 100% = fluid
-    $gutter_width:      20px;  // px|%       --  px = fixed, % = fluid
-    $container_margin:  auto;  // auto|px|% 
+    $column-width: 60px;
+    $gutter-width: 20px;
+    $columns: 12;
 
-Check out the [website](http://www.profoundgrid.com/) for more information.
+Check out the [website](http://semantic.gs/) for more information.
 
 
 

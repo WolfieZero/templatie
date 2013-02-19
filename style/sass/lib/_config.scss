@@ -17,11 +17,11 @@ $base-mono-font-family: Courier, monospace;
 // ----------------------------------------------------------------------------
 ///
 
-$base-font-color: #333;
-$base-doc-background: #EFEFEF;
+$base-font-color: #EFEFEF;
+$base-doc-background: #222;
 
-$base-link-color: #C01;
-$base-link-color-hover: #400;
+$base-link-color: #C09;
+$base-link-color-hover: #C09;
 
 $selection-color: #FFF;
 $selection-background: #C01;
@@ -30,20 +30,19 @@ $base-border-color: #EEE;
 
 
 ///
-// Grid
-// ----------------------------------------------------------------------------
-///
-
-$total_columns:     12;
-$total_width:       960px; // px|100%    --  px = fixed, 100% = fluid
-$gutter_width:      20px;  // px|%       --  px = fixed, % = fluid
-$container_margin:  auto;    // auto|px|% 
-
-
-///
 // Measurements
 // ----------------------------------------------------------------------------
 ///
 
-$base-doc-width: 960px;
+$base-doc-width: 980px;
 $base-mobile-width: 625px;
+
+
+///
+// Grid
+// ----------------------------------------------------------------------------
+///
+
+$grid-column-width: 60px;
+$grid-gutter-width: 20px;
+$grid-columns: 12;
