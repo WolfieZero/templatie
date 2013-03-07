@@ -4,6 +4,7 @@
   "devDependencies": {
     "grunt-jsmin-sourcemap": "1.x.x",
     "grunt": "~0.4.0",
-    "grunt-contrib-compass": "~0.1.3"
+    "grunt-contrib-compass": "~0.1.3",
+    "grunt-contrib-watch": "~0.3.1"
   }
 }

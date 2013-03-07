@@ -61,6 +61,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-jsmin-sourcemap');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
 
     // Register Tasks
