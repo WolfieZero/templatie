@@ -7,15 +7,35 @@ The project is written to speed up the way I work with websites by providing
 the defaults I use regulary.
 
 Uses:
- - Sass
- - Compass
- - Semantic.gs
- - Grunt
+
+ - [Sass]
+ - [Compass]
+ - [Grunt]
+ - [Normalize] ([normalize.css Compass Plugin])
 
 Out of the box supports:
- - Bower
- - jsmin-sourcemaps
 
+ - [Bower]
+ - [jsmin-sourcemaps]
+
+
+Install
+-------------------------------------------------------------------------------
+
+The install is relatively simple but only needs to be done once for a machine.
+All of this should be done in the terminal and prosume you have [Ruby] 
+installed and [Node.js].
+
+1. `$ sudo gem update --system`
+2. `$ sudo gem install sass compass compass-normalize-plugin`
+3. `$ sudo npm install -g grunt-cli`
+
+If you've installed all those already then start from here.
+
+1. `$ cd your/projects/front-end/directory/`
+2. `$ git clone https://github.com/WolfieZero/templatie.git ./`
+3. `$ npm install`
+4. `$ mv -i README.md readme-templatie.md`
 
 
 Style Methodology - `/style/`
@@ -38,32 +58,6 @@ and typography.
 `sass/module` is where you place these unique elements more relative to class
 variables. So if we have the class `.box` with different attributes and such
 then we would put that here. They are modal styles.
-
-
-### Semantic.gs
-
-`/style/sass/lib/_grid.scss`
-
-Described as the "Page layout for tomorrow", [Semantic.gs] this is a dead handy
-Sass mixin to create grid style based laouts without excessive CSS overhead or 
-additional files. You call the grid sections you want by going into the layout 
-and within the style refence adding something like:
-
-    .main {
-        @include container();
-        article {
-           .column(9);
-        }
-    }
-
-This will make the `article` tag a width of 9 colums based on the values set in
-the `_config.scss` file.
-
-    $column-width: 60px;
-    $gutter-width: 20px;
-    $columns: 12;
-
-Check out the [website](http://semantic.gs/) for more information.
 
 
 
@@ -206,12 +200,40 @@ conditionals high-up in the markup.
 For more info read [Mathias Bynens] "[In defense of CSS hacks]"
 
 
+Links
+-------------------------------------------------------------------------------
 
+### Tech
+- [Ruby]
+- [Node.js]
+- [Sass]
+- [Grunt]
+
+### Package Managers
+- [NPM]
+- [Grunt]
+- [Bower] / [Bower Components]
+
+### Plugins
+- [normalize.css Compass Plugin]
+- [grunt-jsmin-sourcemap]
+
+### Blog Posts
+- [jQuery 1.9 final, jQuery 2.0 beta, Migrate final released]
+- [In defense of CSS hacks]
+
+
+[Ruby]: http://www.ruby-lang.org/
+[Node.js]: http://nodejs.org/
+[Sass]: sass-lang.com
+[Compass]: http://compass-style.org/
+[Normalize]: http://necolas.github.com/normalize.css/
+[grunt-jsmin-sourcemap]: https://github.com/twolfson/grunt-jsmin-sourcemap
+[Grunt]: http://gruntjs.com/
+[normalize.css Compass Plugin]: https://github.com/jzorn/compass-normalize-plugin
 [Bower]: http://twitter.github.com/bower/
 [Bower Components]: http://sindresorhus.com/bower-components/
-[Node.js]: http://nodejs.org/
 [NPM]: https://npmjs.org/
-[Profound Grid]: http://www.profoundgrid.com/
 [jQuery 1.9 final, jQuery 2.0 beta, Migrate final released]: http://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/
 [HTML5 Boilerplate]: http://html5boilerplate.com/
 [In defense of CSS hacks]: http://mathiasbynens.be/notes/safe-css-hacks

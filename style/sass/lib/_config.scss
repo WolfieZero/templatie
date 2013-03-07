@@ -3,9 +3,11 @@
 // ----------------------------------------------------------------------------
 ///
 
-$base-font-size: 14px;
-$line-height-em: 1.5;
-$base-line-height: $base-font-size * $line-height-em;
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+//$line-height-em: 1.5;
+//$base-line-height: $base-font-size * $line-height-em;
 
 $base-font-family: 'Helvetica Neue', serif;
 $base-header-font-family: Cabin, $base-font-family;
@@ -17,8 +19,8 @@ $base-mono-font-family: Courier, monospace;
 // ----------------------------------------------------------------------------
 ///
 
-$base-font-color: #EFEFEF;
-$base-doc-background: #222;
+$base-font-color: #404040;
+$base-doc-background: #EFEFEF;
 
 $base-link-color: #C09;
 $base-link-color-hover: #C09;

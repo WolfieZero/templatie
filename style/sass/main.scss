@@ -25,14 +25,29 @@
 
 // Gems
 @import 'compass'; 
+@import 'blueprint';
+@import 'normalize';
 
 // Config
 @import 'lib/config';
 
 // Local
 @import 'lib/mixin';
-@import 'lib/grid';
 
+
+///
+// Normalize
+// ----------------------------------------------------------------------------
+///
+
+@include normalize-html5;
+@include normalize-base;
+@include normalize-links;
+//@include normalize-typography; // Covered by 'scaffold/typograpy'
+@include normalize-embedded;
+@include normalize-figures;
+@include normalize-forms;
+@include normalize-tables;
 
 
 ///
@@ -40,9 +55,16 @@
 // ----------------------------------------------------------------------------
 ///
 
-@import 'scaffold/normalise';
 @import 'scaffold/typography';
 @import 'scaffold/layout';
+
+
+///
+// Module
+// ----------------------------------------------------------------------------
+///
+
+@import 'module/nav';
 
 
 ///
@@ -50,4 +72,5 @@
 // ----------------------------------------------------------------------------
 // Not recommended but required
 ///
+
 @import 'scaffold/print'; // Needs to override all styles to print correctly

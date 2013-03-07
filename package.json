@@ -1,16 +1,9 @@
 {
   "name": " ",
   "version": "0.0.0",
-  "description": " ",
-  "main": "grunt.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": " ",
-  "license": "The MIT License (MIT)",
   "devDependencies": {
-    "grunt-compass": "0.3.x",
-    "grunt-jsmin-sourcemap": "1.5.x"
+    "grunt-jsmin-sourcemap": "1.x.x",
+    "grunt": "~0.4.0",
+    "grunt-contrib-compass": "~0.1.3"
   }
 }
- 
