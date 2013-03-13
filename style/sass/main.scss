@@ -2,8 +2,6 @@
 // Main Sass Imports
 // ============================================================================
 //
-// Base style of the site where the main sass files are called in
-//
 //
 // Content
 // ----------------------------------------------------------------------------
@@ -25,7 +23,6 @@
 
 // Gems
 @import 'compass'; 
-@import 'blueprint';
 @import 'normalize';
 
 // Config
@@ -33,6 +30,7 @@
 
 // Local
 @import 'lib/mixin';
+@import 'lib/grid';
 
 
 ///
@@ -41,9 +39,6 @@
 ///
 
 @include normalize-html5;
-@include normalize-base;
-@include normalize-links;
-//@include normalize-typography; // Covered by 'scaffold/typograpy'
 @include normalize-embedded;
 @include normalize-figures;
 @include normalize-forms;
@@ -55,6 +50,7 @@
 // ----------------------------------------------------------------------------
 ///
 
+@import 'scaffold/base';
 @import 'scaffold/typography';
 @import 'scaffold/layout';
 

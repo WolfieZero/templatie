@@ -1,6 +1,8 @@
 Templatie
 ===============================================================================
 
+DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+
 Boilerplate for web projects using intelligent styles and Javascript loading.
 
 The project is written to speed up the way I work with websites by providing
@@ -16,7 +18,8 @@ Uses:
 Out of the box supports:
 
  - [Bower]
- - [jsmin-sourcemaps]
+ - [grunt-jsmin-sourcemap]
+
 
 
 Install
@@ -36,6 +39,7 @@ If you've installed all those already then start from here.
 2. `$ git clone https://github.com/WolfieZero/templatie.git ./`
 3. `$ npm install`
 4. `$ mv -i README.md readme-templatie.md`
+
 
 
 Style Methodology - `/style/`
@@ -87,14 +91,26 @@ packages with ease. For example, if you want jQuery just do the following:
     $ bower install jquery
 
 That will run a script to grab and download the latest version of jQuery to
-your components folder.
+your 'vendor' folder.
 
 You don't need to keep files in there, you can move them to a more logical area
 of your workspace, or you can change where Bower places files by editing the
 `.bowerrc` file (it might be hidden) in the Templatie directory.
 
+If you want to setup a default dependancies for a project then you can add them
+to the 'package.json' file like so:
 
-### jsmin-sourcemap
+    {
+        ..
+        "dependencies": {
+            "jquery": "~1.7.2"
+        }
+    }
+
+Then if you run `$ bower install` it will grab those packages for you.
+
+
+### grunt-jsmin-sourcemap
 
 I keep reading aobut various asynconious Javascript loaders and such like but 
 to no avliable I have found any really benificial to me, so I stick with the

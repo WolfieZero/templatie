@@ -2,8 +2,6 @@
  * Typography
  * ============================================================================
  *
- * The base typography of thesite
- *
  *
  * Content
  * ----------------------------------------------------------------------------
@@ -15,10 +13,20 @@
 
 
 /**
- * Baseline
+ * Baselines
  * ----------------------------------------------------------------------------
  */
+
 @include establish-baseline;
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: $base-font-family;
+    color: $base-font-color;;
+}
 
 
 /**
@@ -139,6 +147,14 @@ sub {
 a {
     @include link-colors($base-link-color, $base-link-color-hover);
     @include hover-link;
+
+    &:focus {
+      outline: thin dotted;
+    }
+
+    a:hover, a:active {
+      outline: 0;
+    }
 }
 
 
@@ -157,7 +173,7 @@ ul {
 
     ul,
     ol,
-    dlx {
+    dl {
         @include leader(0);
         @include trailer(0);
         margin-left: 0;

@@ -31,36 +31,6 @@ audio:not([controls]) {
   display: none;
 }
 
-/* line 2, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-plugin-0.4.0/scss/normalize/_base.scss */
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-/* line 16, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-plugin-0.4.0/scss/normalize/_base.scss */
-html,
-button,
-input,
-select,
-textarea {
-  font-family: sans-serif;
-}
-
-/* line 21, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-plugin-0.4.0/scss/normalize/_base.scss */
-body {
-  margin: 0;
-}
-
-/* line 4, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-plugin-0.4.0/scss/normalize/_links.scss */
-a:focus {
-  outline: thin dotted;
-}
-/* line 10, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-plugin-0.4.0/scss/normalize/_links.scss */
-a:hover, a:active {
-  outline: 0;
-}
-
 /* line 2, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-plugin-0.4.0/scss/normalize/_embedded.scss */
 img {
   border: 0;
@@ -161,10 +131,27 @@ table {
 }
 
 /**
+ * Base
+ * ============================================================================
+ * 
+ *
+ * Content
+ * ----------------------------------------------------------------------------
+ * - Document
+ */
+/**
+ * Document
+ * ----------------------------------------------------------------------------
+ */
+/* line 17, ../sass/scaffold/_base.scss */
+body {
+  background: #fefefe;
+  margin: 0;
+}
+
+/**
  * Typography
  * ============================================================================
- *
- * The base typography of thesite
  *
  *
  * Content
@@ -175,7 +162,7 @@ table {
  * - Monospaced
  */
 /**
- * Baseline
+ * Baselines
  * ----------------------------------------------------------------------------
  */
 /* line 61, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
@@ -189,29 +176,39 @@ html {
   line-height: 1.5em;
 }
 
+/* line 26, ../sass/scaffold/_typography.scss */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", serif;
+  color: #404040;
+}
+
 /**
  * Headers
  * ----------------------------------------------------------------------------
  */
-/* line 29, ../sass/scaffold/_typography.scss */
+/* line 37, ../sass/scaffold/_typography.scss */
 h1 {
   font-size: 2em;
   line-height: 1.5em;
 }
 
-/* line 33, ../sass/scaffold/_typography.scss */
+/* line 41, ../sass/scaffold/_typography.scss */
 h2 {
   font-size: 1.625em;
   line-height: 1.84615em;
 }
 
-/* line 37, ../sass/scaffold/_typography.scss */
+/* line 45, ../sass/scaffold/_typography.scss */
 h3 {
   font-size: 1.375em;
   line-height: 2.18182em;
 }
 
-/* line 41, ../sass/scaffold/_typography.scss */
+/* line 49, ../sass/scaffold/_typography.scss */
 h4 {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -221,7 +218,7 @@ h4 {
  * Quote
  * ----------------------------------------------------------------------------
  */
-/* line 51, ../sass/scaffold/_typography.scss */
+/* line 59, ../sass/scaffold/_typography.scss */
 blockquote {
   margin-top: 3em;
   margin-right: 2em;
@@ -232,12 +229,12 @@ blockquote {
   line-height: 1.33333em;
 }
 
-/* line 60, ../sass/scaffold/_typography.scss */
+/* line 68, ../sass/scaffold/_typography.scss */
 q {
   quotes: none;
 }
 
-/* line 65, ../sass/scaffold/_typography.scss */
+/* line 73, ../sass/scaffold/_typography.scss */
 q:before,
 q:after {
   content: '';
@@ -248,7 +245,7 @@ q:after {
  * Monospaced
  * ----------------------------------------------------------------------------
  */
-/* line 79, ../sass/scaffold/_typography.scss */
+/* line 87, ../sass/scaffold/_typography.scss */
 code,
 kbd,
 pre,
@@ -256,7 +253,7 @@ samp {
   font-family: Courier, monospace;
 }
 
-/* line 83, ../sass/scaffold/_typography.scss */
+/* line 91, ../sass/scaffold/_typography.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -267,34 +264,34 @@ pre {
  * Inline
  * ----------------------------------------------------------------------------
  */
-/* line 95, ../sass/scaffold/_typography.scss */
+/* line 103, ../sass/scaffold/_typography.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 100, ../sass/scaffold/_typography.scss */
+/* line 108, ../sass/scaffold/_typography.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 104, ../sass/scaffold/_typography.scss */
+/* line 112, ../sass/scaffold/_typography.scss */
 dfn {
   font-style: italic;
 }
 
-/* line 108, ../sass/scaffold/_typography.scss */
+/* line 116, ../sass/scaffold/_typography.scss */
 mark {
   background: #ff0;
   color: #000;
 }
 
-/* line 113, ../sass/scaffold/_typography.scss */
+/* line 121, ../sass/scaffold/_typography.scss */
 small {
   font-size: 80%;
 }
 
-/* line 118, ../sass/scaffold/_typography.scss */
+/* line 126, ../sass/scaffold/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -303,12 +300,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 125, ../sass/scaffold/_typography.scss */
+/* line 133, ../sass/scaffold/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 129, ../sass/scaffold/_typography.scss */
+/* line 137, ../sass/scaffold/_typography.scss */
 sub {
   bottom: -0.25em;
 }
@@ -317,7 +314,7 @@ sub {
  * Links
  * ----------------------------------------------------------------------------
  */
-/* line 139, ../sass/scaffold/_typography.scss */
+/* line 147, ../sass/scaffold/_typography.scss */
 a {
   color: #cc0099;
   text-decoration: none;
@@ -330,12 +327,20 @@ a:hover {
 a:hover {
   text-decoration: underline;
 }
+/* line 151, ../sass/scaffold/_typography.scss */
+a:focus {
+  outline: thin dotted;
+}
+/* line 155, ../sass/scaffold/_typography.scss */
+a a:hover, a a:active {
+  outline: 0;
+}
 
 /**
  * Lists
  * ----------------------------------------------------------------------------
  */
-/* line 153, ../sass/scaffold/_typography.scss */
+/* line 169, ../sass/scaffold/_typography.scss */
 dl,
 menu,
 ol,
@@ -344,25 +349,25 @@ ul {
   margin-bottom: 1.5em;
   margin-left: 1em;
 }
-/* line 160, ../sass/scaffold/_typography.scss */
+/* line 176, ../sass/scaffold/_typography.scss */
 dl ul,
 dl ol,
-dl dlx,
+dl dl,
 menu ul,
 menu ol,
-menu dlx,
+menu dl,
 ol ul,
 ol ol,
-ol dlx,
+ol dl,
 ul ul,
 ul ol,
-ul dlx {
+ul dl {
   margin-top: 0em;
   margin-bottom: 0em;
   margin-left: 0;
 }
 
-/* line 167, ../sass/scaffold/_typography.scss */
+/* line 183, ../sass/scaffold/_typography.scss */
 dd {
   padding: 0 0 0 40px;
   margin: 0;
