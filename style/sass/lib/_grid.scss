@@ -7,13 +7,6 @@
 ///
 
 
-///
-// Total width of the grids
-// ----------------------------------------------------------------------------
-// @var num
-///
-$total-width: grids-width($columns);
-
 
 ///
 // If Statements
@@ -43,12 +36,11 @@ $total-width: grids-width($columns);
 
 
 ///
-// Span
+// Total width of the grids
 // ----------------------------------------------------------------------------
+// @var num
 ///
-@function span ($columns:$columns) {
-    @return $column-width * $columns + $gutter-width * ($columns - 1);
-}
+$total-width: grids-width($columns);
 
 
 ///
@@ -85,40 +77,29 @@ $total-width: grids-width($columns);
 
 
 ///
-// Columns
-// ----------------------------------------------------------------------------
-// $cols     num   Number of columns to use
-// $margin   bool  Display the margin
-// $columns  num   Number of columns to base `$cols` on
-///
-@mixin column ($columns:$columns, $margin: true, $total_columns:$columns) {
-    display: inline-block;
-    float: left;
-    @if ($subpixel) {
-        *width: $total-width*(((($gutter-width+$column-width)*$columns)-$gutter-width) / grid-width($total_columns))-$correction;
-    } @else {
-        width: $total-width*(((($gutter-width+$column-width)*$columns)-$gutter-width) / grids-width($total_columns));
-    }
-    @if ($margin) {
-        @if ($subpixel) {
-            *margin: 0 $total-width*(($gutter-width/2)/grids-width($total_columns))-$correction;
-        } @else {
-            margin: 0 $total-width*(($gutter-width/2)/grids-width($total_columns));
-        }
-    }
-}
-
-
-///
 // Cols
 // ----------------------------------------------------------------------------
 // Shorthand for `columns`
-// $cols     num   Number of columns to use
-// $margin   bool  Display the margin
-// $columns  num   Number of columns to base `$cols` on
+// $cols        num   Number of columns to use
+// $margin      bool  Display the margin
+// $total_cols  num   Number of columns to base `$cols` on
 ///
-@mixin cols ($cols, $margin:true, $columns:$columns) {
-    @include column($cols, $margin, $columns)
+@mixin cols ($cols:$columns, $total_cols:$columns) {
+    display: inline-block;
+//    float: left;
+    @if ($subpixel) {
+        *width: $total-width*(((($gutter-width+$column-width)*$cols)-$gutter-width) / grid-width($total_cols))-$correction;
+    } @else {
+        width: $total-width*(((($gutter-width+$column-width)*$cols)-$gutter-width) / grids-width($total_cols));
+    }
+}
+
+@mixin col-gutter ($total_cols:$columns) {
+    @if ($subpixel) {
+        *margin: 0 $total-width*(($gutter-width/2)/grids-width($total_cols))-$correction;
+    } @else {
+        margin: 0 $total-width*(($gutter-width/2)/grids-width($total_cols));
+    }
 }
 
 
@@ -128,8 +109,12 @@ $total-width: grids-width($columns);
 // Pushes a element right by number of columns specified in argument
 // $offset  int  How many columns to offset by
 ///
-@mixin push ($offset:1) {
-    margin-left: $total-width*((($gutter-width+$column-width)*$offset) / grids-width($columns)) + $total-width*(($gutter-width*.5)/grids-width($columns));
+@mixin push ($offset:1, $gutter:true) {
+    @if ($gutter) {
+        margin-left: $total-width*((($gutter-width+$column-width)*$offset) / grids-width($columns)) + $total-width*(($gutter-width*.5)/grids-width($columns));
+    } @else {
+        margin-left: $total-width*((($gutter-width+$column-width)*$offset) / grids-width($columns));
+    }
 }
 
 ///
@@ -138,6 +123,10 @@ $total-width: grids-width($columns);
 // Pulls a element left by number of columns specified in argument
 // $offset  int  How many columns to offset by
 ///
-@mixin pull ($offset:1) {
-    margin-right: $total-width*((($gutter-width+$column-width)*$offset) / grids-width($columns)) + $total-width*(($gutter-width*.5)/grids-width($columns));
+@mixin pull ($offset:1, $gutter:true) {
+    @if ($gutter) {
+        margin-right: $total-width*((($gutter-width+$column-width)*$offset) / grids-width($columns)) + $total-width*(($gutter-width*.5)/grids-width($columns));
+    } @else {
+        margin-right: $total-width*((($gutter-width+$column-width)*$offset) / grids-width($columns));
+    }
 }
