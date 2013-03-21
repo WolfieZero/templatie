@@ -18,3 +18,9 @@ body {
     background: $base-doc-background;
     margin: 0;
 }
+
+* { /* http://j.mp/149phLU */
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
