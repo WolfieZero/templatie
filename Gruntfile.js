@@ -1,6 +1,8 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+    var jsFiles = grunt.file.readJSON('script/main.json');
+
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
@@ -15,6 +17,7 @@ module.exports = function(grunt) {
                     cssDir: 'style/css',
                     fontsDir: 'style/fonts',
                     imagesDir: 'img',
+                    relativeAssets: true,
                     require: [
                         'normalize'
                     ]
@@ -27,6 +30,7 @@ module.exports = function(grunt) {
                     cssDir: 'style/css',
                     fontsDir: 'style/fonts',
                     imagesDir: 'img',
+                    relativeAssets: true,
                     require: [
                         'normalize'
                     ]
@@ -34,13 +38,34 @@ module.exports = function(grunt) {
             }
         },
 
-
-        // jsmin-sourcemap
+        // Uglify our JS
         // --------------------------------------------------------------------
-
-        'jsmin-sourcemap': {
-            //'script/dist/main.js': ['script/dev/one.js', 'script/dev/two.js'],
-            'script/dist/main.js': 'script/dev/main.js'
+        uglify: {
+            options: {
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                        '<%= grunt.template.today("yyyy-mm-dd") %> */'
+            },
+            dev: {
+                options: {
+                    sourceMap: 'script/dist/main.map.js',
+                    //sourceMappingURL: 'http://.../script/dist/main.map.js',
+                    beautify: true,
+                    preserveComments: 'all',
+                    mangle: false
+                },
+                files: jsFiles
+            },
+            dist: {
+                options: {
+                    sourceMap: 'script/dist/main.map.js',
+                    //sourceMappingURL: 'http://.../script/dist/main.map.js',
+                    beautify: false,
+                    preserveComments: 'some',
+                    mangle: true,
+                    report: 'gzip'
+                },
+                files: jsFiles
+            }
         },
 
         // Watch files
@@ -49,8 +74,11 @@ module.exports = function(grunt) {
             compass: {
                 files: ['style/sass/**/*.scss'],
                 tasks: 'compass:dev'
+            },
+            uglify: {
+                files: ['script/dev/**/*.js', 'script/**/*.json'],
+                tasks: 'uglify:dev'
             }
-
         }
 
     });
@@ -60,15 +88,15 @@ module.exports = function(grunt) {
     // ------------------------------------------------------------------------
 
     grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-jsmin-sourcemap');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
 
     // Register Tasks
     // ------------------------------------------------------------------------
 
-    grunt.registerTask('default', 'compass:dev jsmin-sourcemap'); // Default task
-    grunt.registerTask('dev', 'compass:dev'); // Development build
-    grunt.registerTask('dist', 'compass:dist'); // Distribution build
+    grunt.registerTask('default', 'compass:dev uglify:dev'); // Default task
+    grunt.registerTask('dev', 'compass:dev uglify:dev'); // Development build
+    grunt.registerTask('dist', 'compass:dist uglify:dist'); // Distribution build
 
 };

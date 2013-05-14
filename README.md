@@ -15,12 +15,6 @@ Uses:
  - [Grunt]
  - [Normalize] ([normalize.css Compass Plugin])
 
-Out of the box supports:
-
- - [Bower]
- - [grunt-jsmin-sourcemap]
-
-
 
 Install
 -------------------------------------------------------------------------------
@@ -68,84 +62,14 @@ then we would put that here. They are modal styles.
 Script Methodology - `script`
 -------------------------------------------------------------------------------
 
-Scripts within Templatie are made fairly open and up to the developer to chose
-how they with to use them, but it makes use of various helpers such as Bower
-and jsmin-sourcemaps to make development easier, but these aren't requirements
-but simply there to make life easier for starting a distrubutable project.
+If you are using javascript then you might want to approach this project
+differently then you would to any other.
 
-This project is designed to make use of [Bower], a package manager for browser
-scripts. This can handle all your additional vendor libraries, be it Javascript
-or CSS. Worth checking out if you use external libraries alot (like jQuery).
-
-There is an easy search site to see what's avaliable, [Bower Components].
-
-To use Bowser, make sure you have [Node.js] installed along with [NPM] and in
-terminal run:
-
-    $ sudo npm install -g bower
-
-This will allow you to use Bower in any directory on your machine, but for now
-`cd` to the root of your Templatie folder and you will be able to install
-packages with ease. For example, if you want jQuery just do the following:
-
-    $ bower install jquery
-
-That will run a script to grab and download the latest version of jQuery to
-your 'vendor' folder.
-
-You don't need to keep files in there, you can move them to a more logical area
-of your workspace, or you can change where Bower places files by editing the
-`.bowerrc` file (it might be hidden) in the Templatie directory.
-
-If you want to setup a default dependancies for a project then you can add them
-to the 'package.json' file like so:
-
-    {
-        ..
-        "dependencies": {
-            "jquery": "~1.7.2"
-        }
-    }
-
-Then if you run `$ bower install` it will grab those packages for you.
-
-
-### grunt-jsmin-sourcemap
-
-I keep reading aobut various asynconious Javascript loaders and such like but 
-to no avliable I have found any really benificial to me, so I stick with the
-minify and concatinate to manage my scripts. Using Grunt and jsmin-sourcemaps,
-this process is made easier and allows for more accurate debugging with
-sourcemaps.
-
-To use jsmin-sourcemaps you can follow the following code within 
-`grunt.initConfig()`:
-
-    'jsmin-sourcemap': {
-        'script/dist/main.js': [ // output file 
-            'script/one.js', // first file to add to concat
-            'script/two.js' // second file to add to concat
-        ]
-    }
-
-You can create as many of these as you need, so if you want to add a single
-file:
-
-    'jsmin-sourcemap': {
-        'script/dist/main.js': [
-            'script/one.js', 
-            'script/two.js'
-        ],
-        'script/dist/other.js': 'script/three.js'
-    }
-
-Then it will create two new files.
-
-This will also automatically create a source map file within the same location
-and name as the output file with '.map' appended to the file suffix.
-
-So all you need to do is add the output file to your HTML and the source maps
-will be automatically included.
+Templatie makes use of Uglify to do all sorts of spiffing stuff to Javascript.
+The thing you have to remember here is all your file refences need to be added
+in the file 'script/main.json'; this tells Grunt what files to compress and in
+what order. It also allows you to update the file list while running `grunt 
+watch` without restart.
 
 
 ### jQuery
@@ -154,16 +78,10 @@ There is a odd thing with jQuery now, there are two version that have the same
 syntax but varing support. To understand better check out the jQuery blog
 "[jQuery 1.9 final, jQuery 2.0 beta, Migrate final released]". 
 
-If you want to use jQuery then prosuming you have bower installed, run this in
-the Templatie directory:
+Add this line to your HTML document footer:
 
-    $ bower install jquery
-
-Then add this line to your HTML document footer:
-
+    <!--[if gte IE 9]><!--><script src="http://code.jquery.com/jquery-2.0.0.min.js"></script><!--[endif]-->
     <!--[if lt IE 9]><script src="http://code.jquery.com/jquery-1.9.0.min.js"></script><![endif]-->
-    <!--[if gte IE 9]><!--><script src="http://code.jquery.com/jquery-2.0.0b1.min.js"></script><!--[endif]-->
-    <script>window.jQuery || document.write('<script src="components/jquery/jquery.min.js"><\/script>')</script>
 
 Basically we load the smallest file and most efficiant for supported browsers,
 which is version 2, but if it's an un supported browser then we load in 1.9
@@ -229,10 +147,6 @@ Links
 - [NPM]
 - [Grunt]
 - [Bower] / [Bower Components]
-
-### Plugins
-- [normalize.css Compass Plugin]
-- [grunt-jsmin-sourcemap]
 
 ### Blog Posts
 - [jQuery 1.9 final, jQuery 2.0 beta, Migrate final released]
